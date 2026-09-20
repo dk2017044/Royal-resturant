@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Menu, X, Crown, MapPin, Clock, Phone, MessageSquare } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { royalConfig } from "../config";
+import { openDeviceMap } from "../utils/mapUtils";
 import "./Navbar.css";
 
 interface NavbarProps {
@@ -42,7 +43,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenOrderModal: _onOpenOrderMo
       {/* Top Bar with Real Contact & Hours */}
       <div className="royal-topbar">
         <div className="container topbar-container">
-          <div className="topbar-item address-item">
+          <div
+            className="topbar-item address-item"
+            onClick={openDeviceMap}
+            style={{ cursor: "pointer" }}
+            title="Open native map location"
+          >
             <MapPin size={14} className="topbar-icon" />
             <span>{royalConfig.restaurant.address}</span>
           </div>

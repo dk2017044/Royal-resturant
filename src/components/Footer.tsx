@@ -1,6 +1,7 @@
 import React from "react";
 import { Crown, Sparkles, MapPin, Phone, Clock, Heart, MessageSquare } from "lucide-react";
 import { royalConfig } from "../config";
+import { openDeviceMap } from "../utils/mapUtils";
 import "./Footer.css";
 
 interface FooterProps {
@@ -113,7 +114,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenOrderModal }) => {
           <div className="footer-contact-col">
             <h4 className="footer-heading font-cinzel">Visit & Hours</h4>
             <div className="footer-contact-items">
-              <p className="contact-p">
+              <p
+                className="contact-p"
+                onClick={openDeviceMap}
+                style={{ cursor: "pointer" }}
+                title="Open native map directions"
+              >
                 <MapPin size={16} />
                 <span>{royalConfig.restaurant.address}</span>
               </p>

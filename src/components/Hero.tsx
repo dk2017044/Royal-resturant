@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Sparkles, Star, MapPin, ArrowRight, MessageSquare, Phone, Utensils } from "lucide-react";
 import { royalConfig } from "../config";
+import { openDeviceMap } from "../utils/mapUtils";
 import "./Hero.css";
 
 interface HeroProps {
@@ -166,7 +167,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenOrderModal: _onOpenOrderModal 
 
           {/* Quick Location & Direct Call */}
           <div className="hero-quick-meta">
-            <div className="meta-item">
+            <div
+              className="meta-item"
+              onClick={openDeviceMap}
+              style={{ cursor: "pointer" }}
+              title="Open native map directions"
+            >
               <MapPin size={14} className="meta-icon" />
               <span>City Court, Near Smart Point, Sadikpur</span>
             </div>

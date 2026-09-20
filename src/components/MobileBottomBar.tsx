@@ -1,6 +1,7 @@
 import React from "react";
 import { UtensilsCrossed, ShoppingBag, MessageSquare, Phone, MapPin } from "lucide-react";
 import { royalConfig } from "../config";
+import { openDeviceMap } from "../utils/mapUtils";
 import "./MobileBottomBar.css";
 
 interface MobileBottomBarProps {
@@ -22,11 +23,7 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({
   };
 
   const handleOpenMaps = () => {
-    window.open(
-      "https://maps.google.com/?q=Royal+Rasoi+City+Court+Sadikpur+Patna",
-      "_blank",
-      "noopener,noreferrer"
-    );
+    openDeviceMap();
   };
 
   return (

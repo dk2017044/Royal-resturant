@@ -102,6 +102,10 @@
   margin-bottom: 1.5rem;
   gap: 1.25rem;
   flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .subcat-pills-row {
@@ -109,6 +113,9 @@
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .subcat-pill {
@@ -122,6 +129,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
 }
 
 .subcat-pill.active,
@@ -141,6 +149,9 @@
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .mini-search-box {
@@ -994,16 +1005,26 @@
   .menu-controls-bar {
     flex-direction: column;
     align-items: stretch;
-    padding: 10px 14px;
+    padding: 10px 12px;
     gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   .subcat-pills-row {
+    display: flex;
+    align-items: center;
     overflow-x: auto;
+    overflow-y: hidden;
     flex-wrap: nowrap;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
     scrollbar-width: none;
-    padding-bottom: 4px;
-    padding-right: 28px;
+    padding: 2px 2px 6px 2px;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     scroll-snap-type: x proximity;
@@ -1019,17 +1040,24 @@
     scroll-snap-align: center;
     padding: 6px 14px;
     font-size: 0.78rem;
+    box-sizing: border-box;
   }
 
   .search-diet-wrap {
     flex-direction: column;
     align-items: stretch;
     gap: 8px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
   }
 
   .mini-search-box {
     width: 100%;
-    min-width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
   }
 
   .diet-pills-group {
@@ -1040,6 +1068,9 @@
     scroll-snap-type: x proximity;
     justify-content: center;
     gap: 6px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .diet-pill {
@@ -1047,48 +1078,91 @@
     justify-content: center;
     scroll-snap-align: center;
     white-space: nowrap;
+    box-sizing: border-box;
   }
 
-  /* Floating Order Cart Bar docked right above bottom nav */
+  /* Floating Order Cart Bar docked right above mobile bottom nav */
   .floating-order-cart-bar {
-    bottom: 68px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 24px);
-    max-width: 500px;
+    position: fixed;
+    bottom: 74px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-width: calc(100% - 24px);
+    transform: none;
+    margin: 0 auto;
     border-radius: 16px;
     z-index: 995;
-    background: rgba(18, 12, 16, 0.96);
-    border: 1.5px solid rgba(245, 184, 66, 0.7);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), 0 0 20px rgba(245, 184, 66, 0.25);
+    background: rgba(20, 13, 18, 0.98);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1.5px solid rgba(245, 184, 66, 0.75);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.95), 0 0 20px rgba(245, 184, 66, 0.25);
+    box-sizing: border-box;
   }
 
   .cart-bar-content {
-    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
     gap: 10px;
+    flex-wrap: nowrap;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .cart-summary-clickable {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    flex: 1;
   }
 
   .cart-icon-ring {
     width: 36px;
     height: 36px;
+    border-radius: 10px;
+    flex-shrink: 0;
   }
 
   .cart-title {
-    font-size: 0.88rem;
+    font-size: 0.82rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .cart-est-total {
     font-size: 0.76rem;
+    color: var(--accentGold);
+    font-weight: 700;
   }
 
   .cart-actions-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
     flex-shrink: 0;
   }
 
-  .btn-royal-gold-order {
+  .view-order-btn {
     padding: 8px 14px;
     font-size: 0.8rem;
+    font-weight: 700;
     white-space: nowrap;
+    border-radius: 9999px;
+  }
+
+  .clear-feast-btn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   /* Pagination Bar */
