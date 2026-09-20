@@ -68,12 +68,18 @@
   .shahi-ai-floating-btn {
     bottom: 74px;
     right: 12px;
-    padding: 9px 15px;
-    gap: 7px;
+    padding: 8px 14px;
+    gap: 6px;
+    transition: bottom 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .shahi-ai-floating-btn.has-cart-items {
+    bottom: 138px; /* Smoothly floats above the floating order cart bar */
   }
 
   .btn-ai-text {
-    font-size: 0.75rem;
+    font-size: 0.74rem;
+    font-weight: 700;
   }
 }
 

@@ -212,11 +212,29 @@ export const OrderModal: React.FC<OrderModalProps> = ({
                 </button>
               </div>
 
+              {/* Items List Section Header */}
+              {cart.length > 0 && (
+                <div className="cart-items-section-header">
+                  <span className="cart-items-count-badge font-cinzel">
+                    DISHES IN ORDER ({totalItems})
+                  </span>
+                  <button
+                    type="button"
+                    className="cart-clear-all-link font-serif"
+                    onClick={onClearCart}
+                    title="Clear entire cart"
+                  >
+                    Clear All
+                  </button>
+                </div>
+              )}
+
               {/* Items List */}
               <div className="order-items-scroll">
                 {cart.length === 0 ? (
                   <div className="empty-cart-view text-center">
-                    <p className="empty-cart-text font-serif">Your order cart is empty.</p>
+                    <ShoppingBag size={42} className="empty-cart-icon" />
+                    <p className="empty-cart-text font-serif">Your royal feast cart is empty.</p>
                     <button
                       type="button"
                       className="btn-royal-glass"
@@ -228,48 +246,63 @@ export const OrderModal: React.FC<OrderModalProps> = ({
                 ) : (
                   <div className="order-items-list">
                     {cart.map((item) => (
-                      <div key={item.id} className="order-item-row">
-                        <div className="item-left-meta">
-                          <img src={item.image} alt={item.name} className="order-item-thumb" />
-                          <div className="item-name-box">
-                            <div className="item-title-wrap">
-                              <span className={`diet-dot ${item.isVeg ? "veg" : "nonveg"}`}></span>
-                              <h4 className="item-name font-cinzel">{item.name}</h4>
-                            </div>
-                            <span className="item-unit-price font-serif">₹{item.price} each</span>
+                      <div key={item.id} className="order-item-card">
+                        {/* Top: Image, Names & Delete */}
+                        <div className="item-card-top">
+                          <div className="item-thumb-wrapper">
+                            <img src={item.image} alt={item.name} className="order-item-thumb" />
+                            <span className={`item-diet-tag ${item.isVeg ? "veg" : "nonveg"}`}>
+                              <span className="diet-dot-inner"></span>
+                            </span>
                           </div>
+
+                          <div className="item-details-column">
+                            <h4 className="item-name font-cinzel">{item.name}</h4>
+                            {item.hindiName && (
+                              <span className="item-hindi font-serif">{item.hindiName}</span>
+                            )}
+                            <span className="item-unit-rate font-serif">₹{item.price} each</span>
+                          </div>
+
+                          <button
+                            type="button"
+                            className="item-remove-icon-btn"
+                            onClick={() => onRemoveItem(item.id)}
+                            title={`Remove ${item.name}`}
+                            aria-label={`Remove ${item.name}`}
+                          >
+                            <Trash2 size={16} />
+                          </button>
                         </div>
 
-                        {/* Quantity Controls */}
-                        <div className="item-qty-controls">
-                          <button
-                            type="button"
-                            className="qty-btn minus"
-                            onClick={() => onUpdateQuantity(item.id, -1)}
-                            aria-label="Decrease quantity"
-                          >
-                            <Minus size={14} />
-                          </button>
-                          <span className="qty-number font-cinzel">{item.quantity}</span>
-                          <button
-                            type="button"
-                            className="qty-btn plus"
-                            onClick={() => onUpdateQuantity(item.id, 1)}
-                            aria-label="Increase quantity"
-                          >
-                            <Plus size={14} />
-                          </button>
-                          <span className="item-row-total font-cinzel">
-                            ₹{item.price * item.quantity}
-                          </span>
-                          <button
-                            type="button"
-                            className="item-delete-btn"
-                            onClick={() => onRemoveItem(item.id)}
-                            title="Remove item"
-                          >
-                            <Trash2 size={15} />
-                          </button>
+                        {/* Bottom: Stepper & Subtotal */}
+                        <div className="item-card-bottom">
+                          <div className="item-stepper-pill">
+                            <button
+                              type="button"
+                              className="stepper-btn minus"
+                              onClick={() => onUpdateQuantity(item.id, -1)}
+                              aria-label="Decrease quantity"
+                            >
+                              <Minus size={13} />
+                            </button>
+                            <span className="stepper-qty font-cinzel">{item.quantity}</span>
+                            <button
+                              type="button"
+                              className="stepper-btn plus"
+                              onClick={() => onUpdateQuantity(item.id, 1)}
+                              aria-label="Increase quantity"
+                            >
+                              <Plus size={13} />
+                            </button>
+                          </div>
+
+                          <div className="item-line-total-box">
+                            <span className="item-total-label font-serif">Subtotal:</span>
+                            <span className="item-total-amount font-cinzel">
+                              ₹{item.price * item.quantity}
+                            </span>
+                          </div>
                         </div>
                       </div>
                     ))}

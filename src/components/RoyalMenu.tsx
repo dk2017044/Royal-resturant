@@ -239,7 +239,10 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
                   key={cat.id}
                   type="button"
                   className={`cat-book-btn ${isActive ? "active" : ""}`}
-                  onClick={() => handleCategoryChange(cat.id)}
+                  onClick={(e) => {
+                    e.currentTarget.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+                    handleCategoryChange(cat.id);
+                  }}
                 >
                   <span className="cat-icon">{cat.icon}</span>
                   <div className="cat-text-wrap">
@@ -268,7 +271,8 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
                 key={sub}
                 type="button"
                 className={`subcat-pill ${activeSubcategory === sub ? "active" : ""}`}
-                onClick={() => {
+                onClick={(e) => {
+                  e.currentTarget.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
                   setActiveSubcategory(sub);
                   setCurrentPage(1);
                 }}
@@ -304,7 +308,7 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
                   type="button"
                   onClick={() => onOpenAIWithQuery(searchQuery)}
                   className="mini-ai-ask-btn font-cinzel"
-                  title="Ask Shahi Khansama AI about this"
+                  title="Ask Shahi AI about this"
                 >
                   <Sparkles size={12} />
                   <span>Ask AI</span>
@@ -316,7 +320,8 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
               <button
                 type="button"
                 className={`diet-pill ${dietFilter === "All" ? "active all-active" : ""}`}
-                onClick={() => {
+                onClick={(e) => {
+                  e.currentTarget.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
                   setDietFilter("All");
                   setCurrentPage(1);
                 }}
@@ -326,7 +331,8 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
               <button
                 type="button"
                 className={`diet-pill ${dietFilter === "Veg" ? "active veg-active" : ""}`}
-                onClick={() => {
+                onClick={(e) => {
+                  e.currentTarget.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
                   setDietFilter("Veg");
                   setCurrentPage(1);
                 }}
@@ -337,7 +343,8 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
               <button
                 type="button"
                 className={`diet-pill ${dietFilter === "NonVeg" ? "active nonveg-active" : ""}`}
-                onClick={() => {
+                onClick={(e) => {
+                  e.currentTarget.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
                   setDietFilter("NonVeg");
                   setCurrentPage(1);
                 }}

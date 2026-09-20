@@ -167,6 +167,7 @@ export const App: React.FC = () => {
         onClearInitialQuery={() => setAiInitialQuery("")}
         onOpenReservation={() => handleOpenReservation()}
         onOpenOrderModal={() => setIsOrderModalOpen(true)}
+        hasCartItems={totalCartItems > 0}
       />
 
       {/* Dedicated Mobile Bottom App Bar with Live Order Counter & Price */}

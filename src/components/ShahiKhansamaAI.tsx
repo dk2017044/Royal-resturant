@@ -7,34 +7,38 @@ import {
   Sparkles,
   Phone,
   Utensils,
-  Bot
+  Bot,
+  ShoppingBag
 } from "lucide-react";
 import { askShahiKhansama, type ChatMessage } from "../services/groqService";
 import { royalConfig } from "../config";
 import "./ShahiKhansamaAI.css";
 
 interface ShahiKhansamaAIProps {
-  onOpenOrderModal?: () => void;
-  onOpenReservation?: () => void;
   isOpen?: boolean;
   onClose?: () => void;
   initialQuery?: string;
   onClearInitialQuery?: () => void;
+  onOpenReservation?: () => void;
+  onOpenOrderModal?: () => void;
+  hasCartItems?: boolean;
 }
 
 export const ShahiKhansamaAI: React.FC<ShahiKhansamaAIProps> = ({
-  onOpenReservation,
-  isOpen: controlledIsOpen,
-  onClose: controlledOnClose,
-  initialQuery,
+  isOpen: externalIsOpen,
+  onClose: externalOnClose,
+  initialQuery = "",
   onClearInitialQuery,
+  onOpenReservation,
+  onOpenOrderModal,
+  hasCartItems = false,
 }) => {
   const [internalIsOpen, setInternalIsOpen] = useState(false);
-  const isOpen = controlledIsOpen !== undefined ? controlledIsOpen : internalIsOpen;
+  const isOpen = externalIsOpen !== undefined ? externalIsOpen : internalIsOpen;
 
   const handleSetIsOpen = (open: boolean) => {
-    if (!open && controlledOnClose) {
-      controlledOnClose();
+    if (!open && externalOnClose) {
+      externalOnClose();
     }
     setInternalIsOpen(open);
   };
@@ -120,17 +124,17 @@ export const ShahiKhansamaAI: React.FC<ShahiKhansamaAIProps> = ({
       {/* Floating Trigger Button */}
       <motion.button
         type="button"
-        className="shahi-ai-floating-btn"
+        className={`shahi-ai-floating-btn ${hasCartItems ? "has-cart-items" : ""}`}
         onClick={() => handleSetIsOpen(true)}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.94 }}
-        aria-label="Ask Shahi Khansama AI"
+        aria-label="Ask Shahi AI"
       >
         <div className="btn-crown-icon">
-          <Crown size={20} />
+          <Crown size={19} />
           <span className="live-sparkle-dot"></span>
         </div>
-        <span className="btn-ai-text font-cinzel">Ask Khansama AI</span>
+        <span className="btn-ai-text font-cinzel">Shahi AI</span>
       </motion.button>
 
       {/* Chat Window Modal */}
@@ -248,6 +252,20 @@ export const ShahiKhansamaAI: React.FC<ShahiKhansamaAIProps> = ({
                   >
                     <Crown size={14} />
                     <span>Book Table</span>
+                  </button>
+                )}
+
+                {onOpenOrderModal && (
+                  <button
+                    type="button"
+                    className="quick-action-link"
+                    onClick={() => {
+                      handleSetIsOpen(false);
+                      onOpenOrderModal();
+                    }}
+                  >
+                    <ShoppingBag size={14} />
+                    <span>Order Food</span>
                   </button>
                 )}
 
