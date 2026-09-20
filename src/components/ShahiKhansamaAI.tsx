@@ -47,7 +47,7 @@ export const ShahiKhansamaAI: React.FC<ShahiKhansamaAIProps> = ({
     {
       role: "assistant",
       content:
-        "Hello Dear! Main Royal Rasoi ka AI Assistant hoon. Hamare menu, delicious dishes, timings ya table booking ke baare me aap kuch bhi pooch sakte hain. Batayein aaj aap kya khana pasand karenge?",
+        "Hello Dear! Main Rasoi AI hoon — The Royal Rasoi ka smart food assistant. Aap momos, burgers, pakode, biryani, starters, curries ya 10-12 logon ki birthday party ke baare me kuch bhi pooch sakte hain. Batayein aaj aap kya khana pasand karenge?",
     },
   ]);
 
@@ -60,11 +60,12 @@ export const ShahiKhansamaAI: React.FC<ShahiKhansamaAIProps> = ({
   }, [messages, isOpen]);
 
   const quickQuestions = [
-    "Best non-veg dishes kaun si hain?",
-    "Pure veg aur paneer me kya best hai?",
-    "4 logon ke liye budget dinner plan batao",
-    "Restaurant timings aur location kya hai?",
-    "Dine-in table booking kaise karein?",
+    "🥟 Momos & Snacks me kya hai?",
+    "🍔 Best Burgers & Sandwiches",
+    "🍗 Best Non-Veg & Biryani",
+    "🧀 Pure Veg & Paneer Special",
+    "🎉 Birthday Party (10-12 Log)",
+    "⏰ Timings & Location kya hai?",
   ];
 
   const handleSend = async (queryText?: string) => {
@@ -126,13 +127,13 @@ export const ShahiKhansamaAI: React.FC<ShahiKhansamaAIProps> = ({
         onClick={() => handleSetIsOpen(true)}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.94 }}
-        aria-label="Ask Shahi AI"
+        aria-label="Ask Rasoi AI"
       >
         <div className="btn-crown-icon">
           <Crown size={19} />
           <span className="live-sparkle-dot"></span>
         </div>
-        <span className="btn-ai-text font-cinzel">Shahi AI</span>
+        <span className="btn-ai-text font-cinzel">Rasoi AI</span>
       </motion.button>
 
       {/* Chat Window Modal */}
@@ -155,11 +156,11 @@ export const ShahiKhansamaAI: React.FC<ShahiKhansamaAIProps> = ({
                   </div>
                   <div>
                     <div className="avatar-title-row">
-                      <h3 className="khansama-name font-cinzel">Shahi Khansama AI</h3>
+                      <h3 className="khansama-name font-cinzel">Rasoi AI</h3>
                       <span className="online-badge">Online</span>
                     </div>
                     <p className="khansama-role font-serif">
-                      Royal Dining Concierge • The Royal Rasoi
+                      Cafe Food Assistant • The Royal Rasoi
                     </p>
                   </div>
                 </div>
@@ -221,7 +222,7 @@ export const ShahiKhansamaAI: React.FC<ShahiKhansamaAIProps> = ({
                       <span className="dot-pulse"></span>
                       <span className="dot-pulse"></span>
                       <span className="dot-pulse"></span>
-                      <span className="thinking-text font-serif">Khansama farmate hain...</span>
+                      <span className="thinking-text font-serif">Rasoi AI soch raha hai...</span>
                     </div>
                   </div>
                 )}
@@ -239,7 +240,6 @@ export const ShahiKhansamaAI: React.FC<ShahiKhansamaAIProps> = ({
                   <span>View Menu</span>
                 </button>
 
-
                 {onOpenOrderModal && (
                   <button
                     type="button"
@@ -250,7 +250,7 @@ export const ShahiKhansamaAI: React.FC<ShahiKhansamaAIProps> = ({
                     }}
                   >
                     <ShoppingBag size={14} />
-                    <span>Order Food</span>
+                    <span>Order Online</span>
                   </button>
                 )}
 
@@ -259,7 +259,7 @@ export const ShahiKhansamaAI: React.FC<ShahiKhansamaAIProps> = ({
                   className="quick-action-link"
                 >
                   <Phone size={14} />
-                  <span>Call Desk</span>
+                  <span>Call Cafe</span>
                 </a>
               </div>
 
@@ -268,7 +268,7 @@ export const ShahiKhansamaAI: React.FC<ShahiKhansamaAIProps> = ({
                 <input
                   type="text"
                   className="shahi-input"
-                  placeholder="Khansama ji se poochiye (e.g. best biryani, timings)..."
+                  placeholder="Poochiye (e.g. momos, burger, pakoda, biryani, party)..."
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}

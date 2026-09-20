@@ -84,8 +84,8 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
       name: "Chinese & Snacks",
       hindi: "चाउमीन, मोमो व स्नैक्स",
       icon: "🥡",
-      count: 62,
-      subcategories: ["All", "Noodles & Chowmein", "Momos", "Rolls", "Burgers & Sandwiches"],
+      count: 69,
+      subcategories: ["All", "Noodles & Chowmein", "Momos", "Pakodas & Snacks", "Rolls", "Burgers & Sandwiches"],
     },
     {
       id: "Tandoori & Breads",
@@ -124,6 +124,22 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
   // Filter items with global search across all categories when search query is typed
   const filteredItems = useMemo(() => {
     const isSearching = searchQuery.trim() !== "";
+    const qRaw = searchQuery.toLowerCase().trim();
+    const searchTokens = qRaw.split(/\s+/).filter(Boolean);
+
+    // Check if query explicitly specifies diet
+    const querySpecifiesVeg =
+      searchTokens.some((t) => t === "veg" || t === "vegetarian" || t === "shakahari") &&
+      !searchTokens.some((t) => t.includes("non"));
+    const querySpecifiesNonVeg = searchTokens.some(
+      (t) =>
+        t === "non-veg" ||
+        t === "nonveg" ||
+        t === "chicken" ||
+        t === "egg" ||
+        t === "mutton" ||
+        t === "fish"
+    );
 
     return royalConfig.menu.filter((item) => {
       // When searching, search across the ENTIRE menu (all categories)!
@@ -131,8 +147,20 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
         ? true
         : activeCategory === "All" || item.category === activeCategory;
 
-      const matchesDiet =
-        dietFilter === "All" ? true : dietFilter === "Veg" ? item.isVeg : !item.isVeg;
+      let matchesDiet = true;
+      if (isSearching) {
+        if (querySpecifiesVeg) {
+          matchesDiet = item.isVeg;
+        } else if (querySpecifiesNonVeg) {
+          matchesDiet = !item.isVeg;
+        } else {
+          matchesDiet =
+            dietFilter === "All" ? true : dietFilter === "Veg" ? item.isVeg : !item.isVeg;
+        }
+      } else {
+        matchesDiet =
+          dietFilter === "All" ? true : dietFilter === "Veg" ? item.isVeg : !item.isVeg;
+      }
 
       let matchesSub = true;
       if (!isSearching && activeSubcategory !== "All") {
@@ -151,6 +179,13 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
         else if (activeSubcategory === "Noodles & Chowmein")
           matchesSub = n.includes("noodle") || n.includes("chowmein");
         else if (activeSubcategory === "Momos") matchesSub = n.includes("momo");
+        else if (activeSubcategory === "Pakodas & Snacks")
+          matchesSub =
+            n.includes("pakod") ||
+            n.includes("pakor") ||
+            n.includes("bhaji") ||
+            n.includes("fries") ||
+            n.includes("popcorn");
         else if (activeSubcategory === "Rolls") matchesSub = n.includes("roll");
         else if (activeSubcategory === "Burgers & Sandwiches")
           matchesSub = n.includes("burger") || n.includes("sandwich");
@@ -163,13 +198,102 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
           matchesSub = n.includes("sweet") || n.includes("ice") || n.includes("halwa");
       }
 
-      const q = searchQuery.toLowerCase();
-      const matchesSearch =
-        !isSearching ||
-        item.name.toLowerCase().includes(q) ||
-        item.description.toLowerCase().includes(q) ||
-        (item.hindiName && item.hindiName.includes(searchQuery)) ||
-        item.category.toLowerCase().includes(q);
+      if (!isSearching) {
+        return matchesCategory && matchesDiet && matchesSub;
+      }
+
+      // Smart synonym / phonetic matching for search tokens
+      const checkTokenMatch = (token: string) => {
+        const itemN = item.name.toLowerCase();
+        const itemD = item.description.toLowerCase();
+        const itemC = item.category.toLowerCase();
+        const itemH = item.hindiName || "";
+
+        // Direct substring match
+        if (
+          itemN.includes(token) ||
+          itemD.includes(token) ||
+          itemC.includes(token) ||
+          itemH.includes(token)
+        ) {
+          return true;
+        }
+
+        // Pakoda / Pakora / Bhaji
+        if (token.includes("pakod") || token.includes("pakor") || token.includes("bhaji")) {
+          return (
+            itemN.includes("pakora") ||
+            itemN.includes("pakoda") ||
+            itemD.includes("pakora") ||
+            itemD.includes("pakoda") ||
+            itemN.includes("bhaji")
+          );
+        }
+
+        // Momos / Momo / Dumpling
+        if (token.includes("momo") || token.includes("dumpling")) {
+          return itemN.includes("momo") || itemD.includes("momo");
+        }
+
+        // Chowmein / Chowmin / Chawmin / Noodles
+        if (
+          token.includes("chow") ||
+          token.includes("chaw") ||
+          token.includes("noodl") ||
+          token.includes("chaumin")
+        ) {
+          return (
+            itemN.includes("noodle") ||
+            itemN.includes("chowmein") ||
+            itemD.includes("noodle") ||
+            itemD.includes("chowmein")
+          );
+        }
+
+        // Burger / Burgers
+        if (token.includes("burg")) {
+          return itemN.includes("burger") || itemD.includes("burger");
+        }
+
+        // Sandwich / Sandwitch
+        if (token.includes("sandw")) {
+          return itemN.includes("sandwich") || itemD.includes("sandwich");
+        }
+
+        // Kebab / Kabab / Tikka
+        if (token.includes("kebab") || token.includes("kabab")) {
+          return itemN.includes("kebab") || itemN.includes("kabab") || itemD.includes("kebab");
+        }
+
+        // Biryani / Biryany / Briyani
+        if (token.includes("biry") || token.includes("briy")) {
+          return itemN.includes("biryani") || itemD.includes("biryani");
+        }
+
+        // Paneer / Panir
+        if (token.includes("paneer") || token.includes("panir")) {
+          return itemN.includes("paneer") || itemD.includes("paneer");
+        }
+
+        // Chicken / Chiken / Murgh
+        if (token.includes("chick") || token.includes("chiken") || token.includes("murgh")) {
+          return itemN.includes("chicken") || itemN.includes("murgh") || itemD.includes("chicken");
+        }
+
+        // Roll / Rolls
+        if (token.includes("roll")) {
+          return itemN.includes("roll") || itemD.includes("roll");
+        }
+
+        // Pasta / Pastas / Macaroni
+        if (token.includes("past") || token.includes("macaron")) {
+          return itemN.includes("pasta") || itemD.includes("pasta");
+        }
+
+        return false;
+      };
+
+      const matchesSearch = searchTokens.every(checkTokenMatch);
 
       return matchesCategory && matchesDiet && matchesSub && matchesSearch;
     });
@@ -288,7 +412,7 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
               <Search size={15} className="search-icon" />
               <input
                 type="text"
-                placeholder="Search 220+ delicacies (e.g. Biryani, Paneer, Kebab)..."
+                placeholder="Search delicacies (e.g. Momos, Burger, Pakoda, Biryani)..."
                 value={searchQuery}
                 onChange={(e) => handleSearchChange(e.target.value)}
                 className="mini-search-input"
@@ -308,7 +432,7 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
                   type="button"
                   onClick={() => onOpenAIWithQuery(searchQuery)}
                   className="mini-ai-ask-btn font-cinzel"
-                  title="Ask Shahi AI about this"
+                  title="Ask Rasoi AI about this"
                 >
                   <Sparkles size={12} />
                   <span>Ask AI</span>
@@ -469,7 +593,7 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
             <p className="empty-sub font-serif">
               {searchQuery ? (
                 <>
-                  Looking for &ldquo;<strong>{searchQuery}</strong>&rdquo;? Let our Shahi Khansama AI recommend the best feast for you!
+                  Looking for &ldquo;<strong>{searchQuery}</strong>&rdquo;? Let our Rasoi AI recommend the best food for you!
                 </>
               ) : (
                 "Try adjusting your filters or search query."
@@ -483,7 +607,7 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
                   onClick={() => onOpenAIWithQuery(searchQuery)}
                 >
                   <Sparkles size={15} />
-                  <span>Ask Khansama AI for Recommendations</span>
+                  <span>Ask Rasoi AI for Recommendations</span>
                 </button>
               )}
               <button

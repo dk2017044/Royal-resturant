@@ -195,7 +195,7 @@ export const OrderModal: React.FC<OrderModalProps> = ({
                 Order ID: <strong className="gold-text">#{orderId}</strong>
               </p>
               <p className="success-desc font-serif">
-                Shukriya {name || "Guest"}! Your order has been received. Our royal khansama is preparing your delicacies piping hot.
+                Shukriya {name || "Guest"}! Your order has been received. Our kitchen team is preparing your food piping hot.
               </p>
 
               <div className="success-meta-box">
