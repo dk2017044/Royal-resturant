@@ -413,7 +413,15 @@ button {
 
 /* Mobile GPU Memory Optimizations to prevent WebProcess OOM Crashes */
 @media (max-width: 768px) {
-  .glass-panel {
+  .glass-panel,
+  .category-book-tabs,
+  .floating-order-cart-bar,
+  .mobile-bottom-appbar,
+  .royal-navbar,
+  .mobile-drawer,
+  .shahi-chat-window,
+  .order-modal-sheet,
+  .dish-modal-dialog {
     backdrop-filter: blur(8px) !important;
     -webkit-backdrop-filter: blur(8px) !important;
   }
