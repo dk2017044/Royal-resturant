@@ -252,7 +252,7 @@ export const royalConfig = {
     "description": "Tender boneless chicken cubes wok-tossed in spicy Indo-Chinese dark soya glaze with spring onions.",
     "spicyLevel": 3,
     "isChefSpecial": false,
-    "image": "/data/dishes/chicken-tikka.jpg",
+    "image": "/data/dishes/chicken-boneless-chilli.jpg",
     "serves": "1-2 Persons"
   },
   {
@@ -288,7 +288,7 @@ export const royalConfig = {
     "description": "Fiery wok-tossed chicken chunks simmered in authentic Sichuan pepper and roasted red chilli paste.",
     "spicyLevel": 3,
     "isChefSpecial": false,
-    "image": "/data/dishes/chicken-tikka.jpg",
+    "image": "/data/dishes/chicken-schezwan.jpg",
     "serves": "1-2 Persons"
   },
   {
@@ -432,7 +432,7 @@ export const royalConfig = {
     "description": "Double-layered succulent chicken kebabs stuffed with molten mozzarella and mild green herbs.",
     "spicyLevel": 1,
     "isChefSpecial": false,
-    "image": "/data/dishes/chicken-tikka.jpg",
+    "image": "/data/dishes/chicken-malai-kebab.jpg",
     "serves": "1-2 Persons"
   },
   {
@@ -444,7 +444,7 @@ export const royalConfig = {
     "description": "Crispy golden-crumbed chicken patty seasoned with onion, ginger, and Mughlai spices.",
     "spicyLevel": 1,
     "isChefSpecial": false,
-    "image": "/data/dishes/chicken-tikka.jpg",
+    "image": "/data/dishes/chicken-popcorn.jpg",
     "serves": "1-2 Persons"
   },
   {
@@ -456,7 +456,7 @@ export const royalConfig = {
     "description": "Juicy chicken bites tossed in a spicy, aromatic hot garlic and red pepper reduction.",
     "spicyLevel": 3,
     "isChefSpecial": false,
-    "image": "/data/dishes/chicken-tikka.jpg",
+    "image": "/data/dishes/chicken-schezwan.jpg",
     "serves": "1-2 Persons"
   },
   {
@@ -660,7 +660,7 @@ export const royalConfig = {
     "description": "Crispy paneer cutlet with mild spices and seasoning.",
     "spicyLevel": 1,
     "isChefSpecial": false,
-    "image": "/data/dishes/paneer-tikka.jpg",
+    "image": "/data/dishes/paneer-pakora.jpg",
     "serves": "1-2 Persons"
   },
   {
@@ -672,7 +672,7 @@ export const royalConfig = {
     "description": "Bite-sized crispy paneer popcorn tossed with seasoning.",
     "spicyLevel": 1,
     "isChefSpecial": false,
-    "image": "/data/dishes/paneer-tikka.jpg",
+    "image": "/data/dishes/paneer-pakora.jpg",
     "serves": "1-2 Persons"
   },
   {
@@ -684,7 +684,7 @@ export const royalConfig = {
     "description": "Soft paneer tossed in a spicy hot garlic sauce.",
     "spicyLevel": 3,
     "isChefSpecial": false,
-    "image": "/data/dishes/paneer-butter-masala.jpg",
+    "image": "/data/dishes/paneer-chilli.jpg",
     "serves": "1-2 Persons"
   },
   {
@@ -720,7 +720,7 @@ export const royalConfig = {
     "description": "Crispy vegetable cheese balls with a cheesy centre.",
     "spicyLevel": 1,
     "isChefSpecial": false,
-    "image": "/data/dishes/paneer-tikka.jpg",
+    "image": "/data/dishes/cheese-burger.jpg",
     "serves": "1-2 Persons"
   },
   {
@@ -732,7 +732,7 @@ export const royalConfig = {
     "description": "Crispy paneer cheese balls filled with rich cheesy flavour.",
     "spicyLevel": 1,
     "isChefSpecial": false,
-    "image": "/data/dishes/paneer-butter-masala.jpg",
+    "image": "/data/dishes/paneer-pakora.jpg",
     "serves": "1-2 Persons"
   },
   {
@@ -744,7 +744,7 @@ export const royalConfig = {
     "description": "Flavourful paneer saty served with aromatic seasoning.",
     "spicyLevel": 1,
     "isChefSpecial": false,
-    "image": "/data/dishes/paneer-butter-masala.jpg",
+    "image": "/data/dishes/paneer-tikka.jpg",
     "serves": "1-2 Persons"
   },
   {
@@ -1032,7 +1032,7 @@ export const royalConfig = {
     "description": "Soft paneer cubes simmered in a smooth, fragrant spinach puree finished with fresh cream.",
     "spicyLevel": 1,
     "isChefSpecial": false,
-    "image": "/data/dishes/paneer-butter-masala.jpg",
+    "image": "/data/dishes/palak-paneer.jpg",
     "serves": "1-2 Persons"
   },
   {
@@ -1128,7 +1128,7 @@ export const royalConfig = {
     "description": "Royal Mughlai dish of paneer cubes in a silky cashew-almond and saffron gravy.",
     "spicyLevel": 1,
     "isChefSpecial": false,
-    "image": "/data/dishes/paneer-butter-masala.jpg",
+    "image": "/data/dishes/shahi-paneer.jpg",
     "serves": "1-2 Persons"
   },
   {
@@ -2496,7 +2496,7 @@ export const royalConfig = {
     "description": "Layered paratha stuffed with spiced chicken filling.",
     "spicyLevel": 1,
     "isChefSpecial": false,
-    "image": "/data/dishes/murgh-musallam.jpg",
+    "image": "/data/dishes/laccha-paratha.jpg",
     "serves": "1-2 Persons"
   },
   {
@@ -2508,7 +2508,7 @@ export const royalConfig = {
     "description": "Layered paratha stuffed with soft paneer and spices.",
     "spicyLevel": 1,
     "isChefSpecial": false,
-    "image": "/data/dishes/murgh-musallam.jpg",
+    "image": "/data/dishes/laccha-paratha.jpg",
     "serves": "1-2 Persons"
   },
   {
@@ -2520,7 +2520,7 @@ export const royalConfig = {
     "description": "Layered paratha stuffed with seasoned mushroom filling.",
     "spicyLevel": 1,
     "isChefSpecial": true,
-    "image": "/data/dishes/murgh-musallam.jpg",
+    "image": "/data/dishes/laccha-paratha.jpg",
     "serves": "1-2 Persons"
   },
   {
@@ -2544,7 +2544,7 @@ export const royalConfig = {
     "description": "Chilled whipped yogurt mixed with diced cucumbers, tomatoes, onions, and roasted jeera.",
     "spicyLevel": 1,
     "isChefSpecial": false,
-    "image": "/data/dishes/mix-veg.jpg",
+    "image": "/data/dishes/raita.jpg",
     "serves": "1-2 Persons"
   },
   {
@@ -2556,7 +2556,7 @@ export const royalConfig = {
     "description": "Crispy fried gram flour droplets soaked in creamy spiced curd with black salt and cumin.",
     "spicyLevel": 1,
     "isChefSpecial": false,
-    "image": "/data/dishes/mix-veg.jpg",
+    "image": "/data/dishes/raita.jpg",
     "serves": "1-2 Persons"
   },
   {
@@ -2568,7 +2568,7 @@ export const royalConfig = {
     "description": "Freshly sliced crunchy red onion rings served with lemon wedges and green chillies.",
     "spicyLevel": 1,
     "isChefSpecial": false,
-    "image": "/data/dishes/mix-veg.jpg",
+    "image": "/data/dishes/green-salad.jpg",
     "serves": "1-2 Persons"
   },
   {
@@ -2580,7 +2580,7 @@ export const royalConfig = {
     "description": "Crisp garden salad with fresh cucumbers, tomatoes, carrots, beetroot, and lemon.",
     "spicyLevel": 1,
     "isChefSpecial": false,
-    "image": "/data/dishes/mix-veg.jpg",
+    "image": "/data/dishes/green-salad.jpg",
     "serves": "1-2 Persons"
   },
   {
@@ -2592,7 +2592,7 @@ export const royalConfig = {
     "description": "Fresh salad made with seasonal vegetables and light seasoning.",
     "spicyLevel": 1,
     "isChefSpecial": false,
-    "image": "/data/dishes/paneer-butter-masala.jpg",
+    "image": "/data/dishes/green-salad.jpg",
     "serves": "1-2 Persons"
   },
   {
@@ -2784,7 +2784,7 @@ export const royalConfig = {
     "description": "Frothy brewed cold coffee served with a generous scoop of rich vanilla ice cream and cocoa.",
     "spicyLevel": 1,
     "isChefSpecial": false,
-    "image": "/data/dishes/lemonade.jpg",
+    "image": "/data/dishes/cold-coffee.jpg",
     "serves": "1-2 Persons"
   },
   {
