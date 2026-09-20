@@ -1,0 +1,281 @@
+[
+  {
+    "category": "Thali",
+    "items": [
+      {
+        "name": "Royal Spl. Veg Thali",
+        "description": "Butter Tawa Roti (3 Pcs), Jeera Rice, Paneer butter Masala, Mix Veg. Dal, Salad, Raita, Sweets, Papad & pickle",
+        "price": "269/-",
+        "image_url": "https://placehold.co/400x400?text=Royal+Spl.+Veg+Thali"
+      },
+      {
+        "name": "Royal Spl. Non Veg Thali",
+        "description": "Butter Tawa Roti (2 Pcs), Jeera Rice, Chicken butter Masala (2 Pcs), Salad, Raita, Sweets, Papad & pickle",
+        "price": "335/-",
+        "image_url": "https://placehold.co/400x400?text=Royal+Spl.+Non+Veg+Thali"
+      }
+    ]
+  },
+  {
+    "category": "Budget Friendly Combo",
+    "items": [
+      {
+        "name": "Snacks Combo",
+        "description": "French fries + Veg Grilled Sandwich + Fried Momo (2 Pcs) + cold drink",
+        "price": "179/-",
+        "image_url": "https://placehold.co/400x400?text=Snacks+Combo"
+      },
+      {
+        "name": "Chinese Combo (Veg)",
+        "description": "Noodles + Fried Rice + Paneer chilly (2Pcs) + Manchurian (2 Pcs) + Fried Momo (2Pcs) + Cold drink",
+        "price": "336/-",
+        "image_url": "https://placehold.co/400x400?text=Chinese+Combo+Veg"
+      },
+      {
+        "name": "Chinese Combo (Non Veg)",
+        "description": "Chicken Noodles + Butter Naan + Chicken chilly (4Pcs) + Lollipop (2 Pcs) + mojito",
+        "price": "399/-",
+        "image_url": "https://placehold.co/400x400?text=Chinese+Combo+Non+Veg"
+      }
+    ]
+  },
+  {
+    "category": "Mocktail",
+    "items": [
+      { "name": "Blue Lagoon", "price": "79/-", "image_url": "https://placehold.co/400x400?text=Blue+Lagoon" },
+      { "name": "Kiwi Blast", "price": "79/-", "image_url": "https://placehold.co/400x400?text=Kiwi+Blast" },
+      { "name": "Virgin Mojito", "price": "79/-", "image_url": "https://placehold.co/400x400?text=Virgin+Mojito" },
+      { "name": "Green Apple", "price": "79/-", "image_url": "https://placehold.co/400x400?text=Green+Apple" },
+      { "name": "Fresh Lime Soda", "price": "79/-", "image_url": "https://placehold.co/400x400?text=Fresh+Lime+Soda" },
+      { "name": "Lemonade", "price": "79/-", "image_url": "https://placehold.co/400x400?text=Lemonade" },
+      { "name": "Mango", "price": "79/-", "image_url": "https://placehold.co/400x400?text=Mango" },
+      { "name": "Strawberry", "price": "79/-", "image_url": "https://placehold.co/400x400?text=Strawberry" },
+      { "name": "Orange", "price": "79/-", "image_url": "https://placehold.co/400x400?text=Orange" }
+    ]
+  },
+  {
+    "category": "Shake",
+    "items": [
+      { "name": "Oreo Shake", "price": "129/-", "image_url": "https://placehold.co/400x400?text=Oreo+Shake" },
+      { "name": "Chocolate Shake", "price": "129/-", "image_url": "https://placehold.co/400x400?text=Chocolate+Shake" },
+      { "name": "KitKat Shake", "price": "129/-", "image_url": "https://placehold.co/400x400?text=KitKat+Shake" },
+      { "name": "Vanilla Shake", "price": "129/-", "image_url": "https://placehold.co/400x400?text=Vanilla+Shake" },
+      { "name": "Strawberry Shake", "price": "129/-", "image_url": "https://placehold.co/400x400?text=Strawberry+Shake" },
+      { "name": "ButterScotch Shake", "price": "129/-", "image_url": "https://placehold.co/400x400?text=ButterScotch+Shake" },
+      { "name": "Cold Coffee with Ice cream", "price": "159/-", "image_url": "https://placehold.co/400x400?text=Cold+Coffee" }
+    ]
+  },
+  {
+    "category": "Indian (Chicken)",
+    "items": [
+      { "name": "Egg Masala", "price": "109/-", "image_url": "https://placehold.co/400x400?text=Egg+Masala" },
+      { "name": "Chicken Do Pyaza", "price": "290/-", "image_url": "https://placehold.co/400x400?text=Chicken+Do+Pyaza" },
+      { "name": "Chicken Handi", "price": "299/-", "image_url": "https://placehold.co/400x400?text=Chicken+Handi" },
+      { "name": "Chicken Bharta", "price": "301/-", "image_url": "https://placehold.co/400x400?text=Chicken+Bharta" },
+      { "name": "Kadhai Chicken", "price": "305/-", "image_url": "https://placehold.co/400x400?text=Kadhai+Chicken" },
+      { "name": "Chicken Butter Masala", "price": "317/-", "image_url": "https://placehold.co/400x400?text=Chicken+Butter+Masala" },
+      { "name": "Dehati Chicken", "price": "329/-", "image_url": "https://placehold.co/400x400?text=Dehati+Chicken" },
+      { "name": "Butter Chicken", "price": "331/-", "image_url": "https://placehold.co/400x400?text=Butter+Chicken" },
+      { "name": "Chicken Mughlai", "price": "343/-", "image_url": "https://placehold.co/400x400?text=Chicken+Mughlai" },
+      { "name": "Chicken Tikka Masala", "price": "330/-", "image_url": "https://placehold.co/400x400?text=Chicken+Tikka+Masala" },
+      { "name": "Punjabi Chicken", "price": "345/-", "image_url": "https://placehold.co/400x400?text=Punjabi+Chicken" },
+      { "name": "Murgh Musallam", "price": "599/-", "image_url": "https://placehold.co/400x400?text=Murgh+Musallam" },
+      { "name": "Royal Spl. Chicken", "price": "600/-", "image_url": "https://placehold.co/400x400?text=Royal+Spl.+Chicken" }
+    ]
+  },
+  {
+    "category": "Roti & Bread",
+    "items": [
+      { "name": "Tandoori Roti", "price": "15/-", "image_url": "https://placehold.co/400x400?text=Tandoori+Roti" },
+      { "name": "Tandoori Butter Roti", "price": "20/-", "image_url": "https://placehold.co/400x400?text=Tandoori+Butter+Roti" },
+      { "name": "Plain Naan", "price": "35/-", "image_url": "https://placehold.co/400x400?text=Plain+Naan" },
+      { "name": "Butter Naan", "price": "40/-", "image_url": "https://placehold.co/400x400?text=Butter+Naan" },
+      { "name": "Lachha Paratha", "price": "46/-", "image_url": "https://placehold.co/400x400?text=Lachha+Paratha" },
+      { "name": "Aloo Paratha", "price": "40/-", "image_url": "https://placehold.co/400x400?text=Aloo+Paratha" },
+      { "name": "Onion(pyaaz) Paratha", "price": "35/-", "image_url": "https://placehold.co/400x400?text=Onion+Paratha" },
+      { "name": "Stuffed Naan", "price": "65/-", "image_url": "https://placehold.co/400x400?text=Stuffed+Naan" },
+      { "name": "Paneer Paratha", "price": "68/-", "image_url": "https://placehold.co/400x400?text=Paneer+Paratha" }
+    ]
+  },
+  {
+    "category": "Rice & Noodles",
+    "items": [
+      { "name": "Steamed Rice", "price": "70/-", "image_url": "https://placehold.co/400x400?text=Steamed+Rice" },
+      { "name": "Jeera Rice", "price": "95/-", "image_url": "https://placehold.co/400x400?text=Jeera+Rice" },
+      { "name": "Veg Fried Rice", "price": "130/-", "image_url": "https://placehold.co/400x400?text=Veg+Fried+Rice" },
+      { "name": "Veg Schezwan Fried Rice", "price": "140/-", "image_url": "https://placehold.co/400x400?text=Veg+Schezwan+Fried+Rice" },
+      { "name": "Veg Pulao", "price": "150/-", "image_url": "https://placehold.co/400x400?text=Veg+Pulao" },
+      { "name": "Egg Fried Rice", "price": "145/-", "image_url": "https://placehold.co/400x400?text=Egg+Fried+Rice" },
+      { "name": "Egg Schezwan Fried Rice", "price": "160/-", "image_url": "https://placehold.co/400x400?text=Egg+Schezwan+Fried+Rice" },
+      { "name": "Spl Veg Chilli Garlic Fried Rice", "price": "170/-", "image_url": "https://placehold.co/400x400?text=Spl+Veg+Chilli+Garlic+Fried+Rice" },
+      { "name": "Paneer Fried Rice", "price": "160/-", "image_url": "https://placehold.co/400x400?text=Paneer+Fried+Rice" },
+      { "name": "Chicken Fried Rice", "price": "162/-", "image_url": "https://placehold.co/400x400?text=Chicken+Fried+Rice" },
+      { "name": "Chicken Schezwan Rice", "price": "185/-", "image_url": "https://placehold.co/400x400?text=Chicken+Schezwan+Rice" },
+      { "name": "Mixed Fried Rice", "price": "199/-", "image_url": "https://placehold.co/400x400?text=Mixed+Fried+Rice" },
+      { "name": "Kashmiri Pulao", "price": "210/-", "image_url": "https://placehold.co/400x400?text=Kashmiri+Pulao" },
+      { "name": "Veg Noodles", "price": "109/-", "image_url": "https://placehold.co/400x400?text=Veg+Noodles" },
+      { "name": "Veg Hakka Noodles", "price": "135/-", "image_url": "https://placehold.co/400x400?text=Veg+Hakka+Noodles" },
+      { "name": "Veg Schezwan Noodles", "price": "147/-", "image_url": "https://placehold.co/400x400?text=Veg+Schezwan+Noodles" },
+      { "name": "Veg Chilli Garlic Noodles", "price": "161/-", "image_url": "https://placehold.co/400x400?text=Veg+Chilli+Garlic+Noodles" },
+      { "name": "Paneer Noodles", "price": "159/-", "image_url": "https://placehold.co/400x400?text=Paneer+Noodles" },
+      { "name": "Egg Noodles", "price": "172/-", "image_url": "https://placehold.co/400x400?text=Egg+Noodles" },
+      { "name": "Chicken Noodles", "price": "188/-", "image_url": "https://placehold.co/400x400?text=Chicken+Noodles" },
+      { "name": "Mix Noodles", "price": "197/-", "image_url": "https://placehold.co/400x400?text=Mix+Noodles" },
+      { "name": "Chicken Schezwan Noodles", "price": "198/-", "image_url": "https://placehold.co/400x400?text=Chicken+Schezwan+Noodles" },
+      { "name": "Chicken Egg Noodles", "price": "214/-", "image_url": "https://placehold.co/400x400?text=Chicken+Egg+Noodles" },
+      { "name": "Chicken Chilli Garlic Noodles", "price": "238/-", "image_url": "https://placehold.co/400x400?text=Chicken+Chilli+Garlic+Noodles" }
+    ]
+  },
+  {
+    "category": "Biryani",
+    "items": [
+      { "name": "Veg Biryani", "price": "160/-", "image_url": "https://placehold.co/400x400?text=Veg+Biryani" },
+      { "name": "Egg Biryani", "price": "172/-", "image_url": "https://placehold.co/400x400?text=Egg+Biryani" },
+      { "name": "Paneer Biryani", "price": "175/-", "image_url": "https://placehold.co/400x400?text=Paneer+Biryani" },
+      { "name": "Chicken Biryani", "price": "250/-", "image_url": "https://placehold.co/400x400?text=Chicken+Biryani" },
+      { "name": "Royal Spl. Biryani", "price": "399/-", "image_url": "https://placehold.co/400x400?text=Royal+Spl.+Biryani" }
+    ]
+  },
+  {
+    "category": "Starters",
+    "items": [
+      { "name": "French Fries", "price": "95/-", "image_url": "https://placehold.co/400x400?text=French+Fries" },
+      { "name": "Cheese French Fries", "price": "115/-", "image_url": "https://placehold.co/400x400?text=Cheese+French+Fries" },
+      { "name": "Sweet Corn masala", "price": "125/-", "image_url": "https://placehold.co/400x400?text=Sweet+Corn+masala" },
+      { "name": "Onion(pyaaz) Pakora", "price": "70/-", "image_url": "https://placehold.co/400x400?text=Onion+Pakora" },
+      { "name": "Egg Pakora", "price": "85/-", "image_url": "https://placehold.co/400x400?text=Egg+Pakora" },
+      { "name": "Veg Pakora", "price": "95/-", "image_url": "https://placehold.co/400x400?text=Veg+Pakora" },
+      { "name": "Paneer Pakora (8pcs)", "price": "135/-", "image_url": "https://placehold.co/400x400?text=Paneer+Pakora" },
+      { "name": "Chicken Pakora (8Pcs)", "price": "200/-", "image_url": "https://placehold.co/400x400?text=Chicken+Pakora" },
+      { "name": "Chicken Popcorn", "price": "175/-", "image_url": "https://placehold.co/400x400?text=Chicken+Popcorn" },
+      { "name": "French Fries Chilli", "price": "135/-", "image_url": "https://placehold.co/400x400?text=French+Fries+Chilli" },
+      { "name": "Honey Potato Chilli", "price": "150/-", "image_url": "https://placehold.co/400x400?text=Honey+Potato+Chilli" },
+      { "name": "Baby Corn Chilli", "price": "240/-", "image_url": "https://placehold.co/400x400?text=Baby+Corn+Chilli" },
+      { "name": "Mushroom Crispy chilli", "price": "240/-", "image_url": "https://placehold.co/400x400?text=Mushroom+Crispy+chilli" },
+      { "name": "Corn Salt & Pepper", "price": "225/-", "image_url": "https://placehold.co/400x400?text=Corn+Salt+Pepper" },
+      { "name": "Mushroom Salt & Pepper", "price": "235/-", "image_url": "https://placehold.co/400x400?text=Mushroom+Salt+Pepper" },
+      { "name": "Paneer Salt & Pepper", "price": "235/-", "image_url": "https://placehold.co/400x400?text=Paneer+Salt+Pepper" },
+      { "name": "Chicken 65", "price": "240/-", "image_url": "https://placehold.co/400x400?text=Chicken+65" },
+      { "name": "Chicken Lollipop", "price": "255/-", "image_url": "https://placehold.co/400x400?text=Chicken+Lollipop" },
+      { "name": "Baby Corn Paprika", "price": "265/-", "image_url": "https://placehold.co/400x400?text=Baby+Corn+Paprika" }
+    ]
+  },
+  {
+    "category": "Momos",
+    "items": [
+      { "name": "Veg Fried Momo", "price": "95/-", "image_url": "https://placehold.co/400x400?text=Veg+Fried+Momo" },
+      { "name": "Veg Roasted Momo", "price": "110/-", "image_url": "https://placehold.co/400x400?text=Veg+Roasted+Momo" },
+      { "name": "Veg Crispy Momo", "price": "115/-", "image_url": "https://placehold.co/400x400?text=Veg+Crispy+Momo" },
+      { "name": "Veg Afghani Momo", "price": "130/-", "image_url": "https://placehold.co/400x400?text=Veg+Afghani+Momo" },
+      { "name": "Veg Crispy Afghani Momo", "price": "150/-", "image_url": "https://placehold.co/400x400?text=Veg+Crispy+Afghani+Momo" },
+      { "name": "Paneer Fried Momo", "price": "100/-", "image_url": "https://placehold.co/400x400?text=Paneer+Fried+Momo" },
+      { "name": "Paneer Roasted Momo", "price": "115/-", "image_url": "https://placehold.co/400x400?text=Paneer+Roasted+Momo" },
+      { "name": "Paneer Crispy Momo", "price": "125/-", "image_url": "https://placehold.co/400x400?text=Paneer+Crispy+Momo" },
+      { "name": "Paneer Afghani Momo", "price": "145/-", "image_url": "https://placehold.co/400x400?text=Paneer+Afghani+Momo" },
+      { "name": "Paneer Crispy Afghani Momo", "price": "160/-", "image_url": "https://placehold.co/400x400?text=Paneer+Crispy+Afghani+Momo" },
+      { "name": "Chicken Fried Momo", "price": "100/-", "image_url": "https://placehold.co/400x400?text=Chicken+Fried+Momo" },
+      { "name": "Chicken Roasted Momo", "price": "115/-", "image_url": "https://placehold.co/400x400?text=Chicken+Roasted+Momo" },
+      { "name": "Chicken Crispy Momo", "price": "125/-", "image_url": "https://placehold.co/400x400?text=Chicken+Crispy+Momo" },
+      { "name": "Chicken Afghani Momo", "price": "145/-", "image_url": "https://placehold.co/400x400?text=Chicken+Afghani+Momo" },
+      { "name": "Chicken Crispy Afghani Momo", "price": "160/-", "image_url": "https://placehold.co/400x400?text=Chicken+Crispy+Afghani+Momo" }
+    ]
+  },
+  {
+    "category": "Burger",
+    "items": [
+      { "name": "Veg Cheese Burger", "price": "100/-", "image_url": "https://placehold.co/400x400?text=Veg+Cheese+Burger" },
+      { "name": "Egg Cheese Burger", "price": "110/-", "image_url": "https://placehold.co/400x400?text=Egg+Cheese+Burger" },
+      { "name": "Paneer Cheese Burger", "price": "115/-", "image_url": "https://placehold.co/400x400?text=Paneer+Cheese+Burger" },
+      { "name": "Chicken Cheese Burger", "price": "125/-", "image_url": "https://placehold.co/400x400?text=Chicken+Cheese+Burger" }
+    ]
+  },
+  {
+    "category": "Sandwich",
+    "items": [
+      { "name": "Veg Grilled Sandwich", "price": "95/-", "image_url": "https://placehold.co/400x400?text=Veg+Grilled+Sandwich" },
+      { "name": "Egg Grilled Sandwich", "price": "105/-", "image_url": "https://placehold.co/400x400?text=Egg+Grilled+Sandwich" },
+      { "name": "Cheese corn Grilled Sandwich", "price": "120/-", "image_url": "https://placehold.co/400x400?text=Cheese+corn+Grilled+Sandwich" },
+      { "name": "Paneer Grilled Sandwich", "price": "125/-", "image_url": "https://placehold.co/400x400?text=Paneer+Grilled+Sandwich" },
+      { "name": "Chicken Grilled Sandwich", "price": "135/-", "image_url": "https://placehold.co/400x400?text=Chicken+Grilled+Sandwich" }
+    ]
+  },
+  {
+    "category": "Chinese",
+    "items": [
+      { "name": "Veg Manchurian", "price": "160/-", "image_url": "https://placehold.co/400x400?text=Veg+Manchurian" },
+      { "name": "Paneer Chilli", "price": "185/-", "image_url": "https://placehold.co/400x400?text=Paneer+Chilli" },
+      { "name": "Mushroom Chilli", "price": "195/-", "image_url": "https://placehold.co/400x400?text=Mushroom+Chilli" },
+      { "name": "Chicken Bone Chilli", "price": "200/-", "image_url": "https://placehold.co/400x400?text=Chicken+Bone+Chilli" },
+      { "name": "Chicken Boneless Chilli", "price": "225/-", "image_url": "https://placehold.co/400x400?text=Chicken+Boneless+Chilli" },
+      { "name": "Chicken Manchurian", "price": "235/-", "image_url": "https://placehold.co/400x400?text=Chicken+Manchurian" },
+      { "name": "Chicken Schezwan", "price": "240/-", "image_url": "https://placehold.co/400x400?text=Chicken+Schezwan" }
+    ]
+  },
+  {
+    "category": "Salad",
+    "items": [
+      { "name": "Onion Salad", "price": "40/-", "image_url": "https://placehold.co/400x400?text=Onion+Salad" },
+      { "name": "Green Salad", "price": "55/-", "image_url": "https://placehold.co/400x400?text=Green+Salad" }
+    ]
+  },
+  {
+    "category": "Raita",
+    "items": [
+      { "name": "Mix Raita", "price": "40/-", "image_url": "https://placehold.co/400x400?text=Mix+Raita" },
+      { "name": "Boondi Raita", "price": "35/-", "image_url": "https://placehold.co/400x400?text=Boondi+Raita" }
+    ]
+  },
+  {
+    "category": "Rolls",
+    "items": [
+      { "name": "Veg Roll", "price": "55/-", "image_url": "https://placehold.co/400x400?text=Veg+Roll" },
+      { "name": "Egg Roll", "price": "65/-", "image_url": "https://placehold.co/400x400?text=Egg+Roll" },
+      { "name": "Cheese corn Roll", "price": "80/-", "image_url": "https://placehold.co/400x400?text=Cheese+corn+Roll" },
+      { "name": "Paneer Roll", "price": "95/-", "image_url": "https://placehold.co/400x400?text=Paneer+Roll" },
+      { "name": "Chicken Roll", "price": "105/-", "image_url": "https://placehold.co/400x400?text=Chicken+Roll" },
+      { "name": "Chicken Egg Roll", "price": "125/-", "image_url": "https://placehold.co/400x400?text=Chicken+Egg+Roll" }
+    ]
+  },
+  {
+    "category": "Soup",
+    "items": [
+      { "name": "Sweet Corn Soup", "price": "85/-", "image_url": "https://placehold.co/400x400?text=Sweet+Corn+Soup" },
+      { "name": "Veg Hot & Sour Soup", "price": "85/-", "image_url": "https://placehold.co/400x400?text=Veg+Hot+Sour+Soup" },
+      { "name": "Veg Manchow Soup", "price": "110/-", "image_url": "https://placehold.co/400x400?text=Veg+Manchow+Soup" },
+      { "name": "Tomato Soup", "price": "85/-", "image_url": "https://placehold.co/400x400?text=Tomato+Soup" },
+      { "name": "Chicken Corn Soup", "price": "95/-", "image_url": "https://placehold.co/400x400?text=Chicken+Corn+Soup" },
+      { "name": "Chicken Hot & Sour Soup", "price": "125/-", "image_url": "https://placehold.co/400x400?text=Chicken+Hot+Sour+Soup" },
+      { "name": "Chicken Manchow Soup", "price": "135/-", "image_url": "https://placehold.co/400x400?text=Chicken+Manchow+Soup" }
+    ]
+  },
+  {
+    "category": "Tandoori (Veg)",
+    "items": [
+      { "name": "Paneer Tikka", "price": "225/-", "image_url": "https://placehold.co/400x400?text=Paneer+Tikka" },
+      { "name": "Paneer Seekh Kebab", "price": "235/-", "image_url": "https://placehold.co/400x400?text=Paneer+Seekh+Kebab" },
+      { "name": "Paneer Achari Tikka", "price": "235/-", "image_url": "https://placehold.co/400x400?text=Paneer+Achari+Tikka" },
+      { "name": "Paneer Malai Kebab", "price": "340/-", "image_url": "https://placehold.co/400x400?text=Paneer+Malai+Kebab" },
+      { "name": "Harabhara Kebab", "price": "320/-", "image_url": "https://placehold.co/400x400?text=Harabhara+Kebab" }
+    ]
+  },
+  {
+    "category": "Tandoori (Chicken)",
+    "items": [
+      { "name": "Tandoori Chicken Half", "price": "240/-", "image_url": "https://placehold.co/400x400?text=Tandoori+Chicken+Half" },
+      { "name": "Chicken Patiala Half", "price": "240/-", "image_url": "https://placehold.co/400x400?text=Chicken+Patiala+Half" },
+      { "name": "Chicken Tikka", "price": "250/-", "image_url": "https://placehold.co/400x400?text=Chicken+Tikka" },
+      { "name": "Chicken Seekh Kebab", "price": "250/-", "image_url": "https://placehold.co/400x400?text=Chicken+Seekh+Kebab" },
+      { "name": "Chicken Boti Kebab", "price": "261/-", "image_url": "https://placehold.co/400x400?text=Chicken+Boti+Kebab" },
+      { "name": "Chicken Hariyali Kebab", "price": "263/-", "image_url": "https://placehold.co/400x400?text=Chicken+Hariyali+Kebab" },
+      { "name": "Chicken Kali Mirch Kebab", "price": "265/-", "image_url": "https://placehold.co/400x400?text=Chicken+Kali+Mirch+Kebab" },
+      { "name": "Chicken Reshmi Kebab", "price": "267/-", "image_url": "https://placehold.co/400x400?text=Chicken+Reshmi+Kebab" },
+      { "name": "Chicken Achari Tikka", "price": "290/-", "image_url": "https://placehold.co/400x400?text=Chicken+Achari+Tikka" },
+      { "name": "Chicken Garlic Kebab", "price": "325/-", "image_url": "https://placehold.co/400x400?text=Chicken+Garlic+Kebab" },
+      { "name": "Chicken Malai Kebab", "price": "365/-", "image_url": "https://placehold.co/400x400?text=Chicken+Malai+Kebab" },
+      { "name": "Tangdi Kebab (4Leg pcs.)", "price": "327/-", "image_url": "https://placehold.co/400x400?text=Tangdi+Kebab" },
+      { "name": "Chicken Cheese Kebab", "price": "400/-", "image_url": "https://placehold.co/400x400?text=Chicken+Cheese+Kebab" },
+      { "name": "Tandoori Chicken Full", "price": "410/-", "image_url": "https://placehold.co/400x400?text=Tandoori+Chicken+Full" },
+      { "name": "Chicken Patiala Full", "price": "409/-", "image_url": "https://placehold.co/400x400?text=Chicken+Patiala+Full" }
+    ]
+  }
+]

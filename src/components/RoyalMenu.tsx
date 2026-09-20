@@ -45,7 +45,7 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
   onOpenOrderModal,
   onOpenAIWithQuery,
 }) => {
-  const [activeCategory, setActiveCategory] = useState<string>("Starters");
+  const [activeCategory, setActiveCategory] = useState<string>("Combos & Thali");
   const [activeSubcategory, setActiveSubcategory] = useState<string>("All");
   const [dietFilter, setDietFilter] = useState<"All" | "Veg" | "NonVeg">("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -56,52 +56,68 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
 
   const categories: CategoryMeta[] = [
     {
-      id: "Starters",
-      name: "Starters",
-      hindi: "शाही स्टार्टर्स व कबाब",
+      id: "Combos & Thali",
+      name: "Combos & Thali",
+      hindi: "शाही थाली व कॉम्बो",
+      icon: "🍱",
+      count: 5,
+      subcategories: ["All", "Thali", "Budget Friendly Combo"],
+    },
+    {
+      id: "Momos & Fast Food",
+      name: "Momos & Fast Food",
+      hindi: "मोमो, बर्गर, सैंडविच व रोल्स",
+      icon: "🥟",
+      count: 30,
+      subcategories: ["All", "Momos", "Burger", "Sandwich", "Rolls"],
+    },
+    {
+      id: "Starters & Snacks",
+      name: "Starters & Snacks",
+      hindi: "फ्राइज, पकौड़ा व स्नैक्स",
+      icon: "🍟",
+      count: 19,
+      subcategories: ["All", "Pakoras", "Fries & Corn", "Chilli & Sizzlers"],
+    },
+    {
+      id: "Tandoori & Kebabs",
+      name: "Tandoori Kebabs",
+      hindi: "तंदूरी कबाब व टिक्का",
       icon: "🍢",
-      count: 43,
-      subcategories: ["All", "Non-Veg Starters", "Veg Starters", "Tandoori & Kebabs"],
+      count: 20,
+      subcategories: ["All", "Tandoori (Chicken)", "Tandoori (Veg)"],
     },
     {
-      id: "Main Course",
-      name: "Curries",
-      hindi: "शाही सालन व दाल",
+      id: "Curries & Chinese",
+      name: "Curries & Chinese",
+      hindi: "चिकन सालन व चाइनीज",
       icon: "🍲",
-      count: 57,
-      subcategories: ["All", "Non-Veg Curries", "Veg Curries", "Dal Specialties"],
+      count: 20,
+      subcategories: ["All", "Indian (Chicken)", "Chinese"],
     },
     {
-      id: "Biryani & Rice",
-      name: "Biryani & Rice",
-      hindi: "दम पुख़्त बिरयानी व पुलाव",
+      id: "Rice, Biryani & Noodles",
+      name: "Rice & Biryani",
+      hindi: "बिरयानी, फ्राइड राइस व नूडल्स",
       icon: "🍚",
       count: 29,
-      subcategories: ["All", "Biryani Handis", "Pulao & Steamed", "Fried Rice"],
+      subcategories: ["All", "Biryani", "Fried Rice & Pulao", "Noodles"],
     },
     {
-      id: "Chinese & Snacks",
-      name: "Chinese & Snacks",
-      hindi: "चाउमीन, मोमो व स्नैक्स",
-      icon: "🥡",
-      count: 69,
-      subcategories: ["All", "Noodles & Chowmein", "Momos", "Pakodas & Snacks", "Rolls", "Burgers & Sandwiches"],
-    },
-    {
-      id: "Tandoori & Breads",
+      id: "Tandoori Breads",
       name: "Breads",
-      hindi: "नान, कुलचा व पराठा",
+      hindi: "नान, रोटी व पराठा",
       icon: "🫓",
-      count: 13,
+      count: 9,
       subcategories: ["All", "Naans", "Rotis & Parathas"],
     },
     {
-      id: "Beverages",
-      name: "Beverages",
-      hindi: "शरबत, मॉकटेल व मिष्ठान",
+      id: "Beverages & Soups",
+      name: "Beverages & Soups",
+      hindi: "शेक्स, मॉकटेल, सूप व रायता",
       icon: "🍹",
-      count: 16,
-      subcategories: ["All", "Mocktails & Sodas", "Desserts"],
+      count: 27,
+      subcategories: ["All", "Mocktail", "Shake", "Soup", "Salad & Raita"],
     },
   ];
 
@@ -165,37 +181,32 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
       let matchesSub = true;
       if (!isSearching && activeSubcategory !== "All") {
         const n = item.name.toLowerCase();
-        if (activeSubcategory === "Non-Veg Starters") matchesSub = !item.isVeg;
-        else if (activeSubcategory === "Veg Starters") matchesSub = item.isVeg;
-        else if (activeSubcategory === "Tandoori & Kebabs")
-          matchesSub = n.includes("kebab") || n.includes("tikka") || n.includes("tandoori");
-        else if (activeSubcategory === "Non-Veg Curries") matchesSub = !item.isVeg;
-        else if (activeSubcategory === "Veg Curries") matchesSub = item.isVeg && !n.includes("dal");
-        else if (activeSubcategory === "Dal Specialties") matchesSub = n.includes("dal");
-        else if (activeSubcategory === "Biryani Handis") matchesSub = n.includes("biryani");
-        else if (activeSubcategory === "Pulao & Steamed")
-          matchesSub = n.includes("pulao") || n.includes("rice") || n.includes("jeera");
-        else if (activeSubcategory === "Fried Rice") matchesSub = n.includes("fried rice");
-        else if (activeSubcategory === "Noodles & Chowmein")
-          matchesSub = n.includes("noodle") || n.includes("chowmein");
-        else if (activeSubcategory === "Momos") matchesSub = n.includes("momo");
-        else if (activeSubcategory === "Pakodas & Snacks")
-          matchesSub =
-            n.includes("pakod") ||
-            n.includes("pakor") ||
-            n.includes("bhaji") ||
-            n.includes("fries") ||
-            n.includes("popcorn");
-        else if (activeSubcategory === "Rolls") matchesSub = n.includes("roll");
-        else if (activeSubcategory === "Burgers & Sandwiches")
-          matchesSub = n.includes("burger") || n.includes("sandwich");
-        else if (activeSubcategory === "Naans") matchesSub = n.includes("naan") || n.includes("kulcha");
-        else if (activeSubcategory === "Rotis & Parathas")
-          matchesSub = n.includes("roti") || n.includes("paratha");
-        else if (activeSubcategory === "Mocktails & Sodas")
-          matchesSub = !n.includes("sweet") && !n.includes("dessert");
-        else if (activeSubcategory === "Desserts")
-          matchesSub = n.includes("sweet") || n.includes("ice") || n.includes("halwa");
+        const sub = item.subCategory || "";
+
+        if (activeSubcategory === "Thali") matchesSub = sub === "Thali";
+        else if (activeSubcategory === "Budget Friendly Combo") matchesSub = sub === "Budget Friendly Combo";
+        else if (activeSubcategory === "Momos") matchesSub = sub === "Momos";
+        else if (activeSubcategory === "Burger") matchesSub = sub === "Burger";
+        else if (activeSubcategory === "Sandwich") matchesSub = sub === "Sandwich";
+        else if (activeSubcategory === "Rolls") matchesSub = sub === "Rolls";
+        else if (activeSubcategory === "Pakoras") matchesSub = n.includes("pakora") || n.includes("pakoda");
+        else if (activeSubcategory === "Fries & Corn") matchesSub = n.includes("fries") || n.includes("corn");
+        else if (activeSubcategory === "Chilli & Sizzlers")
+          matchesSub = n.includes("chilli") || n.includes("pepper") || n.includes("popcorn") || n.includes("65") || n.includes("lollipop");
+        else if (activeSubcategory === "Tandoori (Chicken)") matchesSub = sub === "Tandoori (Chicken)";
+        else if (activeSubcategory === "Tandoori (Veg)") matchesSub = sub === "Tandoori (Veg)";
+        else if (activeSubcategory === "Indian (Chicken)") matchesSub = sub === "Indian (Chicken)";
+        else if (activeSubcategory === "Chinese") matchesSub = sub === "Chinese";
+        else if (activeSubcategory === "Biryani") matchesSub = sub === "Biryani";
+        else if (activeSubcategory === "Fried Rice & Pulao")
+          matchesSub = n.includes("fried rice") || n.includes("pulao") || n.includes("steamed") || n.includes("jeera");
+        else if (activeSubcategory === "Noodles") matchesSub = n.includes("noodle");
+        else if (activeSubcategory === "Naans") matchesSub = n.includes("naan");
+        else if (activeSubcategory === "Rotis & Parathas") matchesSub = n.includes("roti") || n.includes("paratha");
+        else if (activeSubcategory === "Mocktail") matchesSub = sub === "Mocktail";
+        else if (activeSubcategory === "Shake") matchesSub = sub === "Shake";
+        else if (activeSubcategory === "Soup") matchesSub = sub === "Soup";
+        else if (activeSubcategory === "Salad & Raita") matchesSub = sub === "Salad" || sub === "Raita";
       }
 
       if (!isSearching) {
