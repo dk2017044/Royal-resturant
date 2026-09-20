@@ -1,0 +1,224 @@
+.reservation-section {
+  background: radial-gradient(circle at 30% 60%, #15090f 0%, #090608 70%);
+  position: relative;
+}
+
+.reservation-card-split {
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+/* Left Column */
+.form-left-col {
+  padding: 3.5rem 3rem;
+}
+
+.reservation-title {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0.75rem 0 6px;
+}
+
+.reservation-subtitle {
+  font-size: 0.95rem;
+  color: rgba(245, 230, 211, 0.75);
+  margin-bottom: 2rem;
+}
+
+.gold-link {
+  color: #f5b842;
+  font-weight: 600;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.icon-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--accentGold);
+  pointer-events: none;
+}
+
+.royal-input {
+  width: 100%;
+  background: rgba(9, 6, 8, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 12px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.92rem;
+  padding: 13px 16px;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.royal-input:focus {
+  border-color: #f5b842;
+  box-shadow: 0 0 16px rgba(245, 184, 66, 0.25);
+}
+
+.select-input,
+.date-input {
+  padding-left: 40px;
+}
+
+.select-input option {
+  background: #14090d;
+  color: #ffffff;
+}
+
+.textarea-input {
+  resize: vertical;
+  min-height: 90px;
+  margin-bottom: 1.5rem;
+}
+
+.w-full-btn {
+  width: 100%;
+}
+
+/* Success Card */
+.booking-success-wrap {
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.gold-check-icon {
+  color: #22c55e;
+}
+
+.success-heading {
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.success-sub {
+  font-size: 1.05rem;
+  color: rgba(245, 230, 211, 0.85);
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+/* Right Column: Contact */
+.form-right-col {
+  background: rgba(14, 8, 12, 0.95);
+  border-left: 1px solid rgba(212, 175, 55, 0.2);
+  padding: 3.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.contact-heading {
+  font-size: 1.6rem;
+  color: #ffffff;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  padding-bottom: 12px;
+}
+
+.contact-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-label {
+  font-size: 0.72rem;
+  color: var(--accentGold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.contact-tel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  transition: color 0.2s ease;
+}
+
+.contact-tel:hover {
+  color: #f5b842;
+}
+
+.contact-address {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.92rem;
+  color: rgba(245, 230, 211, 0.8);
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.gold-icon {
+  color: var(--accentGold);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.contact-time {
+  font-size: 0.92rem;
+  color: rgba(245, 230, 211, 0.8);
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .reservation-card-split {
+    grid-template-columns: 1fr;
+  }
+
+  .form-right-col {
+    border-left: none;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 2.5rem 2rem;
+  }
+
+  .form-left-col {
+    padding: 2.5rem 2rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .form-grid-2,
+  .form-grid-3 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .form-left-col {
+    padding: 2rem 1.5rem;
+  }
+
+  .form-right-col {
+    padding: 2rem 1.5rem;
+  }
+}

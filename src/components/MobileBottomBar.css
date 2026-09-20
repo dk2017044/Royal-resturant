@@ -1,0 +1,152 @@
+/* MobileBottomBar.css - Dedicated Restaurant Mobile App Navigation */
+
+.mobile-bottom-appbar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-bottom-appbar {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: rgba(12, 7, 10, 0.94);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(212, 175, 55, 0.28);
+    box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.8), 0 0 16px rgba(212, 175, 55, 0.12);
+    padding-bottom: env(safe-area-inset-bottom, 8px);
+  }
+
+  .bottom-bar-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 64px;
+    padding: 0 8px;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .bottom-nav-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100%;
+    color: rgba(245, 230, 211, 0.72);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    position: relative;
+    padding: 4px 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .bottom-nav-btn:active {
+    transform: scale(0.92);
+  }
+
+  .icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    margin-bottom: 2px;
+    color: rgba(245, 230, 211, 0.75);
+    transition: color 0.2s ease;
+  }
+
+  .bottom-nav-btn:hover .icon-wrapper,
+  .bottom-nav-btn.has-feast .icon-wrapper {
+    color: #f5b842;
+  }
+
+  .btn-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: rgba(245, 230, 211, 0.7);
+    transition: color 0.2s ease;
+  }
+
+  .bottom-nav-btn:hover .btn-label,
+  .bottom-nav-btn.has-feast .btn-label {
+    color: #f5b842;
+  }
+
+  /* Center CTA Button (Book Table) */
+  .bottom-nav-btn.center-cta-btn {
+    position: relative;
+    top: -10px;
+  }
+
+  .center-cta-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f5b842 0%, #d4af37 60%, #aa8724 100%);
+    border: 2px solid #ffffff;
+    box-shadow: 0 4px 18px rgba(212, 175, 55, 0.6), 0 0 24px rgba(245, 184, 66, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #090608;
+    margin-bottom: 3px;
+    transition: transform 0.2s ease;
+  }
+
+  .center-cta-btn:active .center-cta-circle {
+    transform: scale(0.92);
+  }
+
+  .center-cta-btn .btn-label {
+    color: #f5b842;
+    font-weight: 700;
+    font-size: 0.62rem;
+  }
+
+  /* Feast Badge Counter */
+  .feast-icon-wrapper {
+    position: relative;
+  }
+
+  .feast-badge-counter {
+    position: absolute;
+    top: -4px;
+    right: -7px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    border-radius: 9999px;
+    background: #ef4444;
+    border: 1.5px solid #0c070a;
+    color: #ffffff;
+    font-size: 0.65rem;
+    font-weight: 800;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.8);
+    animation: badge-pop 0.3s ease-out;
+  }
+
+  @keyframes badge-pop {
+    0% {
+      transform: scale(0);
+    }
+    70% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}

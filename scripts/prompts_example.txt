@@ -1,0 +1,12 @@
+# Bulk Image Generation Prompts Example
+# Format 1: Just prompt text (filename will be automatically numbered)
+# Format 2: filename.jpg: Custom prompt text
+
+chicken_biryani.jpg: Authentic royal Awadhi chicken dum biryani in earthen handi with saffron rice and fresh mint
+paneer_tikka.jpg: Sizzling tandoori paneer tikka skewers with charred capsicum and onion, served on black stone platter
+dal_makhani.jpg: Rich creamy Dal Makhani in copper bowl with fresh cream swirl and melting white butter
+butter_chicken.jpg: Creamy Mughlai butter chicken in brass bowl with butter naan on side
+kebab_platter.jpg: Royal assorted tandoori kebab platter with seekh kebabs, chicken tikka, and green mint chutney
+shahi_tukda.jpg: Royal Shahi Tukda dessert with thick rabri, silver vark, pistachios, and saffron strands
+tandoori_roti.jpg: Freshly baked crisp tandoori roti and garlic butter naan in wicker basket
+cold_coffee.jpg: Iced cold coffee shake with chocolate syrup drizzle and vanilla ice cream scoop
