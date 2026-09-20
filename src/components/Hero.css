@@ -431,8 +431,17 @@
   }
 
   .hero-main-title {
-    font-size: clamp(2.2rem, 9vw, 3.2rem);
+    font-size: clamp(1.4rem, 6.2vw, 2.1rem);
     margin-bottom: 0.5rem;
+    line-height: 1.2;
+    white-space: normal;
+    text-align: center;
+    width: 100%;
+  }
+
+  .title-royal,
+  .hero-main-title .glow-text {
+    display: inline-block;
   }
 
   .hero-headline-sub {

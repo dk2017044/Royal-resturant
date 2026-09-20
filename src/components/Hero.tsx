@@ -103,7 +103,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenOrderModal: _onOpenOrderModal 
 
           {/* Grand Main Headline */}
           <h1 className="hero-main-title font-cinzel">
-            The Royal <span className="glow-text">Rasoi</span>
+            <span className="title-royal">The Royal</span> <span className="glow-text">Rasoi</span>
           </h1>
 
           <p className="hero-headline-sub font-serif">
