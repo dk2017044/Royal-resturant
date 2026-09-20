@@ -128,8 +128,8 @@ export const PalaceHeritage: React.FC<PalaceHeritageProps> = () => {
               className={`heritage-tab-btn ${activeTab === "craft" ? "active" : ""}`}
               onClick={() => setActiveTab("craft")}
             >
-              <Flame size={16} />
-              <span>The Culinary Craft</span>
+              <Utensils size={16} />
+              <span>About The Royal Rasoi</span>
               {activeTab === "craft" && (
                 <motion.div
                   layoutId="heritageTabGlow"
@@ -186,19 +186,19 @@ export const PalaceHeritage: React.FC<PalaceHeritageProps> = () => {
               transition={{ duration: 0.4, ease: "easeOut" }}
             >
               <div className="craft-grid">
-                {/* Left: Chef & Craft Story */}
+                {/* Left: Restaurant Overview & Quality Commitments */}
                 <div className="craft-text-card glass-panel">
                   <div className="badge-inline">
-                    <Flame size={14} className="gold-icon" />
-                    <span>ANCIENT DUM PUKHT ART</span>
+                    <Sparkles size={14} className="gold-icon" />
+                    <span>AUTHENTIC DINING • ESTD. 2018</span>
                   </div>
 
                   <h3 className="craft-heading font-cinzel">
-                    Slow-Cooked Over Charcoal Embers in Sealed Earthen Handis
+                    Fresh Ingredients, Honest Flavors & Cozy Ambiance in Sadikpur
                   </h3>
 
                   <p className="craft-desc font-serif">
-                    At Royal Rasoi, we preserve the authentic Awadhi method of <em>Dum Pukht</em> — slow breathing. Our earthen handis are sealed with freshly kneaded whole-wheat dough to lock in the fragrant steam of aged basmati, saffron strands, and hand-ground <em>potli masalas</em>.
+                    Established in 2018 at City Court, Sadikpur, <strong>The Royal Rasoi</strong> is Patna City’s beloved destination for freshly cooked meals. We bring you flavorful North Indian curries, aromatic Dum Biryanis, hot clay-oven tandoori kebabs, crispy momos, juicy burgers, and value combos in a welcoming, fully air-conditioned family cafe.
                   </p>
 
                   <div className="craft-pillars-list">
@@ -208,17 +208,17 @@ export const PalaceHeritage: React.FC<PalaceHeritageProps> = () => {
                       </div>
                       <div className="pillar-info">
                         <h4 className="pillar-title font-cinzel">100% Halal & Fresh Daily</h4>
-                        <p className="pillar-detail font-serif">Every cut of poultry and mutton is strictly certified halal, procured fresh each morning.</p>
+                        <p className="pillar-detail font-serif">All poultry and meat is strictly certified halal, procured fresh every morning, with separate hygienic veg preparation.</p>
                       </div>
                     </div>
 
                     <div className="pillar-item">
                       <div className="pillar-icon-box">
-                        <Sparkles size={20} />
+                        <Flame size={20} />
                       </div>
                       <div className="pillar-info">
-                        <h4 className="pillar-title font-cinzel">160 Heirloom Potli Spices</h4>
-                        <p className="pillar-detail font-serif">Secrets passed down through generations, ground on stone sil-batta at the break of dawn.</p>
+                        <h4 className="pillar-title font-cinzel">Prepared Fresh On Order</h4>
+                        <p className="pillar-detail font-serif">Every naan is slapped fresh on the clay tandoor, every curry slow-simmered, and every snack wok-tossed hot on your order.</p>
                       </div>
                     </div>
 
@@ -227,8 +227,8 @@ export const PalaceHeritage: React.FC<PalaceHeritageProps> = () => {
                         <HeartHandshake size={20} />
                       </div>
                       <div className="pillar-info">
-                        <h4 className="pillar-title font-cinzel">Pure Bilona Desi Ghee</h4>
-                        <p className="pillar-detail font-serif">No synthetic additives or vanaspati. Slow-cooked in golden butter and pure churned ghee.</p>
+                        <h4 className="pillar-title font-cinzel">Honest Prices & Friendly Combos</h4>
+                        <p className="pillar-detail font-serif">Delicious, hearty portions at budget-friendly rates for family dinners, takeaway, and cozy celebrations (10–12 guests).</p>
                       </div>
                     </div>
                   </div>
@@ -239,42 +239,42 @@ export const PalaceHeritage: React.FC<PalaceHeritageProps> = () => {
                       className="btn-royal-primary"
                     >
                       <Utensils size={16} />
-                      <span>Explore Royal Menu</span>
+                      <span>Explore Our Delicacies</span>
                     </a>
                   </div>
                 </div>
 
-                {/* Right: Master Chef Feature Card */}
+                {/* Right: Restaurant Feature Card */}
                 <div className="craft-chef-card glass-panel">
                   <div className="chef-photo-container">
                     <img
                       src="/data/reviews/review-image-1.jpg"
-                      alt="Royal Tandoori Kebab craft"
+                      alt="Fresh Tandoori Delicacies at The Royal Rasoi"
                       className="chef-dish-img"
                     />
                     <div className="chef-floating-quote">
                       <Quote size={20} className="quote-icon" />
                       <p className="quote-text font-serif">
-                        "Real royal cooking cannot be rushed with pressure cookers. It requires charcoal, patience, and devotion to time."
+                        "Good food brings family and friends together. At The Royal Rasoi, we serve hot, flavorful meals made with care every single day."
                       </p>
-                      <span className="quote-author font-cinzel">— The Royal Rasoi Culinary Philosophy</span>
+                      <span className="quote-author font-cinzel">— The Royal Rasoi Team • Sadikpur, Patna</span>
                     </div>
                   </div>
 
                   <div className="chef-stats-row">
-                    <div className="chef-stat">
-                      <span className="stat-number gold-text">18 Hrs</span>
-                      <span className="stat-label">Slow Simmer Dal</span>
-                    </div>
-                    <div className="stat-sep"></div>
                     <div className="chef-stat">
                       <span className="stat-number gold-text">ESTD. 2018</span>
                       <span className="stat-label">Sadikpur, Patna</span>
                     </div>
                     <div className="stat-sep"></div>
                     <div className="chef-stat">
-                      <span className="stat-number gold-text">220+</span>
-                      <span className="stat-label">Imperial Recipes</span>
+                      <span className="stat-number gold-text">4.7 ★</span>
+                      <span className="stat-label">520+ Reviews</span>
+                    </div>
+                    <div className="stat-sep"></div>
+                    <div className="chef-stat">
+                      <span className="stat-number gold-text">159</span>
+                      <span className="stat-label">Fresh Delicacies</span>
                     </div>
                   </div>
                 </div>

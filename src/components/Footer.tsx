@@ -101,12 +101,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenOrderModal }) => {
           <div className="footer-links-col">
             <h4 className="footer-heading font-cinzel">Popular Delicacies</h4>
             <ul className="footer-links">
-              <li><a href="#menu" onClick={(e) => handleSmoothScroll(e, "#menu")}>Awadhi Dum Biryani</a></li>
+              <li><a href="#menu" onClick={(e) => handleSmoothScroll(e, "#menu")}>Royal Spl. Biryani</a></li>
               <li><a href="#menu" onClick={(e) => handleSmoothScroll(e, "#menu")}>Tandoori Chicken & Kebabs</a></li>
-              <li><a href="#menu" onClick={(e) => handleSmoothScroll(e, "#menu")}>Dal Royal Rasoi</a></li>
-              <li><a href="#menu" onClick={(e) => handleSmoothScroll(e, "#menu")}>Mughlai Shahi Paneer</a></li>
-              <li><a href="#menu" onClick={(e) => handleSmoothScroll(e, "#menu")}>Butter Chicken & Naan</a></li>
-              <li><a href="#menu" onClick={(e) => handleSmoothScroll(e, "#menu")}>Shahi Tukda & Desserts</a></li>
+              <li><a href="#menu" onClick={(e) => handleSmoothScroll(e, "#menu")}>Chicken Butter Masala</a></li>
+              <li><a href="#menu" onClick={(e) => handleSmoothScroll(e, "#menu")}>Veg & Chicken Momos</a></li>
+              <li><a href="#menu" onClick={(e) => handleSmoothScroll(e, "#menu")}>Paneer Chilli & Chinese</a></li>
+              <li><a href="#menu" onClick={(e) => handleSmoothScroll(e, "#menu")}>Royal Spl. Thali & Combos</a></li>
             </ul>
           </div>
 
