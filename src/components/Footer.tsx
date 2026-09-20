@@ -8,6 +8,17 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onOpenReservation }) => {
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const targetId = href.substring(1);
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  };
+
   return (
     <footer className="royal-footer">
       <div className="container">
@@ -52,7 +63,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenReservation }) => {
 
             <div className="footer-rating-pill">
               <Sparkles size={15} />
-              <span>Rated {royalConfig.restaurant.rating}/5.0 by 3,850+ Gourmands</span>
+              <span>Rated {royalConfig.restaurant.rating}/5.0 • {royalConfig.restaurant.totalReviews} ({royalConfig.restaurant.guestsServed})</span>
             </div>
           </div>
 
@@ -60,10 +71,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenReservation }) => {
           <div className="footer-links-col">
             <h4 className="footer-heading font-cinzel">The Palace</h4>
             <ul className="footer-links">
-              <li><a href="#hero">Home & Welcome</a></li>
-              <li><a href="#menu">Imperial Menu & Feast</a></li>
-              <li><a href="#heritage">The Royal Heritage</a></li>
-              <li><a href="#reservation-section">Table Reservation</a></li>
+              <li><a href="#hero" onClick={(e) => handleSmoothScroll(e, "#hero")}>Home & Welcome</a></li>
+              <li><a href="#menu" onClick={(e) => handleSmoothScroll(e, "#menu")}>Imperial Menu & Feast</a></li>
+              <li><a href="#heritage" onClick={(e) => handleSmoothScroll(e, "#heritage")}>The Royal Heritage</a></li>
+              <li><a href="#reservation-section" onClick={(e) => handleSmoothScroll(e, "#reservation-section")}>Table Reservation</a></li>
             </ul>
           </div>
 
@@ -71,13 +82,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenReservation }) => {
           <div className="footer-links-col">
             <h4 className="footer-heading font-cinzel">Royal Specialties</h4>
             <ul className="footer-links">
-              <li><a href="#menu">Awadhi Dum Biryani</a></li>
-              <li><a href="#menu">Galouti & Kakori Kebabs</a></li>
-              <li><a href="#menu">18-Hour Dal Royal Rasoi</a></li>
-              <li><a href="#menu">Mughlai Shahi Paneer</a></li>
-              <li><a href="#menu">Slow-Simmered Nalli Nihari</a></li>
-              <li><a href="#menu">Zauq-e-Shahi Tukda</a></li>
-              <li><a href="#menu">Saffron Badam Thandai</a></li>
+              <li><a href="#menu" onClick={(e) => handleSmoothScroll(e, "#menu")}>Awadhi Dum Biryani</a></li>
+              <li><a href="#menu" onClick={(e) => handleSmoothScroll(e, "#menu")}>Galouti & Kakori Kebabs</a></li>
+              <li><a href="#menu" onClick={(e) => handleSmoothScroll(e, "#menu")}>18-Hour Dal Royal Rasoi</a></li>
+              <li><a href="#menu" onClick={(e) => handleSmoothScroll(e, "#menu")}>Mughlai Shahi Paneer</a></li>
+              <li><a href="#menu" onClick={(e) => handleSmoothScroll(e, "#menu")}>Slow-Simmered Nalli Nihari</a></li>
+              <li><a href="#menu" onClick={(e) => handleSmoothScroll(e, "#menu")}>Zauq-e-Shahi Tukda</a></li>
+              <li><a href="#menu" onClick={(e) => handleSmoothScroll(e, "#menu")}>Saffron Badam Thandai</a></li>
             </ul>
           </div>
 
@@ -111,7 +122,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenReservation }) => {
             © {new Date().getFullYear()} {royalConfig.restaurant.name}. All Royal Rights Reserved.
           </p>
           <p className="madewith-text font-serif">
-            Crafted with <Heart size={13} className="heart-icon" /> for the love of regal Indian gastronomy.
+            Crafted with passion & <Heart size={13} className="heart-icon" /> for the love of regal Indian gastronomy.
           </p>
         </div>
       </div>

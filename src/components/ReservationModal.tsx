@@ -16,12 +16,8 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({
   preselectedDish = "",
 }) => {
   const [guests, setGuests] = useState<number>(2);
-  const [date, setDate] = useState<string>(() => {
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    return tomorrow.toISOString().split("T")[0];
-  });
-  const [timeSlot, setTimeSlot] = useState<string>("08:15 PM");
+  const [date, setDate] = useState<string>(() => new Date().toISOString().split("T")[0]);
+  const [timeSlot, setTimeSlot] = useState<string>("07:45 PM");
   const [seatingArea, setSeatingArea] = useState<string>("courtyard");
   const [fullName, setFullName] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
@@ -65,8 +61,8 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({
   };
 
   const timeSlots = [
-    { type: "Lunch", times: ["12:30 PM", "01:15 PM", "02:00 PM", "02:45 PM"] },
-    { type: "Dinner", times: ["07:30 PM", "08:15 PM", "09:00 PM", "09:45 PM", "10:30 PM"] },
+    { type: "Lunch (11:00 AM – 04:00 PM)", times: ["11:30 AM", "12:15 PM", "01:00 PM", "01:45 PM", "02:30 PM", "03:15 PM"] },
+    { type: "Dinner (04:00 PM – 10:30 PM)", times: ["05:00 PM", "06:00 PM", "07:00 PM", "07:45 PM", "08:30 PM", "09:15 PM", "10:00 PM"] },
   ];
 
   return (
@@ -180,7 +176,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({
                         <span>Number of Guests</span>
                       </label>
                       <div className="guest-selector">
-                        {[1, 2, 4, 6, 8, 10, 12].map((num) => (
+                        {[1, 2, 3, 4, 5, 6, 8, 10, 12].map((num) => (
                           <button
                             type="button"
                             key={num}

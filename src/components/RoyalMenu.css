@@ -228,10 +228,28 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.diet-pill.active {
-  background: rgba(212, 175, 55, 0.2);
-  border-color: var(--accentGold);
-  color: #ffffff;
+.diet-pill.active.all-active {
+  background: linear-gradient(135deg, #d4af37, #b8860b);
+  border-color: #ffd700;
+  color: #10080d;
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.45);
+}
+
+.diet-pill.active.veg-active {
+  background: rgba(34, 197, 94, 0.22);
+  border-color: #22c55e;
+  color: #4ade80;
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.4);
+}
+
+.diet-pill.active.nonveg-active {
+  background: rgba(239, 68, 68, 0.22);
+  border-color: #ef4444;
+  color: #fca5a5;
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.4);
 }
 
 .diet-pill .dot {
@@ -472,37 +490,35 @@
   padding-top: 10px;
 }
 
-.spice-tag {
-  display: flex;
+.spice-indicator-badge {
+  display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  border-radius: 9999px;
+  padding: 3px 9px;
 }
 
-.spice-lbl {
-  font-size: 0.7rem;
-  color: rgba(245, 230, 211, 0.6);
-  text-transform: uppercase;
+.spice-indicator-badge .spice-flame {
+  color: #f97316;
 }
 
-.spice-flame {
+.spice-indicator-badge .spice-flame.level-3 {
   color: #ef4444;
 }
 
-.quick-view-link {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 0.74rem;
-  font-weight: 700;
-  color: #f5b842;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: gap 0.2s ease;
+.spice-indicator-badge .spice-text {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(245, 230, 211, 0.85);
+  text-transform: capitalize;
 }
 
-.curated-dish-card:hover .quick-view-link {
-  gap: 7px;
-  color: #ffffff;
+.dish-serves-tag {
+  font-size: 0.76rem;
+  color: var(--accentGold);
+  font-style: italic;
 }
 
 /* Empty Box */

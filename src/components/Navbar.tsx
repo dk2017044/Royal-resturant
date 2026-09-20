@@ -27,6 +27,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation }) => {
     { label: "Reserve Table", href: "#reservation-section" },
   ];
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const targetId = href.substring(1);
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  };
+
   return (
     <>
       {/* Top Bar with Real Contact & Hours */}
@@ -71,7 +82,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation }) => {
       <header className={`royal-navbar ${isScrolled ? "scrolled" : ""}`}>
         <div className="container nav-container">
           {/* Brand Logo with Crown */}
-          <a href="#hero" className="royal-brand">
+          <a href="#hero" className="royal-brand" onClick={(e) => handleNavClick(e, "#hero")}>
             <div className="crown-icon-wrap">
               <Crown size={22} className="crown-icon" />
             </div>
@@ -84,7 +95,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation }) => {
           {/* Desktop Nav Links */}
           <nav className="desktop-nav-menu">
             {navLinks.map((link) => (
-              <a key={link.label} href={link.href} className="nav-item-link">
+              <a
+                key={link.label}
+                href={link.href}
+                className="nav-item-link"
+                onClick={(e) => handleNavClick(e, link.href)}
+              >
                 {link.label}
               </a>
             ))}
@@ -131,7 +147,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation }) => {
                     key={link.label}
                     href={link.href}
                     className="mobile-link"
-                    onClick={() => setMobileOpen(false)}
+                    onClick={(e) => {
+                      setMobileOpen(false);
+                      handleNavClick(e, link.href);
+                    }}
                   >
                     <span>{link.label}</span>
                   </a>

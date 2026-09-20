@@ -1,8 +1,7 @@
-import React, { useState, useMemo, useRef } from "react";
+import React, { useState, useMemo, useRef, useEffect } from "react";
 import {
   Flame,
   Search,
-  BookOpen,
   X,
   ChevronLeft,
   ChevronRight,
@@ -52,10 +51,6 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
   const itemsPerPage = 9; // Exactly 9 dishes per page for ZERO LAG
-
-  // Official Scanned Menu modal state
-  const [isOfficialMenuOpen, setIsOfficialMenuOpen] = useState<boolean>(false);
-  const [menuPageViewerIndex, setMenuPageViewerIndex] = useState<number>(0);
 
   const menuBookRef = useRef<HTMLDivElement>(null);
 
@@ -110,42 +105,71 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
     },
   ];
 
-  const currentCategory = categories.find((c) => c.id === activeCategory) || categories[0];
+  // Dynamically calculate category dish counts based on the active diet filter
+  const dynamicCategories = useMemo(() => {
+    return categories.map((cat) => {
+      const count = royalConfig.menu.filter((item) => {
+        const inCat = item.category === cat.id;
+        const inDiet =
+          dietFilter === "All" ? true : dietFilter === "Veg" ? item.isVeg : !item.isVeg;
+        return inCat && inDiet;
+      }).length;
+      return { ...cat, count };
+    });
+  }, [dietFilter]);
 
-  // Filter all 220 items with instant reactivity
+  const currentCategory =
+    dynamicCategories.find((c) => c.id === activeCategory) || dynamicCategories[0];
+
+  // Filter items with global search across all categories when search query is typed
   const filteredItems = useMemo(() => {
+    const isSearching = searchQuery.trim() !== "";
+
     return royalConfig.menu.filter((item) => {
-      const matchesCategory = activeCategory === "All" || item.category === activeCategory;
+      // When searching, search across the ENTIRE menu (all categories)!
+      const matchesCategory = isSearching
+        ? true
+        : activeCategory === "All" || item.category === activeCategory;
+
       const matchesDiet =
         dietFilter === "All" ? true : dietFilter === "Veg" ? item.isVeg : !item.isVeg;
 
       let matchesSub = true;
-      if (activeSubcategory !== "All") {
+      if (!isSearching && activeSubcategory !== "All") {
         const n = item.name.toLowerCase();
         if (activeSubcategory === "Non-Veg Starters") matchesSub = !item.isVeg;
         else if (activeSubcategory === "Veg Starters") matchesSub = item.isVeg;
-        else if (activeSubcategory === "Tandoori & Kebabs") matchesSub = n.includes("kebab") || n.includes("tikka") || n.includes("tandoori");
+        else if (activeSubcategory === "Tandoori & Kebabs")
+          matchesSub = n.includes("kebab") || n.includes("tikka") || n.includes("tandoori");
         else if (activeSubcategory === "Non-Veg Curries") matchesSub = !item.isVeg;
         else if (activeSubcategory === "Veg Curries") matchesSub = item.isVeg && !n.includes("dal");
         else if (activeSubcategory === "Dal Specialties") matchesSub = n.includes("dal");
         else if (activeSubcategory === "Biryani Handis") matchesSub = n.includes("biryani");
-        else if (activeSubcategory === "Pulao & Steamed") matchesSub = n.includes("pulao") || n.includes("rice") || n.includes("jeera");
+        else if (activeSubcategory === "Pulao & Steamed")
+          matchesSub = n.includes("pulao") || n.includes("rice") || n.includes("jeera");
         else if (activeSubcategory === "Fried Rice") matchesSub = n.includes("fried rice");
-        else if (activeSubcategory === "Noodles & Chowmein") matchesSub = n.includes("noodle") || n.includes("chowmein");
+        else if (activeSubcategory === "Noodles & Chowmein")
+          matchesSub = n.includes("noodle") || n.includes("chowmein");
         else if (activeSubcategory === "Momos") matchesSub = n.includes("momo");
         else if (activeSubcategory === "Rolls") matchesSub = n.includes("roll");
-        else if (activeSubcategory === "Burgers & Sandwiches") matchesSub = n.includes("burger") || n.includes("sandwich");
+        else if (activeSubcategory === "Burgers & Sandwiches")
+          matchesSub = n.includes("burger") || n.includes("sandwich");
         else if (activeSubcategory === "Naans") matchesSub = n.includes("naan") || n.includes("kulcha");
-        else if (activeSubcategory === "Rotis & Parathas") matchesSub = n.includes("roti") || n.includes("paratha");
-        else if (activeSubcategory === "Mocktails & Sodas") matchesSub = !n.includes("sweet") && !n.includes("dessert");
-        else if (activeSubcategory === "Desserts") matchesSub = n.includes("sweet") || n.includes("ice") || n.includes("halwa");
+        else if (activeSubcategory === "Rotis & Parathas")
+          matchesSub = n.includes("roti") || n.includes("paratha");
+        else if (activeSubcategory === "Mocktails & Sodas")
+          matchesSub = !n.includes("sweet") && !n.includes("dessert");
+        else if (activeSubcategory === "Desserts")
+          matchesSub = n.includes("sweet") || n.includes("ice") || n.includes("halwa");
       }
 
+      const q = searchQuery.toLowerCase();
       const matchesSearch =
-        searchQuery.trim() === "" ||
-        item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        (item.hindiName && item.hindiName.includes(searchQuery));
+        !isSearching ||
+        item.name.toLowerCase().includes(q) ||
+        item.description.toLowerCase().includes(q) ||
+        (item.hindiName && item.hindiName.includes(searchQuery)) ||
+        item.category.toLowerCase().includes(q);
 
       return matchesCategory && matchesDiet && matchesSub && matchesSearch;
     });
@@ -153,6 +177,13 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
 
   // Total pages
   const totalPages = Math.ceil(filteredItems.length / itemsPerPage) || 1;
+
+  // Clamp current page whenever totalPages changes
+  useEffect(() => {
+    if (currentPage > totalPages) {
+      setCurrentPage(1);
+    }
+  }, [totalPages, currentPage]);
 
   // Paginated items
   const paginatedItems = useMemo(() => {
@@ -177,16 +208,6 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
   const totalCartItems = cart.reduce((sum, item) => sum + item.quantity, 0);
   const cartTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-  const handlePrevMenuPage = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setMenuPageViewerIndex((prev) => (prev > 0 ? prev - 1 : royalConfig.menuPages.length - 1));
-  };
-
-  const handleNextMenuPage = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setMenuPageViewerIndex((prev) => (prev < royalConfig.menuPages.length - 1 ? prev + 1 : 0));
-  };
-
   return (
     <section className="menu-book-section section-wrapper" id="menu" ref={menuBookRef}>
       <div className="container">
@@ -206,23 +227,12 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
           <p className="section-subtitle font-serif">
             Browse our delicacies category-by-category. Tap <strong className="gold-text">[+ ADD]</strong> on any dish to order for Dine-in Table, Takeaway, or Delivery.
           </p>
-
-          <div className="menu-header-actions">
-            <button
-              type="button"
-              className="btn-royal-glass"
-              onClick={() => setIsOfficialMenuOpen(true)}
-            >
-              <BookOpen size={16} />
-              <span>View Official Scanned Menu (7 Pages)</span>
-            </button>
-          </div>
         </motion.div>
 
         {/* 1. INTERACTIVE CATEGORY SELECTOR DECK (Sticky & Horizontal Scroll on Mobile) */}
         <div className="category-book-tabs-container">
           <div className="category-book-tabs glass-panel">
-            {categories.map((cat) => {
+            {dynamicCategories.map((cat) => {
               const isActive = activeCategory === cat.id;
               return (
                 <button
@@ -274,7 +284,7 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
               <Search size={15} className="search-icon" />
               <input
                 type="text"
-                placeholder={`Search in ${currentCategory.name}...`}
+                placeholder="Search 220+ delicacies (e.g. Biryani, Paneer, Kebab)..."
                 value={searchQuery}
                 onChange={(e) => handleSearchChange(e.target.value)}
                 className="mini-search-input"
@@ -305,7 +315,7 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
             <div className="diet-pills-group">
               <button
                 type="button"
-                className={`diet-pill ${dietFilter === "All" ? "active" : ""}`}
+                className={`diet-pill ${dietFilter === "All" ? "active all-active" : ""}`}
                 onClick={() => {
                   setDietFilter("All");
                   setCurrentPage(1);
@@ -315,7 +325,7 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
               </button>
               <button
                 type="button"
-                className={`diet-pill ${dietFilter === "Veg" ? "active" : ""}`}
+                className={`diet-pill ${dietFilter === "Veg" ? "active veg-active" : ""}`}
                 onClick={() => {
                   setDietFilter("Veg");
                   setCurrentPage(1);
@@ -326,7 +336,7 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
               </button>
               <button
                 type="button"
-                className={`diet-pill ${dietFilter === "NonVeg" ? "active" : ""}`}
+                className={`diet-pill ${dietFilter === "NonVeg" ? "active nonveg-active" : ""}`}
                 onClick={() => {
                   setDietFilter("NonVeg");
                   setCurrentPage(1);
@@ -342,7 +352,11 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
         {/* 3. PAGINATED 9-DISH GRID */}
         <div className="menu-page-header">
           <span className="page-summary font-serif">
-            Showing {currentCategory.name} • Page <strong>{currentPage}</strong> of <strong>{totalPages}</strong> ({filteredItems.length} dishes total)
+            {searchQuery.trim() ? (
+              <>Search results for &ldquo;<strong>{searchQuery}</strong>&rdquo; across all categories • Page <strong>{currentPage}</strong> of <strong>{totalPages}</strong> ({filteredItems.length} delicacies found)</>
+            ) : (
+              <>Showing {currentCategory.name} ({dietFilter === "All" ? "All" : dietFilter === "Veg" ? "Pure Veg" : "Non-Veg"}) • Page <strong>{currentPage}</strong> of <strong>{totalPages}</strong> ({filteredItems.length} dishes)</>
+            )}
           </span>
         </div>
 
@@ -423,15 +437,15 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
                     <p className="dish-desc-text font-serif">{dish.description}</p>
 
                     <div className="dish-footer-row">
-                      <div className="spice-tag">
-                        <span className="spice-lbl">Spice:</span>
-                        {[...Array(dish.spicyLevel)].map((_, i) => (
-                          <Flame key={i} size={12} className="spice-flame" />
-                        ))}
+                      <div className="spice-indicator-badge">
+                        <Flame size={12} className={`spice-flame level-${dish.spicyLevel || 1}`} />
+                        <span className="spice-text">
+                          {dish.spicyLevel === 3 ? "Extra Spicy" : dish.spicyLevel === 2 ? "Medium Spicy" : "Mild Spice"}
+                        </span>
                       </div>
 
-                      <span className="quick-view-link font-cinzel">
-                        Details <ArrowRight size={12} />
+                      <span className="dish-serves-tag font-serif">
+                        {dish.serves || "Serves 1-2"}
                       </span>
                     </div>
                   </div>
@@ -569,79 +583,6 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
           )}
         </AnimatePresence>
       </div>
-
-      {/* Official Scanned Menu Cards Lightbox */}
-      <AnimatePresence>
-        {isOfficialMenuOpen && (
-          <motion.div
-            className="official-menu-modal-backdrop"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setIsOfficialMenuOpen(false)}
-          >
-            <button
-              type="button"
-              className="menu-lightbox-close"
-              onClick={() => setIsOfficialMenuOpen(false)}
-              aria-label="Close menu viewer"
-            >
-              <X size={26} />
-            </button>
-
-            <button
-              type="button"
-              className="menu-lightbox-nav prev"
-              onClick={handlePrevMenuPage}
-              aria-label="Previous menu page"
-            >
-              <ChevronLeft size={30} />
-            </button>
-
-            <button
-              type="button"
-              className="menu-lightbox-nav next"
-              onClick={handleNextMenuPage}
-              aria-label="Next menu page"
-            >
-              <ChevronRight size={30} />
-            </button>
-
-            <motion.div
-              className="menu-lightbox-dialog glass-panel"
-              onClick={(e) => e.stopPropagation()}
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-            >
-              <div className="menu-scanned-page-wrap">
-                <img
-                  src={royalConfig.menuPages[menuPageViewerIndex]}
-                  alt={`Official Menu Page ${menuPageViewerIndex + 1}`}
-                  className="menu-scanned-img"
-                />
-              </div>
-
-              <div className="menu-lightbox-footer">
-                <span className="menu-page-indicator font-cinzel">
-                  Official Menu • Page {menuPageViewerIndex + 1} of {royalConfig.menuPages.length}
-                </span>
-                <div className="menu-lightbox-dots">
-                  {royalConfig.menuPages.map((_, idx) => (
-                    <button
-                      key={idx}
-                      type="button"
-                      className={`menu-dot ${idx === menuPageViewerIndex ? "active" : ""}`}
-                      onClick={() => setMenuPageViewerIndex(idx)}
-                      aria-label={`Go to page ${idx + 1}`}
-                    />
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 };

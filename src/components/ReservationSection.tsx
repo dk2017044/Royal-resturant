@@ -7,13 +7,10 @@ import "./ReservationSection.css";
 export const ReservationSection: React.FC = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
   const [person, setPerson] = useState("2 Persons");
-  const [date, setDate] = useState(() => {
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    return tomorrow.toISOString().split("T")[0];
-  });
-  const [time, setTime] = useState("08:15 PM");
+  const [date, setDate] = useState(() => new Date().toISOString().split("T")[0]);
+  const [time, setTime] = useState("07:45 PM");
   const [message, setMessage] = useState("");
   const [isBooked, setIsBooked] = useState(false);
   const [bookingRef, setBookingRef] = useState("");
@@ -62,12 +59,12 @@ export const ReservationSection: React.FC = () => {
                   Booking request via call <a href={`tel:${royalConfig.restaurant.phone}`} className="gold-link">{royalConfig.restaurant.phone}</a> or fill out the form below
                 </p>
 
-                {/* Name & Phone */}
-                <div className="form-grid-2">
+                {/* Name, Phone & Email */}
+                <div className="form-grid-3">
                   <input
                     type="text"
                     required
-                    placeholder="Your Full Name"
+                    placeholder="Your Full Name *"
                     className="royal-input"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -75,10 +72,17 @@ export const ReservationSection: React.FC = () => {
                   <input
                     type="tel"
                     required
-                    placeholder="Phone Number"
+                    placeholder="Phone Number *"
                     className="royal-input"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    className="royal-input"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
 
@@ -93,10 +97,13 @@ export const ReservationSection: React.FC = () => {
                     >
                       <option value="1 Person">1 Person</option>
                       <option value="2 Persons">2 Persons</option>
+                      <option value="3 Persons">3 Persons</option>
                       <option value="4 Persons">4 Persons</option>
+                      <option value="5 Persons">5 Persons</option>
                       <option value="6 Persons">6 Persons</option>
-                      <option value="8 Persons">8 Persons</option>
-                      <option value="10+ Persons">10+ Persons (Banquet)</option>
+                      <option value="7-8 Persons">7-8 Persons</option>
+                      <option value="9-12 Persons">9-12 Persons</option>
+                      <option value="15+ Persons (Banquet)">15+ Persons (Banquet Hall)</option>
                     </select>
                   </div>
 
@@ -119,13 +126,23 @@ export const ReservationSection: React.FC = () => {
                       value={time}
                       onChange={(e) => setTime(e.target.value)}
                     >
-                      <option value="12:30 PM">12:30 PM (Lunch)</option>
-                      <option value="01:15 PM">01:15 PM (Lunch)</option>
-                      <option value="02:00 PM">02:00 PM (Lunch)</option>
-                      <option value="07:30 PM">07:30 PM (Dinner)</option>
-                      <option value="08:15 PM">08:15 PM (Dinner)</option>
-                      <option value="09:00 PM">09:00 PM (Dinner)</option>
-                      <option value="09:45 PM">09:45 PM (Dinner)</option>
+                      <optgroup label="Lunch (11:00 AM – 04:00 PM)">
+                        <option value="11:30 AM">11:30 AM</option>
+                        <option value="12:15 PM">12:15 PM</option>
+                        <option value="01:00 PM">01:00 PM</option>
+                        <option value="01:45 PM">01:45 PM</option>
+                        <option value="02:30 PM">02:30 PM</option>
+                        <option value="03:15 PM">03:15 PM</option>
+                      </optgroup>
+                      <optgroup label="Dinner (04:00 PM – 10:30 PM)">
+                        <option value="05:00 PM">05:00 PM</option>
+                        <option value="06:00 PM">06:00 PM</option>
+                        <option value="07:00 PM">07:00 PM</option>
+                        <option value="07:45 PM">07:45 PM</option>
+                        <option value="08:30 PM">08:30 PM</option>
+                        <option value="09:15 PM">09:15 PM</option>
+                        <option value="10:00 PM">10:00 PM</option>
+                      </optgroup>
                     </select>
                   </div>
                 </div>

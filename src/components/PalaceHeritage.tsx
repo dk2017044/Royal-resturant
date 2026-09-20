@@ -271,7 +271,7 @@ export const PalaceHeritage: React.FC<PalaceHeritageProps> = ({ onOpenReservatio
                     <div className="stat-sep"></div>
                     <div className="chef-stat">
                       <span className="stat-number gold-text">25+ Yrs</span>
-                      <span className="stat-label">Culinary Mastery</span>
+                      <span className="stat-label">Chef's Career Heritage</span>
                     </div>
                     <div className="stat-sep"></div>
                     <div className="chef-stat">
@@ -321,7 +321,7 @@ export const PalaceHeritage: React.FC<PalaceHeritageProps> = ({ onOpenReservatio
                   </h3>
 
                   <p className="story-desc font-serif">
-                    Founded with a singular vision: to revive the regal hospitality of historic Magadh and Awadh. Located at City Court, near Smart Point in Sadikpur, Royal Rasoi has grown into Patna’s most beloved destination for families celebrating life’s milestones.
+                    Established in 2018 at City Court, Sadikpur, The Royal Rasoi was founded to revive the authentic royal dining traditions of Awadh and Lucknow in Patna. Under the culinary leadership of Master Khansama Ustad Mehmood Qureshi—who brings 25+ years of personal culinary career experience from historic royal kitchens—our restaurant has grown into Patna’s most beloved destination for celebratory feasts.
                   </p>
 
                   <div className="banquet-perks-box">
