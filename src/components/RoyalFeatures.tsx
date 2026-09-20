@@ -22,9 +22,9 @@ export const RoyalFeatures: React.FC = () => {
     {
       icon: Award,
       id: "f-3",
-      title: "Master Khansama Artistry",
-      hindi: "उस्ताद महमूद कुरैशी की विरासत",
-      desc: "Directed by Ustad Mehmood Qureshi with 25+ years of celebrated mastery in royal North Indian and Mughlai kitchens.",
+      title: "Royal Culinary Artistry",
+      hindi: "शाही पकवानों की शुद्धता",
+      desc: "Authentic North Indian and Mughlai recipes prepared using traditional slow-cooking, clay tandoors, and hand-ground spice blends in Sadikpur, Patna.",
     },
     {
       icon: Users,

@@ -53,26 +53,68 @@ export const OrderModal: React.FC<OrderModalProps> = ({
   const [notes, setNotes] = useState("");
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [orderId, setOrderId] = useState("");
+  const [formErrors, setFormErrors] = useState<{
+    name?: string;
+    phone?: string;
+    tableNo?: string;
+    address?: string;
+  }>({});
+  const [showErrorBanner, setShowErrorBanner] = useState(false);
 
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const packagingFee = orderType === "dine-in" ? 0 : 20;
   const grandTotal = subtotal + packagingFee;
 
+  const validateCustomerDetails = (): boolean => {
+    const errs: {
+      name?: string;
+      phone?: string;
+      tableNo?: string;
+      address?: string;
+    } = {};
+
+    if (!name.trim()) {
+      errs.name = "Please enter your name (Aapka naam zaroori hai)";
+    } else if (name.trim().length < 2) {
+      errs.name = "Name must be at least 2 characters";
+    }
+
+    const cleanPhone = phone.replace(/\D/g, "");
+    if (!cleanPhone) {
+      errs.phone = "Please enter mobile number (Mobile no. zaroori hai)";
+    } else if (cleanPhone.length < 10) {
+      errs.phone = "Please enter a valid 10-digit mobile number";
+    }
+
+    if (orderType === "dine-in" && !tableNo.trim()) {
+      errs.tableNo = "Please enter table number (Table no. zaroori hai)";
+    }
+
+    if (orderType === "delivery" && !address.trim()) {
+      errs.address = "Please enter delivery address in Sadikpur / Patna City";
+    }
+
+    setFormErrors(errs);
+    const isValid = Object.keys(errs).length === 0;
+    setShowErrorBanner(!isValid);
+    return isValid;
+  };
+
   const generateOrderText = () => {
     let text = `👑 *ROYAL RASOI - NEW ORDER* 👑\n`;
     text += `---------------------------------\n`;
     text += `*Order Type:* ${
       orderType === "dine-in"
-        ? `🍽️ Dine-In (Table ${tableNo || "Not Specified"})`
+        ? `🍽️ Dine-In (Table ${tableNo.trim() || "Not Specified"})`
         : orderType === "takeaway"
         ? "🥡 Takeaway / Pickup"
         : "🛵 Home Delivery"
     }\n`;
 
-    if (name) text += `*Customer Name:* ${name}\n`;
-    if (phone) text += `*Phone:* ${phone}\n`;
-    if (orderType === "delivery" && address) text += `*Delivery Address:* ${address}\n`;
+    if (name.trim()) text += `*Customer Name:* ${name.trim()}\n`;
+    if (phone.trim()) text += `*Phone:* ${phone.trim()}\n`;
+    if (orderType === "delivery" && address.trim()) text += `*Delivery Address:* ${address.trim()}\n`;
     text += `---------------------------------\n`;
     text += `*ITEMS ORDERED:*\n`;
 
@@ -83,15 +125,18 @@ export const OrderModal: React.FC<OrderModalProps> = ({
     text += `---------------------------------\n`;
     if (packagingFee > 0) text += `*Packaging / Delivery:* ₹${packagingFee}\n`;
     text += `*TOTAL BILL:* ₹${grandTotal}\n`;
-    if (notes) text += `*Special Instructions:* ${notes}\n`;
+    if (notes.trim()) text += `*Special Instructions:* ${notes.trim()}\n`;
     text += `---------------------------------\n`;
     text += `Please confirm my order. Thank you!`;
 
     return text;
   };
 
-  const handleWhatsAppOrder = () => {
+  const handleWhatsAppOrder = (e?: React.MouseEvent) => {
+    if (e) e.preventDefault();
     if (cart.length === 0) return;
+    if (!validateCustomerDetails()) return;
+
     const msg = generateOrderText();
     const encoded = encodeURIComponent(msg);
     const waNumber = "919905604856";
@@ -107,6 +152,7 @@ export const OrderModal: React.FC<OrderModalProps> = ({
   const handleDirectConfirm = (e: React.FormEvent) => {
     e.preventDefault();
     if (cart.length === 0) return;
+    if (!validateCustomerDetails()) return;
     const id = `RR-${Math.floor(1000 + Math.random() * 9000)}`;
     setOrderId(id);
     setIsConfirmed(true);
@@ -312,36 +358,68 @@ export const OrderModal: React.FC<OrderModalProps> = ({
 
               {/* Order Form Details */}
               {cart.length > 0 && (
-                <form onSubmit={handleDirectConfirm} className="order-details-form">
+                <form onSubmit={handleDirectConfirm} className="order-details-form" noValidate>
                   <div className="form-row-2">
-                    <input
-                      type="text"
-                      placeholder="Your Name (Aapka Naam)"
-                      className="order-input"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      required
-                    />
-                    <input
-                      type="tel"
-                      placeholder="Phone Number (Mobile No.)"
-                      className="order-input"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      required
-                    />
+                    <div className="input-group">
+                      <input
+                        type="text"
+                        placeholder="Your Name (Aapka Naam) *"
+                        className={`order-input ${formErrors.name ? "input-error" : ""}`}
+                        value={name}
+                        onChange={(e) => {
+                          setName(e.target.value);
+                          if (formErrors.name) {
+                            setFormErrors((prev) => ({ ...prev, name: undefined }));
+                            setShowErrorBanner(false);
+                          }
+                        }}
+                        required
+                      />
+                      {formErrors.name && (
+                        <span className="field-error-text">{formErrors.name}</span>
+                      )}
+                    </div>
+
+                    <div className="input-group">
+                      <input
+                        type="tel"
+                        placeholder="Phone Number (10-Digit Mobile) *"
+                        className={`order-input ${formErrors.phone ? "input-error" : ""}`}
+                        value={phone}
+                        onChange={(e) => {
+                          setPhone(e.target.value);
+                          if (formErrors.phone) {
+                            setFormErrors((prev) => ({ ...prev, phone: undefined }));
+                            setShowErrorBanner(false);
+                          }
+                        }}
+                        required
+                      />
+                      {formErrors.phone && (
+                        <span className="field-error-text">{formErrors.phone}</span>
+                      )}
+                    </div>
                   </div>
 
                   {orderType === "dine-in" && (
                     <div className="form-row-single">
                       <input
                         type="text"
-                        placeholder="Table Number (e.g. Table 4, Family Cabin 2)"
-                        className="order-input"
+                        placeholder="Table Number (e.g. Table 4, Family Cabin 2) *"
+                        className={`order-input ${formErrors.tableNo ? "input-error" : ""}`}
                         value={tableNo}
-                        onChange={(e) => setTableNo(e.target.value)}
+                        onChange={(e) => {
+                          setTableNo(e.target.value);
+                          if (formErrors.tableNo) {
+                            setFormErrors((prev) => ({ ...prev, tableNo: undefined }));
+                            setShowErrorBanner(false);
+                          }
+                        }}
                         required
                       />
+                      {formErrors.tableNo && (
+                        <span className="field-error-text">{formErrors.tableNo}</span>
+                      )}
                     </div>
                   )}
 
@@ -349,12 +427,21 @@ export const OrderModal: React.FC<OrderModalProps> = ({
                     <div className="form-row-single">
                       <input
                         type="text"
-                        placeholder="Delivery Address in Sadikpur / Patna City"
-                        className="order-input"
+                        placeholder="Delivery Address in Sadikpur / Patna City *"
+                        className={`order-input ${formErrors.address ? "input-error" : ""}`}
                         value={address}
-                        onChange={(e) => setAddress(e.target.value)}
+                        onChange={(e) => {
+                          setAddress(e.target.value);
+                          if (formErrors.address) {
+                            setFormErrors((prev) => ({ ...prev, address: undefined }));
+                            setShowErrorBanner(false);
+                          }
+                        }}
                         required
                       />
+                      {formErrors.address && (
+                        <span className="field-error-text">{formErrors.address}</span>
+                      )}
                     </div>
                   )}
 
@@ -367,6 +454,13 @@ export const OrderModal: React.FC<OrderModalProps> = ({
                       onChange={(e) => setNotes(e.target.value)}
                     />
                   </div>
+
+                  {/* Validation Error Alert Banner */}
+                  {showErrorBanner && (
+                    <div className="order-validation-banner">
+                      <span>⚠️ Please fill in all required customer details (* marked) to proceed.</span>
+                    </div>
+                  )}
 
                   {/* Bill Summary */}
                   <div className="bill-summary-box">

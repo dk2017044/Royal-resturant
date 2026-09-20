@@ -52,10 +52,10 @@ export const royalConfig = {
     },
     amenities: ["Parking","Free Wi-Fi","Table reservation","SwiggyPay accepted"],
     chef: {
-      name: "Ustad Mehmood Qureshi",
-      title: "Master Khansama & Executive Chef",
-      experience: "25+ Years of Culinary Artistry",
-      bio: "Mastering the ancient culinary art of slow-cooked Dum Pukht, charcoal tandoori grills, and hand-ground spices to deliver authentic royal flavors in Patna."
+      name: "The Royal Kitchen Team",
+      title: "Master Culinary Khansamas",
+      experience: "Authentic Mughlai & Awadhi Heritage",
+      bio: "Mastering the ancient culinary art of slow-cooked Dum Pukht, charcoal tandoori grills, and hand-ground spices to deliver authentic royal flavors at City Court, Sadikpur, Patna."
     }
   },
 

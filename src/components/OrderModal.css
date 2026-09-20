@@ -381,6 +381,12 @@
   width: 100%;
 }
 
+.input-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .order-input {
   width: 100%;
   padding: 10px 14px;
@@ -391,7 +397,7 @@
   font-size: 0.86rem;
   font-family: inherit;
   outline: none;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .order-input:focus {
@@ -399,8 +405,42 @@
   box-shadow: 0 0 10px rgba(245, 184, 66, 0.2);
 }
 
+.order-input.input-error {
+  border-color: #ef4444 !important;
+  background: rgba(239, 68, 68, 0.1) !important;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.35) !important;
+}
+
 .order-input::placeholder {
   color: rgba(245, 230, 211, 0.45);
+}
+
+.field-error-text {
+  font-size: 0.72rem;
+  color: #fca5a5;
+  margin-top: 4px;
+  margin-left: 4px;
+  display: block;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.order-validation-banner {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1.5px solid rgba(239, 68, 68, 0.5);
+  color: #fca5a5;
+  padding: 9px 14px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  text-align: center;
+  font-weight: 600;
+  animation: shake-alert 0.3s ease-in-out;
+}
+
+@keyframes shake-alert {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
 }
 
 /* Bill Summary */

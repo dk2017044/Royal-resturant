@@ -259,7 +259,7 @@ export const PalaceHeritage: React.FC<PalaceHeritageProps> = ({ onOpenReservatio
                       <p className="quote-text font-serif">
                         "Real royal cooking cannot be rushed with pressure cookers. It requires charcoal, patience, and devotion to time."
                       </p>
-                      <span className="quote-author font-cinzel">— Master Khansama Ustad Mehmood Qureshi</span>
+                      <span className="quote-author font-cinzel">— The Royal Rasoi Culinary Philosophy</span>
                     </div>
                   </div>
 
@@ -270,8 +270,8 @@ export const PalaceHeritage: React.FC<PalaceHeritageProps> = ({ onOpenReservatio
                     </div>
                     <div className="stat-sep"></div>
                     <div className="chef-stat">
-                      <span className="stat-number gold-text">25+ Yrs</span>
-                      <span className="stat-label">Chef's Career Heritage</span>
+                      <span className="stat-number gold-text">ESTD. 2018</span>
+                      <span className="stat-label">Sadikpur, Patna</span>
                     </div>
                     <div className="stat-sep"></div>
                     <div className="chef-stat">
@@ -321,7 +321,7 @@ export const PalaceHeritage: React.FC<PalaceHeritageProps> = ({ onOpenReservatio
                   </h3>
 
                   <p className="story-desc font-serif">
-                    Established in 2018 at City Court, Sadikpur, The Royal Rasoi was founded to revive the authentic royal dining traditions of Awadh and Lucknow in Patna. Under the culinary leadership of Master Khansama Ustad Mehmood Qureshi—who brings 25+ years of personal culinary career experience from historic royal kitchens—our restaurant has grown into Patna’s most beloved destination for celebratory feasts.
+                    Established in 2018 at City Court, Sadikpur, The Royal Rasoi was founded to bring authentic royal North Indian, Mughlai, and Awadhi culinary traditions to Patna. With our signature slow-simmered handis, charcoal clay tandoor grills, and hand-ground spice recipes, our restaurant has grown into Patna City’s most beloved destination for family feasts and celebrations.
                   </p>
 
                   <div className="banquet-perks-box">
