@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/api/menu", "destination": "/data/menu/official_dishes.json" },
+    { "source": "/menu", "destination": "/index.html" },
+    { "source": "/((?!api|data|assets|favicon|icons).*)$", "destination": "/index.html" }
+  ]
+}
