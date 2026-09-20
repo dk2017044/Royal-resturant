@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-import { Calendar } from "lucide-react";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { RoyalMenu } from "./components/RoyalMenu";
 import { PalaceHeritage } from "./components/PalaceHeritage";
-import { ReservationSection } from "./components/ReservationSection";
 import { Footer } from "./components/Footer";
 import { DishModal } from "./components/DishModal";
-import { ReservationModal } from "./components/ReservationModal";
 import { OrderModal, type CartItem } from "./components/OrderModal";
 import { MobileBottomBar } from "./components/MobileBottomBar";
 import { ShahiKhansamaAI } from "./components/ShahiKhansamaAI";
@@ -15,10 +12,8 @@ import type { MenuItem } from "./config";
 import "./App.css";
 
 export const App: React.FC = () => {
-  const [isReservationOpen, setIsReservationOpen] = useState<boolean>(false);
   const [isOrderModalOpen, setIsOrderModalOpen] = useState<boolean>(false);
   const [selectedDishModal, setSelectedDishModal] = useState<MenuItem | null>(null);
-  const [preselectedDishForBooking, setPreselectedDishForBooking] = useState<string>("");
 
   // Easy Order Cart State
   const [cart, setCart] = useState<CartItem[]>([]);
@@ -32,16 +27,6 @@ export const App: React.FC = () => {
       setAiInitialQuery(query);
     }
     setIsAIOpen(true);
-  };
-
-  const handleOpenReservation = (dishName: string = "") => {
-    setPreselectedDishForBooking(dishName);
-    setIsReservationOpen(true);
-  };
-
-  const handleCloseReservation = () => {
-    setIsReservationOpen(false);
-    setPreselectedDishForBooking("");
   };
 
   // Cart Management Functions
@@ -97,12 +82,12 @@ export const App: React.FC = () => {
   return (
     <div className="app-container">
       {/* Royal Topbar & Navigation */}
-      <Navbar onOpenReservation={() => handleOpenReservation()} />
+      <Navbar onOpenOrderModal={() => setIsOrderModalOpen(true)} />
 
       {/* Main Content Sections - Mobile-First Curated Luxury Experience */}
       <main className="main-content">
         {/* 1. Hero with Interactive Spinning White Plate Delicacy Showcase */}
-        <Hero onOpenReservation={() => handleOpenReservation()} />
+        <Hero onOpenOrderModal={() => setIsOrderModalOpen(true)} />
 
         {/* 2. Zero-Lag Royal Menu Book with Easy 1-Tap [+ ADD] and [- qty +] Controls */}
         <RoyalMenu
@@ -115,30 +100,21 @@ export const App: React.FC = () => {
           onOpenAIWithQuery={handleOpenAI}
         />
 
-        {/* 3. Palace Heritage, Master Khansama Craft & Real Customer Glimpses */}
-        <PalaceHeritage onOpenReservation={(dishName) => handleOpenReservation(dishName)} />
-
-        {/* 4. Imperial Reservation & Banquet Desk */}
-        <ReservationSection />
+        {/* 3. Palace Heritage, Real Celebration Moments & Food Craft */}
+        <PalaceHeritage />
       </main>
 
       {/* Royal Footer */}
-      <Footer onOpenReservation={() => handleOpenReservation()} />
+      <Footer onOpenOrderModal={() => setIsOrderModalOpen(true)} />
 
       {/* Modals */}
       <DishModal
         item={selectedDishModal}
         onClose={() => setSelectedDishModal(null)}
-        onBookTableForDish={(dishName) => handleOpenReservation(dishName)}
+        onAddToCart={handleAddToCart}
       />
 
-      <ReservationModal
-        isOpen={isReservationOpen}
-        onClose={handleCloseReservation}
-        preselectedDish={preselectedDishForBooking}
-      />
-
-      {/* Easy Order Modal with 1-Click WhatsApp, Dine-in Table, Takeaway & Delivery */}
+      {/* Easy Order Modal with 1-Click WhatsApp, Dine-in Cafe, Takeaway & Delivery */}
       <OrderModal
         isOpen={isOrderModalOpen}
         onClose={() => setIsOrderModalOpen(false)}
@@ -148,24 +124,12 @@ export const App: React.FC = () => {
         onClearCart={handleClearCart}
       />
 
-      {/* Desktop-Only Floating Reserve Button (Hidden on Mobile) */}
-      <button
-        type="button"
-        className="btn-gold floating-reserve-cta desktop-only-cta"
-        onClick={() => handleOpenReservation()}
-        aria-label="Book a table quickly"
-      >
-        <Calendar size={18} />
-        <span>Book Table</span>
-      </button>
-
       {/* Shahi Khansama AI Concierge (Powered by Qwen on Groq) */}
       <ShahiKhansamaAI
         isOpen={isAIOpen}
         onClose={() => setIsAIOpen(false)}
         initialQuery={aiInitialQuery}
         onClearInitialQuery={() => setAiInitialQuery("")}
-        onOpenReservation={() => handleOpenReservation()}
         onOpenOrderModal={() => setIsOrderModalOpen(true)}
         hasCartItems={totalCartItems > 0}
       />
@@ -175,7 +139,6 @@ export const App: React.FC = () => {
         orderCount={totalCartItems}
         orderTotal={totalCartPrice}
         onOpenOrder={() => setIsOrderModalOpen(true)}
-        onOpenReservation={() => handleOpenReservation()}
       />
     </div>
   );

@@ -19,7 +19,6 @@ interface ShahiKhansamaAIProps {
   onClose?: () => void;
   initialQuery?: string;
   onClearInitialQuery?: () => void;
-  onOpenReservation?: () => void;
   onOpenOrderModal?: () => void;
   hasCartItems?: boolean;
 }
@@ -29,7 +28,6 @@ export const ShahiKhansamaAI: React.FC<ShahiKhansamaAIProps> = ({
   onClose: externalOnClose,
   initialQuery = "",
   onClearInitialQuery,
-  onOpenReservation,
   onOpenOrderModal,
   hasCartItems = false,
 }) => {
@@ -241,19 +239,6 @@ export const ShahiKhansamaAI: React.FC<ShahiKhansamaAIProps> = ({
                   <span>View Menu</span>
                 </button>
 
-                {onOpenReservation && (
-                  <button
-                    type="button"
-                    className="quick-action-link"
-                    onClick={() => {
-                      handleSetIsOpen(false);
-                      onOpenReservation();
-                    }}
-                  >
-                    <Crown size={14} />
-                    <span>Book Table</span>
-                  </button>
-                )}
 
                 {onOpenOrderModal && (
                   <button

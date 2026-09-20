@@ -42,7 +42,6 @@ export const royalConfig = {
     priceForTwo: "INR 500",
     address: "City Court, near Smart Point, Sadikpur, Patna, Bihar 800007",
     phone: "099056 04856",
-    email: "contact@theroyalrasoi.com",
     googleMapsUrl: "https://www.google.com/maps/place/The+Royal+Rasoi/@25.6063597,75.4530912,6z/data=!4m10!1m2!2m1!1sroyal+rasoi!3m6!1s0x39ed5f7b28401aff:0x48badbd4cd527fe2!8m2!3d25.6063597!4d85.2089506!15sCgtyb3lhbCByYXNvaZIBEWluZGlhbl9yZXN0YXVyYW504AEA!16s%2Fg%2F11yjlngqmv?hl=en-IN&entry=ttu",
     swiggyUrl: "https://www.swiggy.com/restaurants/1309308/dineout",
     hours: {
@@ -50,12 +49,12 @@ export const royalConfig = {
       dinner: "04:00 PM – 10:30 PM",
       days: "Open All 7 Days"
     },
-    amenities: ["Parking","Free Wi-Fi","Table reservation","SwiggyPay accepted"],
+    amenities: ["Parking", "Air-Conditioned", "Cozy Celebrations (10-12)", "Takeaway & Delivery", "SwiggyPay accepted"],
     chef: {
       name: "The Royal Kitchen Team",
       title: "Master Culinary Khansamas",
       experience: "Authentic Mughlai & Awadhi Heritage",
-      bio: "Mastering the ancient culinary art of slow-cooked Dum Pukht, charcoal tandoori grills, and hand-ground spices to deliver authentic royal flavors at City Court, Sadikpur, Patna."
+      bio: "Mastering the culinary art of slow-cooked Dum Handis, charcoal tandoori grills, and hand-ground spices to deliver authentic flavors at City Court, Sadikpur, Patna."
     }
   },
 

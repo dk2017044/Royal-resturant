@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, Crown, MapPin, Clock, Phone, Mail, CalendarCheck, Sparkles } from "lucide-react";
+import { Menu, X, Crown, MapPin, Clock, Phone, MessageSquare } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { royalConfig } from "../config";
 import "./Navbar.css";
 
 interface NavbarProps {
-  onOpenReservation: () => void;
+  onOpenOrderModal?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenOrderModal: _onOpenOrderModal }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -22,9 +22,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation }) => {
 
   const navLinks = [
     { label: "Home", href: "#hero" },
-    { label: "Menu & Feast", href: "#menu" },
-    { label: "Heritage & Craft", href: "#heritage" },
-    { label: "Reserve Table", href: "#reservation-section" },
+    { label: "Menu & Food", href: "#menu" },
+    { label: "Cozy Celebrations", href: "#heritage" },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -68,13 +67,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation }) => {
             <Phone size={14} className="topbar-icon" />
             <span>{royalConfig.restaurant.phone}</span>
           </a>
-
-          <span className="diamond-separator"></span>
-
-          <a href={`mailto:${royalConfig.restaurant.email}`} className="topbar-item topbar-link">
-            <Mail size={14} className="topbar-icon" />
-            <span>{royalConfig.restaurant.email}</span>
-          </a>
         </div>
       </div>
 
@@ -88,7 +80,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation }) => {
             </div>
             <div className="brand-titles">
               <span className="brand-main font-cinzel">{royalConfig.restaurant.name}</span>
-              <span className="brand-tagline">ROYAL FINE DINING • PATNA</span>
+              <span className="brand-tagline">CULINARY CAFE • SADIKPUR, PATNA</span>
             </div>
           </a>
 
@@ -108,16 +100,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation }) => {
 
           {/* Action CTAs */}
           <div className="nav-actions-wrap">
-            <motion.button
-              type="button"
+            <motion.a
+              href={`https://wa.me/919905604856?text=${encodeURIComponent("Hi Royal Rasoi, I want to place an order.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-royal-primary"
-              onClick={onOpenReservation}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.96 }}
             >
-              <CalendarCheck size={16} />
-              <span>Book Table</span>
-            </motion.button>
+              <MessageSquare size={16} />
+              <span>Order on WhatsApp</span>
+            </motion.a>
 
             {/* Mobile Menu Button */}
             <button
@@ -156,17 +149,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation }) => {
                   </a>
                 ))}
                 <div className="mobile-cta-box">
-                  <button
-                    type="button"
+                  <a
+                    href="https://wa.me/919905604856?text=Hi%20Royal%20Rasoi,%20I%20would%20like%20to%20place%20an%20order"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn-royal-primary w-full"
-                    onClick={() => {
-                      setMobileOpen(false);
-                      onOpenReservation();
-                    }}
+                    onClick={() => setMobileOpen(false)}
                   >
-                    <Sparkles size={16} />
-                    <span>Reserve A Table</span>
-                  </button>
+                    <MessageSquare size={16} />
+                    <span>Order on WhatsApp</span>
+                  </a>
                 </div>
               </div>
             </motion.div>

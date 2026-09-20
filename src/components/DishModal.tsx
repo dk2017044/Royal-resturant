@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { X, Flame, Crown, Users, CalendarCheck } from "lucide-react";
+import { X, Flame, Crown, Users, ShoppingBag } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import type { MenuItem } from "../config";
 import "./DishModal.css";
@@ -7,10 +7,10 @@ import "./DishModal.css";
 interface DishModalProps {
   item: MenuItem | null;
   onClose: () => void;
-  onBookTableForDish: (dishName: string) => void;
+  onAddToCart?: (dish: MenuItem) => void;
 }
 
-export const DishModal: React.FC<DishModalProps> = ({ item, onClose, onBookTableForDish }) => {
+export const DishModal: React.FC<DishModalProps> = ({ item, onClose, onAddToCart }) => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -94,23 +94,33 @@ export const DishModal: React.FC<DishModalProps> = ({ item, onClose, onBookTable
                 <p className="modal-desc font-serif">{item.description}</p>
 
                 <div className="modal-actions-row">
-                  <button
-                    type="button"
-                    className="btn-gold modal-reserve-btn"
-                    onClick={() => {
-                      onClose();
-                      onBookTableForDish(item.name);
-                    }}
+                  {onAddToCart && (
+                    <button
+                      type="button"
+                      className="btn-gold"
+                      onClick={() => {
+                        onAddToCart(item);
+                        onClose();
+                      }}
+                    >
+                      <ShoppingBag size={16} />
+                      <span>+ Add to Cart</span>
+                    </button>
+                  )}
+                  <a
+                    href={`https://wa.me/919905604856?text=${encodeURIComponent(`Hi Royal Rasoi, I want to order ${item.name} (₹${item.price}).`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-outline-gold"
                   >
-                    <CalendarCheck size={16} />
-                    <span>Reserve Table for this Dish</span>
-                  </button>
+                    <span>Order on WhatsApp</span>
+                  </a>
                   <button
                     type="button"
                     className="btn-outline-gold"
                     onClick={onClose}
                   >
-                    Back to Menu
+                    Close
                   </button>
                 </div>
               </div>

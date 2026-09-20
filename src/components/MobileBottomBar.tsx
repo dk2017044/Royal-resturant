@@ -1,5 +1,5 @@
 import React from "react";
-import { UtensilsCrossed, ShoppingBag, Calendar, Phone, MapPin } from "lucide-react";
+import { UtensilsCrossed, ShoppingBag, MessageSquare, Phone, MapPin } from "lucide-react";
 import { royalConfig } from "../config";
 import "./MobileBottomBar.css";
 
@@ -7,14 +7,12 @@ interface MobileBottomBarProps {
   orderCount: number;
   orderTotal: number;
   onOpenOrder: () => void;
-  onOpenReservation: () => void;
 }
 
 export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({
   orderCount,
   orderTotal,
   onOpenOrder,
-  onOpenReservation,
 }) => {
   const handleScrollToMenu = () => {
     const el = document.getElementById("menu");
@@ -47,33 +45,34 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({
           <span className="btn-label font-cinzel">Menu</span>
         </button>
 
-        {/* 2. Order Cart (with badge & price) */}
+        {/* 2. WhatsApp Order / Chat */}
+        <a
+          href={`https://wa.me/919905604856?text=${encodeURIComponent("Hi Royal Rasoi, I want to place an order / inquire about food.")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bottom-nav-btn"
+          aria-label="Order on WhatsApp"
+        >
+          <div className="icon-wrapper">
+            <MessageSquare size={20} />
+          </div>
+          <span className="btn-label font-cinzel">WhatsApp</span>
+        </a>
+
+        {/* 3. Order Cart (Center Highlighted CTA) */}
         <button
           type="button"
-          className={`bottom-nav-btn ${orderCount > 0 ? "has-feast" : ""}`}
+          className="bottom-nav-btn center-cta-btn"
           onClick={onOpenOrder}
           aria-label={`View Order with ${orderCount} items`}
         >
-          <div className="icon-wrapper feast-icon-wrapper">
-            <ShoppingBag size={20} />
+          <div className="center-cta-circle">
+            <ShoppingBag size={22} />
             {orderCount > 0 && <span className="feast-badge-counter">{orderCount}</span>}
           </div>
           <span className="btn-label font-cinzel">
             {orderCount > 0 ? `₹${orderTotal}` : "Order"}
           </span>
-        </button>
-
-        {/* 3. Book Table (Center Highlighted CTA) */}
-        <button
-          type="button"
-          className="bottom-nav-btn center-cta-btn"
-          onClick={onOpenReservation}
-          aria-label="Reserve a Royal Table"
-        >
-          <div className="center-cta-circle">
-            <Calendar size={22} />
-          </div>
-          <span className="btn-label font-cinzel">Book Table</span>
         </button>
 
         {/* 4. Direct Call */}

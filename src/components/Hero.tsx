@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Sparkles, Star, MapPin, ArrowRight, Calendar, Phone, Utensils } from "lucide-react";
+import { Sparkles, Star, MapPin, ArrowRight, MessageSquare, Phone, Utensils } from "lucide-react";
 import { royalConfig } from "../config";
 import "./Hero.css";
 
 interface HeroProps {
-  onOpenReservation: () => void;
+  onOpenOrderModal?: () => void;
 }
 
 interface HeroDish {
@@ -18,7 +18,7 @@ interface HeroDish {
   description: string;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
+export const Hero: React.FC<HeroProps> = ({ onOpenOrderModal: _onOpenOrderModal }) => {
   const [activeDishIndex, setActiveDishIndex] = useState(0);
 
   // 5 Signature Delicacies on White Ceramic Plates with Transparent Backgrounds
@@ -106,11 +106,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
           </h1>
 
           <p className="hero-headline-sub font-serif">
-            Flavors Crafted for Royalty • Authentic North Indian & Chinese Fine Dining
+            Authentic Flavors • North Indian, Tandoori & Chinese Delights
           </p>
 
           <p className="hero-paragraph font-serif">
-            Immerse yourself in authentic royal court flavors in Sadikpur, Patna. Every dish is slow-cooked over gentle embers using pure bilona ghee and secret heirloom spices.
+            Welcome to The Royal Rasoi at City Court, Sadikpur, Patna. Enjoy mouth-watering handi curries, fresh charcoal tandoori kebabs, and cozy celebration vibes for birthdays & anniversaries (10–12 guests).
           </p>
 
           {/* Real Metrics Bar */}
@@ -151,16 +151,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation }) => {
               <ArrowRight size={16} />
             </motion.a>
 
-            <motion.button
-              type="button"
+            <motion.a
+              href={`https://wa.me/919905604856?text=${encodeURIComponent("Hi Royal Rasoi, I want to place an order / inquire about celebration.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-royal-glass"
-              onClick={onOpenReservation}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Calendar size={18} />
-              <span>Reserve Table</span>
-            </motion.button>
+              <MessageSquare size={18} />
+              <span>Order on WhatsApp</span>
+            </motion.a>
           </div>
 
           {/* Quick Location & Direct Call */}

@@ -8,17 +8,16 @@ import {
   Star,
   Quote,
   CheckCircle2,
-  Calendar,
-  ChevronRight,
   ShieldCheck,
-  HeartHandshake
+  HeartHandshake,
+  Utensils,
+  MessageSquare,
+  Phone
 } from "lucide-react";
 import { royalConfig } from "../config";
 import "./PalaceHeritage.css";
 
-interface PalaceHeritageProps {
-  onOpenReservation: (dishName?: string) => void;
-}
+interface PalaceHeritageProps {}
 
 type TabType = "craft" | "story" | "reviews";
 
@@ -33,7 +32,7 @@ interface ReviewItem {
   image: string;
 }
 
-export const PalaceHeritage: React.FC<PalaceHeritageProps> = ({ onOpenReservation }) => {
+export const PalaceHeritage: React.FC<PalaceHeritageProps> = () => {
   const [activeTab, setActiveTab] = useState<TabType>("craft");
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
 
@@ -74,7 +73,7 @@ export const PalaceHeritage: React.FC<PalaceHeritageProps> = ({ onOpenReservatio
       source: "Patna Food Explorer",
       rating: 5,
       date: "Recent Event",
-      comment: "Hosted our family celebration here. The banquet service was seamless, food served piping hot, and our guests couldn't stop praising the Dum Biryani.",
+      comment: "Hosted our family celebration here. The cafe ambiance was cozy, food served piping hot, and our guests couldn't stop praising the Dum Biryani.",
       dishRecommended: "Dum Biryani & Paneer Lababdar",
       image: "/data/reviews/review-image-6.jpg",
     },
@@ -146,7 +145,7 @@ export const PalaceHeritage: React.FC<PalaceHeritageProps> = ({ onOpenReservatio
               onClick={() => setActiveTab("story")}
             >
               <Award size={16} />
-              <span>Patna Heritage & Banquets</span>
+              <span>Cozy Cafe & Celebrations</span>
               {activeTab === "story" && (
                 <motion.div
                   layoutId="heritageTabGlow"
@@ -235,14 +234,13 @@ export const PalaceHeritage: React.FC<PalaceHeritageProps> = ({ onOpenReservatio
                   </div>
 
                   <div className="craft-cta-row">
-                    <button
-                      type="button"
+                    <a
+                      href="#menu"
                       className="btn-royal-primary"
-                      onClick={() => onOpenReservation("Dum Pukht Special Tasting")}
                     >
-                      <Calendar size={16} />
-                      <span>Book Dum Pukht Tasting</span>
-                    </button>
+                      <Utensils size={16} />
+                      <span>Explore Royal Menu</span>
+                    </a>
                   </div>
                 </div>
 
@@ -284,7 +282,7 @@ export const PalaceHeritage: React.FC<PalaceHeritageProps> = ({ onOpenReservatio
             </motion.div>
           )}
 
-          {/* TAB 2: PATNA HERITAGE & BANQUETS */}
+          {/* TAB 2: COZY CAFE & CELEBRATIONS */}
           {activeTab === "story" && (
             <motion.div
               key="story"
@@ -299,17 +297,17 @@ export const PalaceHeritage: React.FC<PalaceHeritageProps> = ({ onOpenReservatio
                 <div className="story-photo-col glass-panel">
                   <img
                     src="/data/reviews/review-image-3.jpg"
-                    alt="Royal Rasoi Dining Ambience Sadikpur Patna"
+                    alt="Royal Rasoi Cafe Ambience Sadikpur Patna"
                     className="story-large-img"
                   />
                   <div className="story-photo-caption">
                     <span className="caption-tag">ESTD. 2018</span>
                     <h4 className="caption-heading font-cinzel">City Court, Sadikpur, Patna</h4>
-                    <p className="caption-text font-serif">A sanctuary of Nawabi elegance with private family cabins and banquet seating.</p>
+                    <p className="caption-text font-serif">Cozy cafe ambiance for birthdays, anniversaries, and small celebrations with friends & family.</p>
                   </div>
                 </div>
 
-                {/* Right: The Story & Banquet Hosting */}
+                {/* Right: The Story & Small Celebrations */}
                 <div className="story-details-col glass-panel">
                   <div className="badge-inline">
                     <Award size={14} className="gold-icon" />
@@ -317,50 +315,51 @@ export const PalaceHeritage: React.FC<PalaceHeritageProps> = ({ onOpenReservatio
                   </div>
 
                   <h3 className="story-heading font-cinzel">
-                    Patna’s Premier Destination for Royal Dining & Grand Celebrations
+                    Patna’s Cozy Destination for Celebrations & Authentic Flavors
                   </h3>
 
                   <p className="story-desc font-serif">
-                    Established in 2018 at City Court, Sadikpur, The Royal Rasoi was founded to bring authentic royal North Indian, Mughlai, and Awadhi culinary traditions to Patna. With our signature slow-simmered handis, charcoal clay tandoor grills, and hand-ground spice recipes, our restaurant has grown into Patna City’s most beloved destination for family feasts and celebrations.
+                    Established in 2018 at City Court, Sadikpur, The Royal Rasoi is a cozy culinary cafe founded to bring authentic North Indian, Mughlai, and Tandoori delicacies to Patna. Known for our signature handi preparations, freshly baked tandoori breads, and flavorful bites, we are Patna City’s favorite spot for everyday cravings and intimate celebrations (10–12 guests).
                   </p>
 
-                  <div className="banquet-perks-box">
-                    <h4 className="perks-title font-cinzel">The Imperial Banquet Hall (Up to 150 Guests)</h4>
+                  <div className="cafe-perks-box">
+                    <h4 className="perks-title font-cinzel">Private Celebrations & Gatherings (10–12 Guests)</h4>
                     <ul className="perks-list">
                       <li>
                         <CheckCircle2 size={16} className="gold-icon" />
-                        <span>Private Birthday, Anniversary, & Family Reunion Halls</span>
+                        <span>Birthday Parties & Anniversary Celebrations (10–12 Guests)</span>
                       </li>
                       <li>
                         <CheckCircle2 size={16} className="gold-icon" />
-                        <span>Customized 5-Course Royal Buffet & Live Kebab Counters</span>
+                        <span>Custom Party Combos, Dum Handis & Fresh Tandoori Platters</span>
                       </li>
                       <li>
                         <CheckCircle2 size={16} className="gold-icon" />
-                        <span>Dedicated Imperial Butler Service & Elegant Golden Seating</span>
+                        <span>Cozy Air-Conditioned Cafe Ambiance & Warm Hospitality</span>
                       </li>
                       <li>
                         <CheckCircle2 size={16} className="gold-icon" />
-                        <span>High-Speed Audio-Visual Setup for Speeches & Celebrations</span>
+                        <span>Fast Takeaway & Home Delivery across Patna City</span>
                       </li>
                     </ul>
                   </div>
 
                   <div className="story-actions">
-                    <button
-                      type="button"
+                    <a
+                      href={`https://wa.me/919905604856?text=${encodeURIComponent("Hi Royal Rasoi, I want to inquire about hosting a celebration (birthday/anniversary) for 10-12 guests.")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="btn-royal-primary"
-                      onClick={() => onOpenReservation("Banquet Booking")}
                     >
-                      <Calendar size={16} />
-                      <span>Inquire for Grand Banquet</span>
-                    </button>
+                      <MessageSquare size={16} />
+                      <span>Inquire for Party (WhatsApp)</span>
+                    </a>
                     <a
                       href={`tel:${royalConfig.restaurant.phone}`}
                       className="btn-royal-glass"
                     >
-                      <span>Direct Banquet Desk: {royalConfig.restaurant.phone}</span>
-                      <ChevronRight size={16} />
+                      <Phone size={16} />
+                      <span>Call Cafe: {royalConfig.restaurant.phone}</span>
                     </a>
                   </div>
                 </div>

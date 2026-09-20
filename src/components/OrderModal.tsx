@@ -48,7 +48,6 @@ export const OrderModal: React.FC<OrderModalProps> = ({
   const [orderType, setOrderType] = useState<OrderType>("dine-in");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [tableNo, setTableNo] = useState("");
   const [address, setAddress] = useState("");
   const [notes, setNotes] = useState("");
   const [isConfirmed, setIsConfirmed] = useState(false);
@@ -56,7 +55,6 @@ export const OrderModal: React.FC<OrderModalProps> = ({
   const [formErrors, setFormErrors] = useState<{
     name?: string;
     phone?: string;
-    tableNo?: string;
     address?: string;
   }>({});
   const [showErrorBanner, setShowErrorBanner] = useState(false);
@@ -70,7 +68,6 @@ export const OrderModal: React.FC<OrderModalProps> = ({
     const errs: {
       name?: string;
       phone?: string;
-      tableNo?: string;
       address?: string;
     } = {};
 
@@ -85,10 +82,6 @@ export const OrderModal: React.FC<OrderModalProps> = ({
       errs.phone = "Please enter mobile number (Mobile no. zaroori hai)";
     } else if (cleanPhone.length < 10) {
       errs.phone = "Please enter a valid 10-digit mobile number";
-    }
-
-    if (orderType === "dine-in" && !tableNo.trim()) {
-      errs.tableNo = "Please enter table number (Table no. zaroori hai)";
     }
 
     if (orderType === "delivery" && !address.trim()) {
@@ -106,7 +99,7 @@ export const OrderModal: React.FC<OrderModalProps> = ({
     text += `---------------------------------\n`;
     text += `*Order Type:* ${
       orderType === "dine-in"
-        ? `🍽️ Dine-In (Table ${tableNo.trim() || "Not Specified"})`
+        ? "☕ At Cafe / Dine-In"
         : orderType === "takeaway"
         ? "🥡 Takeaway / Pickup"
         : "🛵 Home Delivery"
@@ -236,7 +229,7 @@ export const OrderModal: React.FC<OrderModalProps> = ({
                   onClick={() => setOrderType("dine-in")}
                 >
                   <Utensils size={16} />
-                  <span>Dine-In (Table)</span>
+                  <span>At Cafe / Dine-In</span>
                 </button>
 
                 <button
@@ -401,27 +394,6 @@ export const OrderModal: React.FC<OrderModalProps> = ({
                     </div>
                   </div>
 
-                  {orderType === "dine-in" && (
-                    <div className="form-row-single">
-                      <input
-                        type="text"
-                        placeholder="Table Number (e.g. Table 4, Family Cabin 2) *"
-                        className={`order-input ${formErrors.tableNo ? "input-error" : ""}`}
-                        value={tableNo}
-                        onChange={(e) => {
-                          setTableNo(e.target.value);
-                          if (formErrors.tableNo) {
-                            setFormErrors((prev) => ({ ...prev, tableNo: undefined }));
-                            setShowErrorBanner(false);
-                          }
-                        }}
-                        required
-                      />
-                      {formErrors.tableNo && (
-                        <span className="field-error-text">{formErrors.tableNo}</span>
-                      )}
-                    </div>
-                  )}
 
                   {orderType === "delivery" && (
                     <div className="form-row-single">
