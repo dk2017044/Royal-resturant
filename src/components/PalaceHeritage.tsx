@@ -12,7 +12,8 @@ import {
   HeartHandshake,
   Utensils,
   MessageSquare,
-  Phone
+  Phone,
+  Maximize2
 } from "lucide-react";
 import { royalConfig } from "../config";
 import "./PalaceHeritage.css";
@@ -32,9 +33,16 @@ interface ReviewItem {
   image: string;
 }
 
+interface GalleryPhoto {
+  src: string;
+  title: string;
+  category: string;
+  description: string;
+}
+
 export const PalaceHeritage: React.FC<PalaceHeritageProps> = () => {
   const [activeTab, setActiveTab] = useState<TabType>("craft");
-  const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
+  const [selectedPhoto, setSelectedPhoto] = useState<GalleryPhoto | null>(null);
 
   const authenticReviews: ReviewItem[] = [
     {
@@ -89,15 +97,61 @@ export const PalaceHeritage: React.FC<PalaceHeritageProps> = () => {
     },
   ];
 
-  const galleryPhotos = [
-    { src: "/data/reviews/review-image-1.jpg", label: "Charcoal Tandoori Kebab Platter", category: "Appetizer" },
-    { src: "/data/reviews/review-image-2.jpg", label: "Awadhi Dum Biryani Handi", category: "Signature" },
-    { src: "/data/reviews/review-image-3.jpg", label: "Grand Royal Dining Ambience", category: "Ambience" },
-    { src: "/data/reviews/review-image-6.jpg", label: "Dal Royal Rasoi & Garlic Naan", category: "Main Course" },
-    { src: "/data/reviews/review-image-7.jpg", label: "Crispy Sizzling Chinese Starters", category: "Snacks" },
-    { src: "/data/reviews/review-image-8.jpg", label: "Paneer Lababdar & Gravies", category: "Main Course" },
-    { src: "/data/reviews/review-image-9.jpg", label: "Royal Family Feast Setup", category: "Dining" },
-    { src: "/data/reviews/review-image-10.jpg", label: "Chef's Special Mughlai Platter", category: "Chef Special" },
+  const galleryPhotos: GalleryPhoto[] = [
+    {
+      src: "/data/reviews/review-image-1.jpg",
+      title: "Neon Photo Wall: 'You're in the Right Place'",
+      category: "Cafe Decor",
+      description: "Lush green foliage wall with glowing neon quote — popular selfie backdrop.",
+    },
+    {
+      src: "/data/reviews/review-image-2.jpg",
+      title: "Chicken Handi Gravy with Fresh Cream",
+      category: "Main Course",
+      description: "Slow-simmered rich Mughlai chicken curry served hot in an oval dish.",
+    },
+    {
+      src: "/data/reviews/review-image-3.jpg",
+      title: "Butter Naan & Rich Chicken Curry Platter",
+      category: "Dining Setup",
+      description: "Freshly baked clay-oven butter naan paired with flavorful chicken gravy.",
+    },
+    {
+      src: "/data/reviews/review-image-4.jpg",
+      title: "Crispy Clay-Tandoor Butter Naan",
+      category: "Tandoor",
+      description: "Golden-crispy tandoori naan brushed with butter in a stainless wire basket.",
+    },
+    {
+      src: "/data/reviews/review-image-6.jpg",
+      title: "Illuminated Ring Chandelier & Greenery",
+      category: "Ambience",
+      description: "Modern warm ring chandelier suspended with lush hanging ceiling vines.",
+    },
+    {
+      src: "/data/reviews/review-image-7.jpg",
+      title: "Arched Floral Mirror Selfie Corner",
+      category: "Cafe Decor",
+      description: "Warm backlit arched mirror framed with green creepers for party snapshots.",
+    },
+    {
+      src: "/data/reviews/review-image-8.jpg",
+      title: "Air-Conditioned Dining Hall & Seating",
+      category: "Ambience",
+      description: "Comfortable tables with circular chandeliers for family & celebration gatherings.",
+    },
+    {
+      src: "/data/reviews/review-image-9.jpg",
+      title: "Crispy Chilli Chicken Dry with Peppers",
+      category: "Chinese & Starters",
+      description: "Wok-tossed boneless chicken bites with caramelized onions, bell peppers & chilies.",
+    },
+    {
+      src: "/data/reviews/review-image-10.jpg",
+      title: "Rich Chicken Butter Masala with Cashews",
+      category: "Main Course",
+      description: "Velvety makhani gravy garnished with roasted cashews and shredded paneer.",
+    },
   ];
 
   return (
@@ -397,7 +451,47 @@ export const PalaceHeritage: React.FC<PalaceHeritageProps> = () => {
                 </div>
               </div>
 
+              {/* Real Customer Photos Gallery - Right below the rating bar */}
+              <div className="gallery-header-row">
+                <div>
+                  <h3 className="gallery-title font-cinzel">The Royal Rasoi Gallery: Real Plates & Moments</h3>
+                  <p className="gallery-subtitle font-serif">Genuine photos of our Sadikpur cafe, decor, dining & freshly served delicacies</p>
+                </div>
+                <span className="gallery-counter font-cinzel">{galleryPhotos.length} Authentic Captures</span>
+              </div>
+
+              <div className="real-photos-grid">
+                {galleryPhotos.map((photo, idx) => (
+                  <motion.div
+                    key={idx}
+                    className="patron-photo-card"
+                    whileHover={{ y: -6 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => setSelectedPhoto(photo)}
+                  >
+                    <div className="patron-photo-media">
+                      <img src={photo.src} alt={photo.title} className="patron-photo-img" loading="lazy" />
+                      <div className="photo-zoom-badge">
+                        <Maximize2 size={12} />
+                        <span>View</span>
+                      </div>
+                    </div>
+                    <div className="patron-photo-body">
+                      <span className="photo-badge font-cinzel">{photo.category}</span>
+                      <h4 className="photo-title font-cinzel">{photo.title}</h4>
+                      <p className="photo-caption-text font-serif">{photo.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
               {/* Review Cards Grid */}
+              <div className="reviews-section-divider">
+                <div className="divider-line"></div>
+                <span className="divider-label font-cinzel">Google Diner Testimonials</span>
+                <div className="divider-line"></div>
+              </div>
+
               <div className="reviews-cards-grid">
                 {authenticReviews.map((rev) => (
                   <motion.div
@@ -429,30 +523,6 @@ export const PalaceHeritage: React.FC<PalaceHeritageProps> = () => {
                   </motion.div>
                 ))}
               </div>
-
-              {/* Real Customer Photos Gallery */}
-              <div className="gallery-header-row">
-                <h3 className="gallery-title font-cinzel">Patron Photostory: Real Plates & Moments</h3>
-                <span className="gallery-subtitle font-serif">Tap any photo to view full capture</span>
-              </div>
-
-              <div className="real-photos-grid">
-                {galleryPhotos.map((photo, idx) => (
-                  <motion.div
-                    key={idx}
-                    className="patron-photo-card"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => setSelectedPhoto(photo.src)}
-                  >
-                    <img src={photo.src} alt={photo.label} className="patron-photo-img" />
-                    <div className="photo-card-overlay">
-                      <span className="photo-badge font-cinzel">{photo.category}</span>
-                      <p className="photo-caption-text font-serif">{photo.label}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
             </motion.div>
           )}
         </AnimatePresence>
@@ -470,12 +540,17 @@ export const PalaceHeritage: React.FC<PalaceHeritageProps> = () => {
           >
             <motion.div
               className="photo-lightbox-card"
-              initial={{ scale: 0.8, opacity: 0 }}
+              initial={{ scale: 0.85, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
+              exit={{ scale: 0.85, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <img src={selectedPhoto} alt="Royal Rasoi Patron Photo" className="lightbox-img" />
+              <img src={selectedPhoto.src} alt={selectedPhoto.title} className="lightbox-img" />
+              <div className="lightbox-caption">
+                <span className="photo-badge font-cinzel">{selectedPhoto.category}</span>
+                <h4 className="lightbox-title font-cinzel">{selectedPhoto.title}</h4>
+                <p className="lightbox-desc font-serif">{selectedPhoto.description}</p>
+              </div>
               <button
                 type="button"
                 className="lightbox-close-btn"

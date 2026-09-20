@@ -72,48 +72,48 @@ export const royalConfig = {
   customerPhotos: [
   {
     "url": "/data/reviews/review-image-1.jpg",
-    "title": "Special Tandoori Feast",
-    "author": "Amarjeet Yadav"
+    "title": "Neon Photo Wall: 'You're in the Right Place'",
+    "author": "Cafe Decor • Selfie Spot"
   },
   {
     "url": "/data/reviews/review-image-2.jpg",
-    "title": "Delicious Spread",
-    "author": "Amarjeet Yadav"
+    "title": "Chicken Handi Gravy with Fresh Cream",
+    "author": "Main Course • Handi Special"
   },
   {
     "url": "/data/reviews/review-image-3.jpg",
-    "title": "Restaurant Interior & Seating",
-    "author": "Rameez Ahmad"
+    "title": "Butter Naan & Rich Chicken Curry Platter",
+    "author": "Dining Setup • Tandoori Feast"
   },
   {
     "url": "/data/reviews/review-image-4.jpg",
-    "title": "Comfortable Dining Area",
-    "author": "Rameez Ahmad"
+    "title": "Crispy Clay-Tandoor Butter Naan",
+    "author": "Tandoor • Freshly Baked"
   },
   {
     "url": "/data/reviews/review-image-6.jpg",
-    "title": "Popular Dishes Served",
-    "author": "Dipanshu Sharma"
+    "title": "Illuminated Ring Chandelier & Greenery",
+    "author": "Ambience • Cafe Interiors"
   },
   {
     "url": "/data/reviews/review-image-7.jpg",
-    "title": "Cozy Palace Ambience",
-    "author": "Tripti Chawla"
+    "title": "Arched Floral Mirror Selfie Corner",
+    "author": "Cafe Decor • Photo Corner"
   },
   {
     "url": "/data/reviews/review-image-8.jpg",
-    "title": "Evening Dining Setup",
-    "author": "Tripti Chawla"
+    "title": "Air-Conditioned Dining Hall & Seating",
+    "author": "Ambience • Family Dining"
   },
   {
     "url": "/data/reviews/review-image-9.jpg",
-    "title": "Freshly Grilled Tandoori",
-    "author": "Customer Photo"
+    "title": "Crispy Chilli Chicken Dry with Peppers",
+    "author": "Chinese & Starters • Wok Tossed"
   },
   {
     "url": "/data/reviews/review-image-10.jpg",
-    "title": "Signature Dish Platter",
-    "author": "Customer Photo"
+    "title": "Rich Chicken Butter Masala with Cashews",
+    "author": "Main Course • Makhani Special"
   }
 ] as CustomerPhoto[],
 
