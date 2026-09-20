@@ -239,10 +239,10 @@ export const royalConfig = {
           "subCategory": "Thali",
           "isVeg": true,
           "price": 269,
-          "description": "Butter Tawa Roti (3 Pcs), Jeera Rice, Paneer butter Masala, Mix Veg. Dal, Salad, Raita, Sweets, Papad & pickle",
+          "description": "Butter Tawa Roti (3 Pcs), Jeera Rice, Paneer butter Masala, Mix Veg, Dal, Salad, Raita, Sweets, Papad & pickle.",
           "spicyLevel": 1,
           "isChefSpecial": true,
-          "image": "/data/dishes/showcase-curry-plate.jpg",
+          "image": "/data/dishes/royal-spl-veg-thali.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -252,10 +252,10 @@ export const royalConfig = {
           "subCategory": "Thali",
           "isVeg": false,
           "price": 335,
-          "description": "Butter Tawa Roti (2 Pcs), Jeera Rice, Chicken butter Masala (2 Pcs), Salad, Raita, Sweets, Papad & pickle",
+          "description": "Butter Tawa Roti (2 Pcs), Jeera Rice, Chicken butter Masala (2 Pcs), Salad, Raita, Sweets, Papad & pickle.",
           "spicyLevel": 1,
           "isChefSpecial": true,
-          "image": "/data/dishes/showcase-curry-plate.jpg",
+          "image": "/data/dishes/royal-spl-non-veg-thali.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -265,10 +265,10 @@ export const royalConfig = {
           "subCategory": "Budget Friendly Combo",
           "isVeg": true,
           "price": 179,
-          "description": "French fries + Veg Grilled Sandwich + Fried Momo (2 Pcs) + cold drink",
+          "description": "French fries + Veg Grilled Sandwich + Fried Momo (2 Pcs) + cold drink.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/french-fries.jpg",
+          "image": "/data/dishes/snacks-combo.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -278,10 +278,10 @@ export const royalConfig = {
           "subCategory": "Budget Friendly Combo",
           "isVeg": true,
           "price": 336,
-          "description": "Noodles + Fried Rice + Paneer chilly (2Pcs) + Manchurian (2 Pcs) + Fried Momo (2Pcs) + Cold drink",
+          "description": "Noodles + Fried Rice + Paneer chilly (2Pcs) + Manchurian (2 Pcs) + Fried Momo (2Pcs) + Cold drink.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/showcase-chinese-plate.jpg",
+          "image": "/data/dishes/chinese-combo-veg.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -291,10 +291,10 @@ export const royalConfig = {
           "subCategory": "Budget Friendly Combo",
           "isVeg": false,
           "price": 399,
-          "description": "Chicken Noodles + Butter Naan + Chicken chilly (4Pcs) + Lollipop (2 Pcs) + mojito",
+          "description": "Chicken Noodles + Butter Naan + Chicken chilly (4Pcs) + Lollipop (2 Pcs) + mojito.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/showcase-chinese-plate.jpg",
+          "image": "/data/dishes/chinese-combo-non-veg.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -304,7 +304,7 @@ export const royalConfig = {
           "subCategory": "Mocktail",
           "isVeg": true,
           "price": 79,
-          "description": "Refreshing Blue Lagoon mocktail crafted with fruit essence, crushed ice, and bubbly soda.",
+          "description": "Chilled sparkling blue curacao cooler with fresh lemon zest, mint sprigs, and soda.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/blue-lagoon.jpg",
@@ -317,10 +317,10 @@ export const royalConfig = {
           "subCategory": "Mocktail",
           "isVeg": true,
           "price": 79,
-          "description": "Refreshing Kiwi Blast mocktail crafted with fruit essence, crushed ice, and bubbly soda.",
+          "description": "Zesty green kiwi cooler blended with crushed mint leaves, lime juice, and sparkling fizz.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/virgin-mojito.jpg",
+          "image": "/data/dishes/kiwi-blast.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -330,7 +330,7 @@ export const royalConfig = {
           "subCategory": "Mocktail",
           "isVeg": true,
           "price": 79,
-          "description": "Refreshing Virgin Mojito mocktail crafted with fruit essence, crushed ice, and bubbly soda.",
+          "description": "Classic Havana-style refresher with muddled fresh garden mint, lime wedges, and bubbly soda.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/virgin-mojito.jpg",
@@ -343,10 +343,10 @@ export const royalConfig = {
           "subCategory": "Mocktail",
           "isVeg": true,
           "price": 79,
-          "description": "Refreshing Green Apple mocktail crafted with fruit essence, crushed ice, and bubbly soda.",
+          "description": "Crisp tart green apple syrup infused with lemon juice and chilled effervescent soda.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/lemonade.jpg",
+          "image": "/data/dishes/green-apple.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -356,7 +356,7 @@ export const royalConfig = {
           "subCategory": "Mocktail",
           "isVeg": true,
           "price": 79,
-          "description": "Refreshing Fresh Lime Soda mocktail crafted with fruit essence, crushed ice, and bubbly soda.",
+          "description": "Refreshing fresh-squeezed lime juice served sweet, salted, or mixed over crushed ice.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/lemonade.jpg",
@@ -369,7 +369,7 @@ export const royalConfig = {
           "subCategory": "Mocktail",
           "isVeg": true,
           "price": 79,
-          "description": "Refreshing Lemonade mocktail crafted with fruit essence, crushed ice, and bubbly soda.",
+          "description": "Traditional thirst-quenching sweet and tangy lemon refresher with roasted cumin pinch.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/lemonade.jpg",
@@ -382,10 +382,10 @@ export const royalConfig = {
           "subCategory": "Mocktail",
           "isVeg": true,
           "price": 79,
-          "description": "Refreshing Mango mocktail crafted with fruit essence, crushed ice, and bubbly soda.",
+          "description": "Tropical sweet Alphonso mango nectar lightly spritzed with sparkling lime soda.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/mango-mocktail.jpg",
+          "image": "/data/dishes/mango.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -395,10 +395,10 @@ export const royalConfig = {
           "subCategory": "Mocktail",
           "isVeg": true,
           "price": 79,
-          "description": "Refreshing Strawberry mocktail crafted with fruit essence, crushed ice, and bubbly soda.",
+          "description": "Luscious strawberry puree shaken with ice, fresh mint, and fizzy soda splash.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/cold-coffee.jpg",
+          "image": "/data/dishes/strawberry.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -408,10 +408,10 @@ export const royalConfig = {
           "subCategory": "Mocktail",
           "isVeg": true,
           "price": 79,
-          "description": "Refreshing Orange mocktail crafted with fruit essence, crushed ice, and bubbly soda.",
+          "description": "Vibrant citrus Valencia orange cooler with a hint of tangy rock salt and mint.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/mango-mocktail.jpg",
+          "image": "/data/dishes/orange.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -421,10 +421,10 @@ export const royalConfig = {
           "subCategory": "Shake",
           "isVeg": true,
           "price": 129,
-          "description": "Thick, creamy Oreo Shake blended with rich milk and velvety cream, served chilled.",
+          "description": "Thick velvety shake blended with crunchy Oreo cookies, dark chocolate fudge, and rich milk.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chocolate-shake.jpg",
+          "image": "/data/dishes/oreo-shake.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -434,7 +434,7 @@ export const royalConfig = {
           "subCategory": "Shake",
           "isVeg": true,
           "price": 129,
-          "description": "Thick, creamy Chocolate Shake blended with rich milk and velvety cream, served chilled.",
+          "description": "Decadent creamy shake made with pure Dutch cocoa, molten chocolate drizzle, and vanilla cream.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/chocolate-shake.jpg",
@@ -447,10 +447,10 @@ export const royalConfig = {
           "subCategory": "Shake",
           "isVeg": true,
           "price": 129,
-          "description": "Thick, creamy KitKat Shake blended with rich milk and velvety cream, served chilled.",
+          "description": "Crisp KitKat chocolate wafer bars blended into rich milk and topped with wafer crunch.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chocolate-shake.jpg",
+          "image": "/data/dishes/kitkat-shake.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -460,10 +460,10 @@ export const royalConfig = {
           "subCategory": "Shake",
           "isVeg": true,
           "price": 129,
-          "description": "Thick, creamy Vanilla Shake blended with rich milk and velvety cream, served chilled.",
+          "description": "Silky smooth classic Madagascar vanilla bean shake whipped to creamy, frothy perfection.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/cold-coffee.jpg",
+          "image": "/data/dishes/vanilla-shake.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -473,7 +473,7 @@ export const royalConfig = {
           "subCategory": "Shake",
           "isVeg": true,
           "price": 129,
-          "description": "Thick, creamy Strawberry Shake blended with rich milk and velvety cream, served chilled.",
+          "description": "Fresh berry-infused pink strawberry milkshake topped with whipped cream and syrup.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/cold-coffee.jpg",
@@ -486,10 +486,10 @@ export const royalConfig = {
           "subCategory": "Shake",
           "isVeg": true,
           "price": 129,
-          "description": "Thick, creamy ButterScotch Shake blended with rich milk and velvety cream, served chilled.",
+          "description": "Rich golden butterscotch milkshake laced with crunchy caramelized praline crumbles.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/cold-coffee.jpg",
+          "image": "/data/dishes/butterscotch-shake.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -499,10 +499,10 @@ export const royalConfig = {
           "subCategory": "Shake",
           "isVeg": true,
           "price": 159,
-          "description": "Thick, creamy Cold Coffee with Ice cream blended with rich milk and velvety cream, served chilled.",
+          "description": "Strong espresso brewed and blended with chilled milk, topped with a scoop of vanilla ice cream.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/cold-coffee.jpg",
+          "image": "/data/dishes/cold-coffee-with-ice-cream.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -512,10 +512,10 @@ export const royalConfig = {
           "subCategory": "Indian (Chicken)",
           "isVeg": false,
           "price": 109,
-          "description": "Authentic slow-cooked Egg Masala prepared with rich Mughlai spices, aromatics, and rich savory gravy.",
+          "description": "Hard-boiled farm eggs cooked in a rich onion-tomato gravy with roasted garam masala.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/egg-curry.jpg",
+          "image": "/data/dishes/egg-masala.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -525,10 +525,10 @@ export const royalConfig = {
           "subCategory": "Indian (Chicken)",
           "isVeg": false,
           "price": 290,
-          "description": "Authentic slow-cooked Chicken Do Pyaza prepared with rich Mughlai spices, aromatics, and rich savory gravy.",
+          "description": "Succulent chicken pieces cooked with double the onions in a rich caramelized semi-dry gravy.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-curry.jpg",
+          "image": "/data/dishes/chicken-do-pyaza.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -538,10 +538,10 @@ export const royalConfig = {
           "subCategory": "Indian (Chicken)",
           "isVeg": false,
           "price": 299,
-          "description": "Authentic slow-cooked Chicken Handi prepared with rich Mughlai spices, aromatics, and rich savory gravy.",
+          "description": "Traditional slow-cooked chicken in an earthen handi with fragrant potli spices and fresh cream.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-curry.jpg",
+          "image": "/data/dishes/chicken-handi.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -551,10 +551,10 @@ export const royalConfig = {
           "subCategory": "Indian (Chicken)",
           "isVeg": false,
           "price": 301,
-          "description": "Authentic slow-cooked Chicken Bharta prepared with rich Mughlai spices, aromatics, and rich savory gravy.",
+          "description": "Shredded smoked chicken simmered in a velvety egg-infused cashew and tomato gravy.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-curry.jpg",
+          "image": "/data/dishes/chicken-bharta.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -564,7 +564,7 @@ export const royalConfig = {
           "subCategory": "Indian (Chicken)",
           "isVeg": false,
           "price": 305,
-          "description": "Authentic slow-cooked Kadhai Chicken prepared with rich Mughlai spices, aromatics, and rich savory gravy.",
+          "description": "Tender chicken tossed in a cast-iron kadhai with crunchy bell peppers, coriander seeds, and dry red chillies.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/kadhai-chicken.jpg",
@@ -577,10 +577,10 @@ export const royalConfig = {
           "subCategory": "Indian (Chicken)",
           "isVeg": false,
           "price": 317,
-          "description": "Authentic slow-cooked Chicken Butter Masala prepared with rich Mughlai spices, aromatics, and rich savory gravy.",
+          "description": "Chicken chunks simmered in a silky, mildly sweet tomato-butter gravy with kasuri methi.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/butter-chicken.jpg",
+          "image": "/data/dishes/chicken-butter-masala.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -590,10 +590,10 @@ export const royalConfig = {
           "subCategory": "Indian (Chicken)",
           "isVeg": false,
           "price": 329,
-          "description": "Authentic slow-cooked Dehati Chicken prepared with rich Mughlai spices, aromatics, and rich savory gravy.",
+          "description": "Rustic Bihari-style chicken curry cooked with whole garlic cloves, mustard oil, and crushed spices.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-curry.jpg",
+          "image": "/data/dishes/dehati-chicken.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -603,7 +603,7 @@ export const royalConfig = {
           "subCategory": "Indian (Chicken)",
           "isVeg": false,
           "price": 331,
-          "description": "Authentic slow-cooked Butter Chicken prepared with rich Mughlai spices, aromatics, and rich savory gravy.",
+          "description": "The timeless royal classic: tandoori chicken simmered in rich makhani gravy with pure butter.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/butter-chicken.jpg",
@@ -616,10 +616,10 @@ export const royalConfig = {
           "subCategory": "Indian (Chicken)",
           "isVeg": false,
           "price": 343,
-          "description": "Authentic slow-cooked Chicken Mughlai prepared with rich Mughlai spices, aromatics, and rich savory gravy.",
+          "description": "Royal Awadhi chicken preparation cooked in a creamy almond-cashew paste with saffron hints.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-curry.jpg",
+          "image": "/data/dishes/chicken-mughlai.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -629,7 +629,7 @@ export const royalConfig = {
           "subCategory": "Indian (Chicken)",
           "isVeg": false,
           "price": 330,
-          "description": "Authentic slow-cooked Chicken Tikka Masala prepared with rich Mughlai spices, aromatics, and rich savory gravy.",
+          "description": "Charcoal-grilled chicken tikka morsels tossed in a spicy, vibrant tomato-onion masala gravy.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/chicken-tikka-masala.jpg",
@@ -642,10 +642,10 @@ export const royalConfig = {
           "subCategory": "Indian (Chicken)",
           "isVeg": false,
           "price": 345,
-          "description": "Authentic slow-cooked Punjabi Chicken prepared with rich Mughlai spices, aromatics, and rich savory gravy.",
+          "description": "Robust North Indian style spicy chicken curry flavored with ginger juliennes and fresh green chillies.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-curry.jpg",
+          "image": "/data/dishes/punjabi-chicken.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -655,7 +655,7 @@ export const royalConfig = {
           "subCategory": "Indian (Chicken)",
           "isVeg": false,
           "price": 599,
-          "description": "Authentic slow-cooked Murgh Musallam prepared with rich Mughlai spices, aromatics, and rich savory gravy.",
+          "description": "Grand whole chicken slow-cooked with rich Mughlai spices, boiled egg stuffing, and royal saffron gravy.",
           "spicyLevel": 1,
           "isChefSpecial": true,
           "image": "/data/dishes/murgh-musallam.jpg",
@@ -668,10 +668,10 @@ export const royalConfig = {
           "subCategory": "Indian (Chicken)",
           "isVeg": false,
           "price": 600,
-          "description": "Authentic slow-cooked Royal Spl. Chicken prepared with rich Mughlai spices, aromatics, and rich savory gravy.",
+          "description": "Our master chef special chicken preparation featuring secret spice blend and slow-simmered rich gravy.",
           "spicyLevel": 1,
           "isChefSpecial": true,
-          "image": "/data/dishes/chicken-curry.jpg",
+          "image": "/data/dishes/royal-spl-chicken.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -681,7 +681,7 @@ export const royalConfig = {
           "subCategory": "Roti & Bread",
           "isVeg": true,
           "price": 15,
-          "description": "Freshly baked Tandoori Roti hot from the clay tandoor, crisp on the edges and soft inside.",
+          "description": "Whole wheat flatbread slapped on the clay tandoor walls and baked to crisp perfection.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/tandoori-roti.jpg",
@@ -694,10 +694,10 @@ export const royalConfig = {
           "subCategory": "Roti & Bread",
           "isVeg": true,
           "price": 20,
-          "description": "Freshly baked Tandoori Butter Roti hot from the clay tandoor, crisp on the edges and soft inside.",
+          "description": "Hot whole wheat tandoori roti generously brushed with creamy dairy butter.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/tandoori-roti.jpg",
+          "image": "/data/dishes/tandoori-butter-roti.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -707,10 +707,10 @@ export const royalConfig = {
           "subCategory": "Roti & Bread",
           "isVeg": true,
           "price": 35,
-          "description": "Freshly baked Plain Naan hot from the clay tandoor, crisp on the edges and soft inside.",
+          "description": "Soft and pillowy leavened refined flour bread baked fresh in the glowing clay tandoor.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/butter-naan.jpg",
+          "image": "/data/dishes/plain-naan.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -720,7 +720,7 @@ export const royalConfig = {
           "subCategory": "Roti & Bread",
           "isVeg": true,
           "price": 40,
-          "description": "Freshly baked Butter Naan hot from the clay tandoor, crisp on the edges and soft inside.",
+          "description": "Tender clay oven-baked naan bread smothered in golden melted butter.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/butter-naan.jpg",
@@ -733,10 +733,10 @@ export const royalConfig = {
           "subCategory": "Roti & Bread",
           "isVeg": true,
           "price": 46,
-          "description": "Freshly baked Lachha Paratha hot from the clay tandoor, crisp on the edges and soft inside.",
+          "description": "Multi-layered flaky whole wheat paratha crisped on the tandoor with pure ghee.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/laccha-paratha.jpg",
+          "image": "/data/dishes/lachha-paratha.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -746,10 +746,10 @@ export const royalConfig = {
           "subCategory": "Roti & Bread",
           "isVeg": true,
           "price": 40,
-          "description": "Freshly baked Aloo Paratha hot from the clay tandoor, crisp on the edges and soft inside.",
+          "description": "Tandoori paratha stuffed with spiced mashed potatoes, green chillies, and fresh coriander.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/laccha-paratha.jpg",
+          "image": "/data/dishes/aloo-paratha.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -759,10 +759,10 @@ export const royalConfig = {
           "subCategory": "Roti & Bread",
           "isVeg": true,
           "price": 35,
-          "description": "Freshly baked Onion(pyaaz) Paratha hot from the clay tandoor, crisp on the edges and soft inside.",
+          "description": "Crisp tandoori paratha stuffed with finely chopped spiced onions and ajwain.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/laccha-paratha.jpg",
+          "image": "/data/dishes/onionpyaaz-paratha.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -772,10 +772,10 @@ export const royalConfig = {
           "subCategory": "Roti & Bread",
           "isVeg": true,
           "price": 65,
-          "description": "Freshly baked Stuffed Naan hot from the clay tandoor, crisp on the edges and soft inside.",
+          "description": "Leavened naan bread generously filled with spiced mashed vegetables, herbs, and paneer.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/butter-naan.jpg",
+          "image": "/data/dishes/stuffed-naan.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -785,10 +785,10 @@ export const royalConfig = {
           "subCategory": "Roti & Bread",
           "isVeg": true,
           "price": 68,
-          "description": "Freshly baked Paneer Paratha hot from the clay tandoor, crisp on the edges and soft inside.",
+          "description": "Flaky golden tandoori paratha packed with seasoned grated cottage cheese and herbs.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/laccha-paratha.jpg",
+          "image": "/data/dishes/paneer-paratha.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -798,10 +798,10 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": true,
           "price": 70,
-          "description": "Wok-tossed Steamed Rice flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Fluffy, long-grain basmati rice steamed to tender perfection.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/jeera-rice.jpg",
+          "image": "/data/dishes/steamed-rice.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -811,7 +811,7 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": true,
           "price": 95,
-          "description": "Wok-tossed Jeera Rice flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Fragrant aged basmati rice tempered with aromatic cumin seeds and pure desi ghee.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/jeera-rice.jpg",
@@ -824,7 +824,7 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": true,
           "price": 130,
-          "description": "Wok-tossed Veg Fried Rice flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Wok-tossed basmati rice with finely diced carrots, beans, cabbage, and light soya sauce.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/veg-fried-rice.jpg",
@@ -837,10 +837,10 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": true,
           "price": 140,
-          "description": "Wok-tossed Veg Schezwan Fried Rice flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Spicy wok-tossed fried rice infused with fiery red Schezwan pepper sauce and spring onions.",
           "spicyLevel": 2,
           "isChefSpecial": false,
-          "image": "/data/dishes/veg-fried-rice.jpg",
+          "image": "/data/dishes/veg-schezwan-fried-rice.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -850,7 +850,7 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": true,
           "price": 150,
-          "description": "Wok-tossed Veg Pulao flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Mildly spiced aromatic basmati rice cooked with fresh seasonal vegetables and whole spices.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/veg-pulao.jpg",
@@ -863,10 +863,10 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": false,
           "price": 145,
-          "description": "Wok-tossed Egg Fried Rice flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Wok-fried fluffy basmati tossed with golden scrambled eggs, spring onions, and white pepper.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-fried-rice.jpg",
+          "image": "/data/dishes/egg-fried-rice.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -876,10 +876,10 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": false,
           "price": 160,
-          "description": "Wok-tossed Egg Schezwan Fried Rice flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Egg fried rice elevated with spicy in-house Schezwan sauce and crunchy bell peppers.",
           "spicyLevel": 2,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-fried-rice.jpg",
+          "image": "/data/dishes/egg-schezwan-fried-rice.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -889,10 +889,10 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": true,
           "price": 170,
-          "description": "Wok-tossed Spl Veg Chilli Garlic Fried Rice flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Aromatic rice fried with roasted golden garlic cloves, fiery green chillies, and vegetables.",
           "spicyLevel": 2,
           "isChefSpecial": true,
-          "image": "/data/dishes/veg-fried-rice.jpg",
+          "image": "/data/dishes/spl-veg-chilli-garlic-fried-rice.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -902,10 +902,10 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": true,
           "price": 160,
-          "description": "Wok-tossed Paneer Fried Rice flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Savory fried rice tossed with golden fried paneer cubes, vegetables, and oriental seasoning.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/veg-fried-rice.jpg",
+          "image": "/data/dishes/paneer-fried-rice.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -915,7 +915,7 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": false,
           "price": 162,
-          "description": "Wok-tossed Chicken Fried Rice flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Tender chicken bites and fluffy rice wok-tossed with spring onions, egg ribbons, and soy sauce.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/chicken-fried-rice.jpg",
@@ -928,10 +928,10 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": false,
           "price": 185,
-          "description": "Wok-tossed Chicken Schezwan Rice flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Fiery wok-fried rice with diced chicken, Schezwan paste, and spicy red chillies.",
           "spicyLevel": 2,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-fried-rice.jpg",
+          "image": "/data/dishes/chicken-schezwan-rice.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -941,10 +941,10 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": true,
           "price": 199,
-          "description": "Wok-tossed Mixed Fried Rice flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Loaded fried rice featuring a delicious trio of chicken, scrambled egg, and fresh garden veggies.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-fried-rice.jpg",
+          "image": "/data/dishes/mixed-fried-rice.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -954,10 +954,10 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": true,
           "price": 210,
-          "description": "Wok-tossed Kashmiri Pulao flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Sweet and aromatic saffron basmati rice garnished with dry fruits, nuts, and fresh pomegranate.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/veg-pulao.jpg",
+          "image": "/data/dishes/kashmiri-pulao.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -967,10 +967,10 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": true,
           "price": 109,
-          "description": "Wok-tossed Veg Noodles flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Classic stir-fried thin wheat noodles with crunchy julienned cabbage, carrots, and soy seasoning.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/veg-hakka-noodles.jpg",
+          "image": "/data/dishes/veg-noodles.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -980,7 +980,7 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": true,
           "price": 135,
-          "description": "Wok-tossed Veg Hakka Noodles flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Street-style Hakka noodles tossed with bell peppers, shredded cabbage, and aromatic spices.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/veg-hakka-noodles.jpg",
@@ -993,10 +993,10 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": true,
           "price": 147,
-          "description": "Wok-tossed Veg Schezwan Noodles flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Spicy Schezwan noodles tossed with fiery red chilli sauce and crunchy spring vegetables.",
           "spicyLevel": 2,
           "isChefSpecial": false,
-          "image": "/data/dishes/schezwan-noodles.jpg",
+          "image": "/data/dishes/veg-schezwan-noodles.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1006,10 +1006,10 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": true,
           "price": 161,
-          "description": "Wok-tossed Veg Chilli Garlic Noodles flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Savory noodles infused with deeply browned garlic, fresh green chillies, and soya sauce.",
           "spicyLevel": 2,
           "isChefSpecial": false,
-          "image": "/data/dishes/veg-hakka-noodles.jpg",
+          "image": "/data/dishes/veg-chilli-garlic-noodles.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1019,10 +1019,10 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": true,
           "price": 159,
-          "description": "Wok-tossed Paneer Noodles flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Wok-tossed noodles loaded with soft paneer cubes, crunchy peppers, and oriental spices.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/veg-hakka-noodles.jpg",
+          "image": "/data/dishes/paneer-noodles.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1032,10 +1032,10 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": false,
           "price": 172,
-          "description": "Wok-tossed Egg Noodles flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Hakka noodles tossed with fluffy scrambled egg ribbons, onions, and spicy seasoning.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-noodles.jpg",
+          "image": "/data/dishes/egg-noodles.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1045,7 +1045,7 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": false,
           "price": 188,
-          "description": "Wok-tossed Chicken Noodles flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Stir-fried noodles loaded with shredded seasoned chicken, spring onions, and savoury sauces.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/chicken-noodles.jpg",
@@ -1058,10 +1058,10 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": true,
           "price": 197,
-          "description": "Wok-tossed Mix Noodles flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Wok noodles tossed with seasoned chicken, egg scramble, and fresh vegetables.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-noodles.jpg",
+          "image": "/data/dishes/mix-noodles.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1071,10 +1071,10 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": false,
           "price": 198,
-          "description": "Wok-tossed Chicken Schezwan Noodles flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Spicy chicken noodles coated in zesty homemade Schezwan sauce with scallions.",
           "spicyLevel": 2,
           "isChefSpecial": false,
-          "image": "/data/dishes/schezwan-noodles.jpg",
+          "image": "/data/dishes/chicken-schezwan-noodles.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1084,10 +1084,10 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": false,
           "price": 214,
-          "description": "Wok-tossed Chicken Egg Noodles flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Rich noodles tossed with both tender chicken shreds and scrambled egg bits.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-noodles.jpg",
+          "image": "/data/dishes/chicken-egg-noodles.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1097,10 +1097,10 @@ export const royalConfig = {
           "subCategory": "Rice & Noodles",
           "isVeg": false,
           "price": 238,
-          "description": "Wok-tossed Chicken Chilli Garlic Noodles flavored with delicate aromatics and seasoned vegetables.",
+          "description": "Spicy noodles bursting with pungent roasted garlic and tender chicken morsels.",
           "spicyLevel": 2,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-noodles.jpg",
+          "image": "/data/dishes/chicken-chilli-garlic-noodles.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1110,7 +1110,7 @@ export const royalConfig = {
           "subCategory": "Biryani",
           "isVeg": true,
           "price": 160,
-          "description": "Aromatic long-grain basmati Veg Biryani slow-cooked Dum Pukht style with royal saffron, spices, and raita.",
+          "description": "Fragrant basmati rice layered with spiced seasonal vegetables, saffron milk, and fried onions.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/veg-biryani.jpg",
@@ -1123,10 +1123,10 @@ export const royalConfig = {
           "subCategory": "Biryani",
           "isVeg": false,
           "price": 172,
-          "description": "Aromatic long-grain basmati Egg Biryani slow-cooked Dum Pukht style with royal saffron, spices, and raita.",
+          "description": "Dum-cooked aromatic basmati rice served with two golden roasted eggs and spicy salan.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-biryani.jpg",
+          "image": "/data/dishes/egg-biryani.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1136,7 +1136,7 @@ export const royalConfig = {
           "subCategory": "Biryani",
           "isVeg": true,
           "price": 175,
-          "description": "Aromatic long-grain basmati Paneer Biryani slow-cooked Dum Pukht style with royal saffron, spices, and raita.",
+          "description": "Tender marinated cottage cheese cubes dum-cooked with aged basmati, mint, and royal spices.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/paneer-biryani.jpg",
@@ -1149,7 +1149,7 @@ export const royalConfig = {
           "subCategory": "Biryani",
           "isVeg": false,
           "price": 250,
-          "description": "Aromatic long-grain basmati Chicken Biryani slow-cooked Dum Pukht style with royal saffron, spices, and raita.",
+          "description": "Authentic Awadhi dum biryani with succulent chicken pieces, saffron basmati, and boiled egg.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/chicken-biryani.jpg",
@@ -1162,10 +1162,10 @@ export const royalConfig = {
           "subCategory": "Biryani",
           "isVeg": true,
           "price": 399,
-          "description": "Aromatic long-grain basmati Royal Spl. Biryani slow-cooked Dum Pukht style with royal saffron, spices, and raita.",
+          "description": "Our chef signature feast biryani loaded with double chicken, egg, dry fruits, and saffron.",
           "spicyLevel": 1,
           "isChefSpecial": true,
-          "image": "/data/dishes/chicken-biryani.jpg",
+          "image": "/data/dishes/royal-spl-biryani.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1175,7 +1175,7 @@ export const royalConfig = {
           "subCategory": "Starters",
           "isVeg": true,
           "price": 95,
-          "description": "Crisp and flavorful French Fries tossed with aromatic herbs and house special seasoning.",
+          "description": "Crisp golden salted potato fingers fried to perfection, served with tangy tomato ketchup.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/french-fries.jpg",
@@ -1188,10 +1188,10 @@ export const royalConfig = {
           "subCategory": "Starters",
           "isVeg": true,
           "price": 115,
-          "description": "Crisp and flavorful Cheese French Fries tossed with aromatic herbs and house special seasoning.",
+          "description": "Crispy golden fries smothered in warm molten cheddar cheese sauce and oregano.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/french-fries.jpg",
+          "image": "/data/dishes/cheese-french-fries.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1201,10 +1201,10 @@ export const royalConfig = {
           "subCategory": "Starters",
           "isVeg": true,
           "price": 125,
-          "description": "Crisp and flavorful Sweet Corn masala tossed with aromatic herbs and house special seasoning.",
+          "description": "Steamed tender sweet corn kernels tossed with butter, chatpata chaat masala, and lemon.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/corn-salt-pepper.jpg",
+          "image": "/data/dishes/sweet-corn-masala.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1214,10 +1214,10 @@ export const royalConfig = {
           "subCategory": "Starters",
           "isVeg": true,
           "price": 70,
-          "description": "Crisp and flavorful Onion(pyaaz) Pakora tossed with aromatic herbs and house special seasoning.",
+          "description": "Crisp golden fritters made with sliced onions, carom seeds, and green chillies in gram flour.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/onion-pakora.jpg",
+          "image": "/data/dishes/onionpyaaz-pakora.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1227,10 +1227,10 @@ export const royalConfig = {
           "subCategory": "Starters",
           "isVeg": false,
           "price": 85,
-          "description": "Crisp and flavorful Egg Pakora tossed with aromatic herbs and house special seasoning.",
+          "description": "Boiled egg halves dipped in seasoned chickpea batter, golden fried with chaat masala.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/pakora.jpg",
+          "image": "/data/dishes/egg-pakora.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1240,10 +1240,10 @@ export const royalConfig = {
           "subCategory": "Starters",
           "isVeg": true,
           "price": 95,
-          "description": "Crisp and flavorful Veg Pakora tossed with aromatic herbs and house special seasoning.",
+          "description": "Assorted vegetable fritters of potato, cauliflower, and onions fried crisp and piping hot.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/pakora.jpg",
+          "image": "/data/dishes/veg-pakora.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1253,10 +1253,10 @@ export const royalConfig = {
           "subCategory": "Starters",
           "isVeg": true,
           "price": 135,
-          "description": "Crisp and flavorful Paneer Pakora (8pcs) tossed with aromatic herbs and house special seasoning.",
+          "description": "Thick fresh cottage cheese cubes seasoned with ajwain and batter-fried to golden crunch.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/paneer-pakora.jpg",
+          "image": "/data/dishes/paneer-pakora-8pcs.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1266,10 +1266,10 @@ export const royalConfig = {
           "subCategory": "Starters",
           "isVeg": false,
           "price": 200,
-          "description": "Crisp and flavorful Chicken Pakora (8Pcs) tossed with aromatic herbs and house special seasoning.",
+          "description": "Juicy chicken bites marinated in royal spices and deep-fried in a crunchy spiced batter.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-65.jpg",
+          "image": "/data/dishes/chicken-pakora-8pcs.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1279,7 +1279,7 @@ export const royalConfig = {
           "subCategory": "Starters",
           "isVeg": false,
           "price": 175,
-          "description": "Crisp and flavorful Chicken Popcorn tossed with aromatic herbs and house special seasoning.",
+          "description": "Bite-sized tender chicken nuggets coated in crunchy seasoned breadcrumbs with garlic dip.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/chicken-popcorn.jpg",
@@ -1292,7 +1292,7 @@ export const royalConfig = {
           "subCategory": "Starters",
           "isVeg": true,
           "price": 135,
-          "description": "Crisp and flavorful French Fries Chilli tossed with aromatic herbs and house special seasoning.",
+          "description": "Golden fries tossed in sweet and spicy Indo-Chinese chilli garlic sauce with capsicum.",
           "spicyLevel": 2,
           "isChefSpecial": false,
           "image": "/data/dishes/french-fries.jpg",
@@ -1305,10 +1305,10 @@ export const royalConfig = {
           "subCategory": "Starters",
           "isVeg": true,
           "price": 150,
-          "description": "Crisp and flavorful Honey Potato Chilli tossed with aromatic herbs and house special seasoning.",
+          "description": "Crispy potato fingers glazed in a sticky honey-chilli sauce with toasted sesame seeds.",
           "spicyLevel": 2,
           "isChefSpecial": false,
-          "image": "/data/dishes/honey-chilli-potato.jpg",
+          "image": "/data/dishes/honey-potato-chilli.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1318,10 +1318,10 @@ export const royalConfig = {
           "subCategory": "Starters",
           "isVeg": true,
           "price": 240,
-          "description": "Crisp and flavorful Baby Corn Chilli tossed with aromatic herbs and house special seasoning.",
+          "description": "Crisp golden baby corn batons wok-tossed in spicy chilli soya glaze with spring onions.",
           "spicyLevel": 2,
           "isChefSpecial": false,
-          "image": "/data/dishes/corn-salt-pepper.jpg",
+          "image": "/data/dishes/baby-corn-chilli.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1331,10 +1331,10 @@ export const royalConfig = {
           "subCategory": "Starters",
           "isVeg": true,
           "price": 240,
-          "description": "Crisp and flavorful Mushroom Crispy chilli tossed with aromatic herbs and house special seasoning.",
+          "description": "Batter-crisped button mushrooms tossed with diced bell peppers, onions, and hot chilli sauce.",
           "spicyLevel": 2,
           "isChefSpecial": false,
-          "image": "/data/dishes/mushroom-chilli.jpg",
+          "image": "/data/dishes/mushroom-crispy-chilli.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1344,7 +1344,7 @@ export const royalConfig = {
           "subCategory": "Starters",
           "isVeg": true,
           "price": 225,
-          "description": "Crisp and flavorful Corn Salt & Pepper tossed with aromatic herbs and house special seasoning.",
+          "description": "Crispy fried sweet corn tossed with freshly cracked black pepper, garlic, and scallions.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/corn-salt-pepper.jpg",
@@ -1357,10 +1357,10 @@ export const royalConfig = {
           "subCategory": "Starters",
           "isVeg": true,
           "price": 235,
-          "description": "Crisp and flavorful Mushroom Salt & Pepper tossed with aromatic herbs and house special seasoning.",
+          "description": "Crunchy button mushrooms tossed with sea salt, crushed Malabar black pepper, and garlic.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/mushroom-chilli.jpg",
+          "image": "/data/dishes/mushroom-salt-pepper.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1370,10 +1370,10 @@ export const royalConfig = {
           "subCategory": "Starters",
           "isVeg": true,
           "price": 235,
-          "description": "Crisp and flavorful Paneer Salt & Pepper tossed with aromatic herbs and house special seasoning.",
+          "description": "Golden paneer cubes seasoned with cracked black pepper, garlic butter, and scallions.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/paneer-chilli.jpg",
+          "image": "/data/dishes/paneer-salt-pepper.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1383,7 +1383,7 @@ export const royalConfig = {
           "subCategory": "Starters",
           "isVeg": false,
           "price": 240,
-          "description": "Crisp and flavorful Chicken 65 tossed with aromatic herbs and house special seasoning.",
+          "description": "Famous South-Indian style boneless chicken tossed with fiery red chillies, curry leaves, and mustard.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/chicken-65.jpg",
@@ -1396,7 +1396,7 @@ export const royalConfig = {
           "subCategory": "Starters",
           "isVeg": false,
           "price": 255,
-          "description": "Crisp and flavorful Chicken Lollipop tossed with aromatic herbs and house special seasoning.",
+          "description": "Crisp-fried chicken wings shaped into lollipops, tossed in zesty Schezwan garlic sauce.",
           "spicyLevel": 1,
           "isChefSpecial": true,
           "image": "/data/dishes/chicken-lollipop.jpg",
@@ -1409,10 +1409,10 @@ export const royalConfig = {
           "subCategory": "Starters",
           "isVeg": true,
           "price": 265,
-          "description": "Crisp and flavorful Baby Corn Paprika tossed with aromatic herbs and house special seasoning.",
+          "description": "Crunchy baby corn tossed with smoky Spanish paprika, garlic butter, and fresh herbs.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/corn-salt-pepper.jpg",
+          "image": "/data/dishes/baby-corn-paprika.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1422,10 +1422,10 @@ export const royalConfig = {
           "subCategory": "Momos",
           "isVeg": true,
           "price": 95,
-          "description": "Steamed or fried Veg Fried Momo with savory stuffing, served with fiery momo chutney and creamy mayo.",
+          "description": "Crispy golden fried dumplings packed with finely minced cabbage, carrots, spring onions, and ginger.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/fried-momos.jpg",
+          "image": "/data/dishes/veg-fried-momo.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1435,10 +1435,10 @@ export const royalConfig = {
           "subCategory": "Momos",
           "isVeg": true,
           "price": 110,
-          "description": "Steamed or fried Veg Roasted Momo with savory stuffing, served with fiery momo chutney and creamy mayo.",
+          "description": "Tandoor-charred vegetable momos roasted with smokey spices and chaat masala, served with mint dip.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/steamed-momos.jpg",
+          "image": "/data/dishes/veg-roasted-momo.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1448,10 +1448,10 @@ export const royalConfig = {
           "subCategory": "Momos",
           "isVeg": true,
           "price": 115,
-          "description": "Steamed or fried Veg Crispy Momo with savory stuffing, served with fiery momo chutney and creamy mayo.",
+          "description": "Panko crumb-coated vegetable momos fried to extra crunchy perfection, served with garlic schezwan dip.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/fried-momos.jpg",
+          "image": "/data/dishes/veg-crispy-momo.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1461,10 +1461,10 @@ export const royalConfig = {
           "subCategory": "Momos",
           "isVeg": true,
           "price": 130,
-          "description": "Steamed or fried Veg Afghani Momo with savory stuffing, served with fiery momo chutney and creamy mayo.",
+          "description": "Steamed vegetable momos drenched in a rich, creamy Afghani cashew-malai sauce with black pepper.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/afghani-momos.jpg",
+          "image": "/data/dishes/veg-afghani-momo.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1474,10 +1474,10 @@ export const royalConfig = {
           "subCategory": "Momos",
           "isVeg": true,
           "price": 150,
-          "description": "Steamed or fried Veg Crispy Afghani Momo with savory stuffing, served with fiery momo chutney and creamy mayo.",
+          "description": "Extra crunchy crumb-fried veg momos tossed in velvety Afghani malai gravy with roasted sesame.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/afghani-momos.jpg",
+          "image": "/data/dishes/veg-crispy-afghani-momo.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1487,10 +1487,10 @@ export const royalConfig = {
           "subCategory": "Momos",
           "isVeg": true,
           "price": 100,
-          "description": "Steamed or fried Paneer Fried Momo with savory stuffing, served with fiery momo chutney and creamy mayo.",
+          "description": "Crispy golden dumplings loaded with fresh spiced paneer, onions, and herbs, served with zesty chutney.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/fried-momos.jpg",
+          "image": "/data/dishes/paneer-fried-momo.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1500,10 +1500,10 @@ export const royalConfig = {
           "subCategory": "Momos",
           "isVeg": true,
           "price": 115,
-          "description": "Steamed or fried Paneer Roasted Momo with savory stuffing, served with fiery momo chutney and creamy mayo.",
+          "description": "Tandoori roasted paneer dumplings with a smoky charred exterior and soft paneer filling inside.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/steamed-momos.jpg",
+          "image": "/data/dishes/paneer-roasted-momo.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1513,10 +1513,10 @@ export const royalConfig = {
           "subCategory": "Momos",
           "isVeg": true,
           "price": 125,
-          "description": "Steamed or fried Paneer Crispy Momo with savory stuffing, served with fiery momo chutney and creamy mayo.",
+          "description": "Crunchy crumb-coated paneer momos fried to golden perfection with sweet and spicy dips.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/fried-momos.jpg",
+          "image": "/data/dishes/paneer-crispy-momo.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1526,10 +1526,10 @@ export const royalConfig = {
           "subCategory": "Momos",
           "isVeg": true,
           "price": 145,
-          "description": "Steamed or fried Paneer Afghani Momo with savory stuffing, served with fiery momo chutney and creamy mayo.",
+          "description": "Soft paneer momos coated in luxurious Afghani malai cream, cashew paste, and fresh herbs.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/afghani-momos.jpg",
+          "image": "/data/dishes/paneer-afghani-momo.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1539,10 +1539,10 @@ export const royalConfig = {
           "subCategory": "Momos",
           "isVeg": true,
           "price": 160,
-          "description": "Steamed or fried Paneer Crispy Afghani Momo with savory stuffing, served with fiery momo chutney and creamy mayo.",
+          "description": "Crispy paneer momos smothered in rich cardamom-infused cream and roasted aromatics.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/afghani-momos.jpg",
+          "image": "/data/dishes/paneer-crispy-afghani-momo.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1552,10 +1552,10 @@ export const royalConfig = {
           "subCategory": "Momos",
           "isVeg": false,
           "price": 100,
-          "description": "Steamed or fried Chicken Fried Momo with savory stuffing, served with fiery momo chutney and creamy mayo.",
+          "description": "Deep-fried crisp flour pockets stuffed with juicy minced chicken, garlic, and coriander.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/fried-momos.jpg",
+          "image": "/data/dishes/chicken-fried-momo.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1565,10 +1565,10 @@ export const royalConfig = {
           "subCategory": "Momos",
           "isVeg": false,
           "price": 115,
-          "description": "Steamed or fried Chicken Roasted Momo with savory stuffing, served with fiery momo chutney and creamy mayo.",
+          "description": "Tandoor-blistered juicy chicken momos with a smoky coal aroma and chatpata seasoning.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/steamed-momos.jpg",
+          "image": "/data/dishes/chicken-roasted-momo.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1578,10 +1578,10 @@ export const royalConfig = {
           "subCategory": "Momos",
           "isVeg": false,
           "price": 125,
-          "description": "Steamed or fried Chicken Crispy Momo with savory stuffing, served with fiery momo chutney and creamy mayo.",
+          "description": "Golden panko-crusted chicken momos with a crunchy bite and piping-hot juicy chicken center.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/fried-momos.jpg",
+          "image": "/data/dishes/chicken-crispy-momo.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1591,10 +1591,10 @@ export const royalConfig = {
           "subCategory": "Momos",
           "isVeg": false,
           "price": 145,
-          "description": "Steamed or fried Chicken Afghani Momo with savory stuffing, served with fiery momo chutney and creamy mayo.",
+          "description": "Juicy chicken dumplings tossed in rich, velvety Afghani cashew-cream gravy with fragrant spices.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/afghani-momos.jpg",
+          "image": "/data/dishes/chicken-afghani-momo.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1604,10 +1604,10 @@ export const royalConfig = {
           "subCategory": "Momos",
           "isVeg": false,
           "price": 160,
-          "description": "Steamed or fried Chicken Crispy Afghani Momo with savory stuffing, served with fiery momo chutney and creamy mayo.",
+          "description": "Crunchy crumb-fried chicken momos bathed in luscious Afghani malai sauce.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/afghani-momos.jpg",
+          "image": "/data/dishes/chicken-crispy-afghani-momo.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1617,10 +1617,10 @@ export const royalConfig = {
           "subCategory": "Burger",
           "isVeg": true,
           "price": 100,
-          "description": "Juicy patty layered in toasted sesame bun with melted cheese slice and special cafe sauce.",
+          "description": "Crisp golden spiced vegetable patty topped with melted cheddar cheese, sliced onions, and lettuce.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/cheese-burger.jpg",
+          "image": "/data/dishes/veg-cheese-burger.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1630,10 +1630,10 @@ export const royalConfig = {
           "subCategory": "Burger",
           "isVeg": false,
           "price": 110,
-          "description": "Juicy patty layered in toasted sesame bun with melted cheese slice and special cafe sauce.",
+          "description": "Double layered spiced egg omelette patty with melted cheese, caramelized onions, and garlic mayo.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/cheese-burger.jpg",
+          "image": "/data/dishes/egg-cheese-burger.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1643,10 +1643,10 @@ export const royalConfig = {
           "subCategory": "Burger",
           "isVeg": true,
           "price": 115,
-          "description": "Juicy patty layered in toasted sesame bun with melted cheese slice and special cafe sauce.",
+          "description": "Thick slab of seasoned crumb-fried paneer with melted mozzarella, fresh tomatoes, and tandoori mayo.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/veg-burger.jpg",
+          "image": "/data/dishes/paneer-cheese-burger.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1656,10 +1656,10 @@ export const royalConfig = {
           "subCategory": "Burger",
           "isVeg": false,
           "price": 125,
-          "description": "Juicy patty layered in toasted sesame bun with melted cheese slice and special cafe sauce.",
+          "description": "Crisp golden chicken patty topped with molten cheddar slice, jalapeños, and special burger relish.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-burger.jpg",
+          "image": "/data/dishes/chicken-cheese-burger.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1669,7 +1669,7 @@ export const royalConfig = {
           "subCategory": "Sandwich",
           "isVeg": true,
           "price": 95,
-          "description": "Golden toasted bread stuffed with flavorful seasoned filling and melted cheese.",
+          "description": "Triple-layer grilled bread filled with sliced cucumbers, tomatoes, capsicum, and mint chutney.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/veg-grilled-sandwich.jpg",
@@ -1682,10 +1682,10 @@ export const royalConfig = {
           "subCategory": "Sandwich",
           "isVeg": false,
           "price": 105,
-          "description": "Golden toasted bread stuffed with flavorful seasoned filling and melted cheese.",
+          "description": "Fluffy masala egg scramble with black pepper, melted cheese, and sliced onions in golden toast.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/egg-sandwich.jpg",
+          "image": "/data/dishes/egg-grilled-sandwich.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1695,10 +1695,10 @@ export const royalConfig = {
           "subCategory": "Sandwich",
           "isVeg": true,
           "price": 120,
-          "description": "Golden toasted bread stuffed with flavorful seasoned filling and melted cheese.",
+          "description": "Sweet golden corn kernels tossed with molten cheddar and mozzarella, oregano, and chili flakes.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/cheese-corn-sandwich.jpg",
+          "image": "/data/dishes/cheese-corn-grilled-sandwich.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1708,10 +1708,10 @@ export const royalConfig = {
           "subCategory": "Sandwich",
           "isVeg": true,
           "price": 125,
-          "description": "Golden toasted bread stuffed with flavorful seasoned filling and melted cheese.",
+          "description": "Marinated cottage cheese cubes tossed in tandoori spices and capsicum, grilled with molten cheese.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/paneer-sandwich.jpg",
+          "image": "/data/dishes/paneer-grilled-sandwich.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1721,10 +1721,10 @@ export const royalConfig = {
           "subCategory": "Sandwich",
           "isVeg": false,
           "price": 135,
-          "description": "Golden toasted bread stuffed with flavorful seasoned filling and melted cheese.",
+          "description": "Shredded smoked chicken tossed in creamy pepper mayo, bell peppers, and melted cheese.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-sandwich.jpg",
+          "image": "/data/dishes/chicken-grilled-sandwich.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1734,7 +1734,7 @@ export const royalConfig = {
           "subCategory": "Chinese",
           "isVeg": true,
           "price": 160,
-          "description": "Wok-tossed Veg Manchurian in rich Indo-Chinese sauces with crunchy bell peppers and spring onions.",
+          "description": "Golden vegetable dumplings simmered in a savory, tangy dark soy and ginger-garlic sauce.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/veg-manchurian.jpg",
@@ -1747,10 +1747,10 @@ export const royalConfig = {
           "subCategory": "Chinese",
           "isVeg": true,
           "price": 185,
-          "description": "Wok-tossed Paneer Chilli in rich Indo-Chinese sauces with crunchy bell peppers and spring onions.",
+          "description": "Soft paneer cubes wok-tossed with fiery green chillies, bell peppers, onions, and dark soya glaze.",
           "spicyLevel": 2,
           "isChefSpecial": false,
-          "image": "/data/dishes/paneer-sandwich.jpg",
+          "image": "/data/dishes/paneer-chilli.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1760,7 +1760,7 @@ export const royalConfig = {
           "subCategory": "Chinese",
           "isVeg": true,
           "price": 195,
-          "description": "Wok-tossed Mushroom Chilli in rich Indo-Chinese sauces with crunchy bell peppers and spring onions.",
+          "description": "Button mushrooms wok-fried in spicy Indo-Chinese chilli garlic sauce with crunchy capsicum.",
           "spicyLevel": 2,
           "isChefSpecial": false,
           "image": "/data/dishes/mushroom-chilli.jpg",
@@ -1773,10 +1773,10 @@ export const royalConfig = {
           "subCategory": "Chinese",
           "isVeg": false,
           "price": 200,
-          "description": "Wok-tossed Chicken Bone Chilli in rich Indo-Chinese sauces with crunchy bell peppers and spring onions.",
+          "description": "Traditional bone-in chicken chunks tossed in spicy soy-chilli gravy with green onions.",
           "spicyLevel": 2,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-chilli.jpg",
+          "image": "/data/dishes/chicken-bone-chilli.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1786,7 +1786,7 @@ export const royalConfig = {
           "subCategory": "Chinese",
           "isVeg": false,
           "price": 225,
-          "description": "Wok-tossed Chicken Boneless Chilli in rich Indo-Chinese sauces with crunchy bell peppers and spring onions.",
+          "description": "Juicy boneless chicken cubes wok-tossed with red and green chillies, garlic, and soy sauce.",
           "spicyLevel": 2,
           "isChefSpecial": false,
           "image": "/data/dishes/chicken-boneless-chilli.jpg",
@@ -1799,7 +1799,7 @@ export const royalConfig = {
           "subCategory": "Chinese",
           "isVeg": false,
           "price": 235,
-          "description": "Wok-tossed Chicken Manchurian in rich Indo-Chinese sauces with crunchy bell peppers and spring onions.",
+          "description": "Tender chicken meatballs glazed in a glossy, tangy ginger-coriander Manchurian sauce.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/chicken-manchurian.jpg",
@@ -1812,7 +1812,7 @@ export const royalConfig = {
           "subCategory": "Chinese",
           "isVeg": false,
           "price": 240,
-          "description": "Wok-tossed Chicken Schezwan in rich Indo-Chinese sauces with crunchy bell peppers and spring onions.",
+          "description": "Spicy chicken morsels cooked in authentic fiery Sichuan pepper and roasted chilli paste.",
           "spicyLevel": 2,
           "isChefSpecial": false,
           "image": "/data/dishes/chicken-schezwan.jpg",
@@ -1825,10 +1825,10 @@ export const royalConfig = {
           "subCategory": "Salad",
           "isVeg": true,
           "price": 40,
-          "description": "Freshly sliced Onion Salad with lemon wedges and green chillies.",
+          "description": "Freshly sliced crisp red onion rings seasoned with chaat masala, lemon wedges, and green chillies.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/green-salad.jpg",
+          "image": "/data/dishes/onion-salad.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1838,7 +1838,7 @@ export const royalConfig = {
           "subCategory": "Salad",
           "isVeg": true,
           "price": 55,
-          "description": "Freshly sliced Green Salad with lemon wedges and green chillies.",
+          "description": "Fresh farm salad platter of sliced cucumbers, tomatoes, carrots, onions, and lemon wedges.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/green-salad.jpg",
@@ -1851,10 +1851,10 @@ export const royalConfig = {
           "subCategory": "Raita",
           "isVeg": true,
           "price": 40,
-          "description": "Chilled spiced curd mixed with crunchy boondi and roasted cumin.",
+          "description": "Chilled creamy yogurt whipped with finely diced cucumbers, onions, tomatoes, and roasted cumin.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/raita.jpg",
+          "image": "/data/dishes/mix-raita.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1864,7 +1864,7 @@ export const royalConfig = {
           "subCategory": "Raita",
           "isVeg": true,
           "price": 35,
-          "description": "Chilled spiced curd mixed with crunchy boondi and roasted cumin.",
+          "description": "Classic spiced yogurt mixed with crunchy gram flour boondi pearls and fragrant mint powder.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/boondi-raita.jpg",
@@ -1877,10 +1877,10 @@ export const royalConfig = {
           "subCategory": "Rolls",
           "isVeg": true,
           "price": 55,
-          "description": "Flaky crispy paratha wrap packed with seasoned filling, onions, and tangy chutneys.",
+          "description": "Flaky paratha rolled with seasoned sautéed vegetables, crunchy sliced onions, and tangy mint chutney.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/paneer-roll.jpg",
+          "image": "/data/dishes/veg-roll.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1890,7 +1890,7 @@ export const royalConfig = {
           "subCategory": "Rolls",
           "isVeg": false,
           "price": 65,
-          "description": "Flaky crispy paratha wrap packed with seasoned filling, onions, and tangy chutneys.",
+          "description": "Golden paratha coated with a fried egg and rolled with spiced onions, lemon juice, and sauces.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/egg-roll.jpg",
@@ -1903,10 +1903,10 @@ export const royalConfig = {
           "subCategory": "Rolls",
           "isVeg": true,
           "price": 80,
-          "description": "Flaky crispy paratha wrap packed with seasoned filling, onions, and tangy chutneys.",
+          "description": "Crispy paratha wrap stuffed with sweet corn, molten mozzarella cheese, and chatpata seasoning.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/cheese-corn-sandwich.jpg",
+          "image": "/data/dishes/cheese-corn-roll.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1916,10 +1916,10 @@ export const royalConfig = {
           "subCategory": "Rolls",
           "isVeg": true,
           "price": 95,
-          "description": "Flaky crispy paratha wrap packed with seasoned filling, onions, and tangy chutneys.",
+          "description": "Warm paratha wrap filled with tandoori spiced paneer tikka, crunchy onions, and green chutney.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/paneer-sandwich.jpg",
+          "image": "/data/dishes/paneer-roll.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1929,7 +1929,7 @@ export const royalConfig = {
           "subCategory": "Rolls",
           "isVeg": false,
           "price": 105,
-          "description": "Flaky crispy paratha wrap packed with seasoned filling, onions, and tangy chutneys.",
+          "description": "Flaky crisp paratha rolled with juicy spiced chicken boti, sliced onions, and lemon pepper.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/chicken-roll.jpg",
@@ -1942,10 +1942,10 @@ export const royalConfig = {
           "subCategory": "Rolls",
           "isVeg": false,
           "price": 125,
-          "description": "Flaky crispy paratha wrap packed with seasoned filling, onions, and tangy chutneys.",
+          "description": "Double delight of fluffy egg-coated paratha stuffed with tender spiced chicken chunks.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/egg-roll.jpg",
+          "image": "/data/dishes/chicken-egg-roll.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1955,10 +1955,10 @@ export const royalConfig = {
           "subCategory": "Soup",
           "isVeg": true,
           "price": 85,
-          "description": "Piping hot bowl of Sweet Corn Soup simmered with fresh herbs, vegetables, and warm spices.",
+          "description": "Comforting creamy sweet corn soup with tender corn kernels and gentle seasonings.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/corn-salt-pepper.jpg",
+          "image": "/data/dishes/sweet-corn-soup.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1968,10 +1968,10 @@ export const royalConfig = {
           "subCategory": "Soup",
           "isVeg": true,
           "price": 85,
-          "description": "Piping hot bowl of Veg Hot & Sour Soup simmered with fresh herbs, vegetables, and warm spices.",
+          "description": "Spicy and tangy Chinese broth loaded with shredded vegetables, mushrooms, and black pepper.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/paneer-roll.jpg",
+          "image": "/data/dishes/veg-hot-sour-soup.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1981,10 +1981,10 @@ export const royalConfig = {
           "subCategory": "Soup",
           "isVeg": true,
           "price": 110,
-          "description": "Piping hot bowl of Veg Manchow Soup simmered with fresh herbs, vegetables, and warm spices.",
+          "description": "Dark, savory vegetable soup flavored with garlic, coriander, and served with crispy fried noodles.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/paneer-roll.jpg",
+          "image": "/data/dishes/veg-manchow-soup.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1994,10 +1994,10 @@ export const royalConfig = {
           "subCategory": "Soup",
           "isVeg": true,
           "price": 85,
-          "description": "Piping hot bowl of Tomato Soup simmered with fresh herbs, vegetables, and warm spices.",
+          "description": "Rich velvety ripe tomato soup simmered with fresh herbs, butter, and served with crunchy croutons.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/sweet-corn-soup.jpg",
+          "image": "/data/dishes/tomato-soup.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -2007,10 +2007,10 @@ export const royalConfig = {
           "subCategory": "Soup",
           "isVeg": false,
           "price": 95,
-          "description": "Piping hot bowl of Chicken Corn Soup simmered with fresh herbs, vegetables, and warm spices.",
+          "description": "Delicate, soothing broth with tender shredded chicken, sweet corn, and egg drops.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-roll.jpg",
+          "image": "/data/dishes/chicken-corn-soup.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -2020,10 +2020,10 @@ export const royalConfig = {
           "subCategory": "Soup",
           "isVeg": false,
           "price": 125,
-          "description": "Piping hot bowl of Chicken Hot & Sour Soup simmered with fresh herbs, vegetables, and warm spices.",
+          "description": "Fiery and sour chicken broth packed with shredded chicken, bamboo shoots, and green chillies.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-roll.jpg",
+          "image": "/data/dishes/chicken-hot-sour-soup.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -2033,10 +2033,10 @@ export const royalConfig = {
           "subCategory": "Soup",
           "isVeg": false,
           "price": 135,
-          "description": "Piping hot bowl of Chicken Manchow Soup simmered with fresh herbs, vegetables, and warm spices.",
+          "description": "Bold, aromatic chicken soup with ginger, garlic, and fresh herbs, topped with fried noodles.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-roll.jpg",
+          "image": "/data/dishes/chicken-manchow-soup.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -2046,10 +2046,10 @@ export const royalConfig = {
           "subCategory": "Tandoori (Veg)",
           "isVeg": true,
           "price": 225,
-          "description": "Charcoal-grilled Paneer Tikka steeped in royal tandoori marinade and roasted over glowing coal embers.",
+          "description": "Fresh cottage cheese cubes marinated in spiced hung curd, skewered and charred over live embers.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/paneer-sandwich.jpg",
+          "image": "/data/dishes/paneer-tikka.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -2059,10 +2059,10 @@ export const royalConfig = {
           "subCategory": "Tandoori (Veg)",
           "isVeg": true,
           "price": 235,
-          "description": "Charcoal-grilled Paneer Seekh Kebab steeped in royal tandoori marinade and roasted over glowing coal embers.",
+          "description": "Minced spiced paneer blended with herbs and royal Lucknowi seasonings, grilled on skewers.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/paneer-sandwich.jpg",
+          "image": "/data/dishes/paneer-seekh-kebab.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -2072,10 +2072,10 @@ export const royalConfig = {
           "subCategory": "Tandoori (Veg)",
           "isVeg": true,
           "price": 235,
-          "description": "Charcoal-grilled Paneer Achari Tikka steeped in royal tandoori marinade and roasted over glowing coal embers.",
+          "description": "Paneer cubes infused with punchy pickle spices, mustard oil, and charred in the tandoor.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/paneer-sandwich.jpg",
+          "image": "/data/dishes/paneer-achari-tikka.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -2085,10 +2085,10 @@ export const royalConfig = {
           "subCategory": "Tandoori (Veg)",
           "isVeg": true,
           "price": 340,
-          "description": "Charcoal-grilled Paneer Malai Kebab steeped in royal tandoori marinade and roasted over glowing coal embers.",
+          "description": "Melt-in-mouth paneer cubes soaked in rich cashew cream, cardamom, and roasted gentle over coal.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/paneer-sandwich.jpg",
+          "image": "/data/dishes/paneer-malai-kebab.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -2098,10 +2098,10 @@ export const royalConfig = {
           "subCategory": "Tandoori (Veg)",
           "isVeg": true,
           "price": 320,
-          "description": "Charcoal-grilled Harabhara Kebab steeped in royal tandoori marinade and roasted over glowing coal embers.",
+          "description": "Pan-grilled spinach and green pea patties seasoned with ginger, cumin, and roasted cashews.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/hara-bhara-kabab.jpg",
+          "image": "/data/dishes/harabhara-kebab.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -2111,10 +2111,10 @@ export const royalConfig = {
           "subCategory": "Tandoori (Chicken)",
           "isVeg": false,
           "price": 240,
-          "description": "Charcoal-grilled Tandoori Chicken Half steeped in royal tandoori marinade and roasted over glowing coal embers.",
+          "description": "Two chicken quarters steeped in Kashmiri deghi mirch and mustard oil, roasted in clay oven.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-roll.jpg",
+          "image": "/data/dishes/tandoori-chicken-half.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -2124,10 +2124,10 @@ export const royalConfig = {
           "subCategory": "Tandoori (Chicken)",
           "isVeg": false,
           "price": 240,
-          "description": "Charcoal-grilled Chicken Patiala Half steeped in royal tandoori marinade and roasted over glowing coal embers.",
+          "description": "Tender chicken marinated in Punjabi spices, slow-grilled and topped with rich Mughlai glaze.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-roll.jpg",
+          "image": "/data/dishes/chicken-patiala-half.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -2137,10 +2137,10 @@ export const royalConfig = {
           "subCategory": "Tandoori (Chicken)",
           "isVeg": false,
           "price": 250,
-          "description": "Charcoal-grilled Chicken Tikka steeped in royal tandoori marinade and roasted over glowing coal embers.",
+          "description": "Boneless chicken cubes steeped in ginger, garlic, and curd marinade, roasted crisp in the tandoor.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-roll.jpg",
+          "image": "/data/dishes/chicken-tikka.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -2150,10 +2150,10 @@ export const royalConfig = {
           "subCategory": "Tandoori (Chicken)",
           "isVeg": false,
           "price": 250,
-          "description": "Charcoal-grilled Chicken Seekh Kebab steeped in royal tandoori marinade and roasted over glowing coal embers.",
+          "description": "Minced chicken blended with fresh herbs and Lucknowi aromatics, skewered and charcoal-grilled.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-roll.jpg",
+          "image": "/data/dishes/chicken-seekh-kebab.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -2163,10 +2163,10 @@ export const royalConfig = {
           "subCategory": "Tandoori (Chicken)",
           "isVeg": false,
           "price": 261,
-          "description": "Charcoal-grilled Chicken Boti Kebab steeped in royal tandoori marinade and roasted over glowing coal embers.",
+          "description": "Tender boneless chicken boti bites steeped in spicy marinade, charred over glowing coal embers.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-roll.jpg",
+          "image": "/data/dishes/chicken-boti-kebab.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -2176,10 +2176,10 @@ export const royalConfig = {
           "subCategory": "Tandoori (Chicken)",
           "isVeg": false,
           "price": 263,
-          "description": "Charcoal-grilled Chicken Hariyali Kebab steeped in royal tandoori marinade and roasted over glowing coal embers.",
+          "description": "Succulent chicken morsels infused with fresh garden mint, coriander, and green chillies.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-roll.jpg",
+          "image": "/data/dishes/chicken-hariyali-kebab.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -2189,10 +2189,10 @@ export const royalConfig = {
           "subCategory": "Tandoori (Chicken)",
           "isVeg": false,
           "price": 265,
-          "description": "Charcoal-grilled Chicken Kali Mirch Kebab steeped in royal tandoori marinade and roasted over glowing coal embers.",
+          "description": "Creamy tandoori chicken marinated in freshly crushed Malabar black pepper and fresh cream.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-roll.jpg",
+          "image": "/data/dishes/chicken-kali-mirch-kebab.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -2202,10 +2202,10 @@ export const royalConfig = {
           "subCategory": "Tandoori (Chicken)",
           "isVeg": false,
           "price": 267,
-          "description": "Charcoal-grilled Chicken Reshmi Kebab steeped in royal tandoori marinade and roasted over glowing coal embers.",
+          "description": "Silken-smooth chicken kebabs tenderized with egg whites, clotted cream, and subtle saffron.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-roll.jpg",
+          "image": "/data/dishes/chicken-reshmi-kebab.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -2215,10 +2215,10 @@ export const royalConfig = {
           "subCategory": "Tandoori (Chicken)",
           "isVeg": false,
           "price": 290,
-          "description": "Charcoal-grilled Chicken Achari Tikka steeped in royal tandoori marinade and roasted over glowing coal embers.",
+          "description": "Bold and tangy chicken tikka steeped in panch-phoran pickle spices and mustard oil.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-roll.jpg",
+          "image": "/data/dishes/chicken-achari-tikka.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -2228,10 +2228,10 @@ export const royalConfig = {
           "subCategory": "Tandoori (Chicken)",
           "isVeg": false,
           "price": 325,
-          "description": "Charcoal-grilled Chicken Garlic Kebab steeped in royal tandoori marinade and roasted over glowing coal embers.",
+          "description": "Charcoal-roasted chicken skewers steeped in roasted golden garlic butter and crushed herbs.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-roll.jpg",
+          "image": "/data/dishes/chicken-garlic-kebab.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -2241,10 +2241,10 @@ export const royalConfig = {
           "subCategory": "Tandoori (Chicken)",
           "isVeg": false,
           "price": 365,
-          "description": "Charcoal-grilled Chicken Malai Kebab steeped in royal tandoori marinade and roasted over glowing coal embers.",
+          "description": "Decadent chicken cubes bathed in rich cardamom cream, cashew nut paste, and melted cheese.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-roll.jpg",
+          "image": "/data/dishes/chicken-malai-kebab.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -2254,7 +2254,7 @@ export const royalConfig = {
           "subCategory": "Tandoori (Chicken)",
           "isVeg": false,
           "price": 327,
-          "description": "Charcoal-grilled Tangdi Kebab (4Leg pcs.) steeped in royal tandoori marinade and roasted over glowing coal embers.",
+          "description": "Four whole chicken drumsticks marinated in royal spices and slow-roasted in the clay oven.",
           "spicyLevel": 1,
           "isChefSpecial": false,
           "image": "/data/dishes/tangdi-kebab.jpg",
@@ -2267,10 +2267,10 @@ export const royalConfig = {
           "subCategory": "Tandoori (Chicken)",
           "isVeg": false,
           "price": 400,
-          "description": "Charcoal-grilled Chicken Cheese Kebab steeped in royal tandoori marinade and roasted over glowing coal embers.",
+          "description": "Succulent chicken kebabs stuffed with molten mozzarella and mild green herbs.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-roll.jpg",
+          "image": "/data/dishes/chicken-cheese-kebab.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -2280,10 +2280,10 @@ export const royalConfig = {
           "subCategory": "Tandoori (Chicken)",
           "isVeg": false,
           "price": 410,
-          "description": "Charcoal-grilled Tandoori Chicken Full steeped in royal tandoori marinade and roasted over glowing coal embers.",
+          "description": "Whole chicken steeped in traditional tandoori marinade, slow-roasted over coal embers.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-roll.jpg",
+          "image": "/data/dishes/tandoori-chicken-full.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -2293,10 +2293,10 @@ export const royalConfig = {
           "subCategory": "Tandoori (Chicken)",
           "isVeg": false,
           "price": 409,
-          "description": "Charcoal-grilled Chicken Patiala Full steeped in royal tandoori marinade and roasted over glowing coal embers.",
+          "description": "Whole tandoori chicken cooked in royal Patiala style with roasted aromatics and rich glaze.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/chicken-roll.jpg",
+          "image": "/data/dishes/chicken-patiala-full.jpg",
           "serves": "1-2 Persons"
       }
   ] as MenuItem[],
