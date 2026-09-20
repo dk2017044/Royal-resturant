@@ -359,7 +359,7 @@ export const royalConfig = {
           "description": "Refreshing fresh-squeezed lime juice served sweet, salted, or mixed over crushed ice.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/lemonade.jpg",
+          "image": "/data/dishes/fresh-lime-soda.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -476,7 +476,7 @@ export const royalConfig = {
           "description": "Fresh berry-infused pink strawberry milkshake topped with whipped cream and syrup.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/cold-coffee.jpg",
+          "image": "/data/dishes/strawberry-shake.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -1295,7 +1295,7 @@ export const royalConfig = {
           "description": "Golden fries tossed in sweet and spicy Indo-Chinese chilli garlic sauce with capsicum.",
           "spicyLevel": 2,
           "isChefSpecial": false,
-          "image": "/data/dishes/french-fries.jpg",
+          "image": "/data/dishes/french-fries-chilli.jpg",
           "serves": "1-2 Persons"
       },
       {
@@ -2257,7 +2257,7 @@ export const royalConfig = {
           "description": "Four whole chicken drumsticks marinated in royal spices and slow-roasted in the clay oven.",
           "spicyLevel": 1,
           "isChefSpecial": false,
-          "image": "/data/dishes/tangdi-kebab.jpg",
+          "image": "/data/dishes/tangdi-kebab-4leg-pcs.jpg",
           "serves": "1-2 Persons"
       },
       {

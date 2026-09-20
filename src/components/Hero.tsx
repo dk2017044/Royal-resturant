@@ -53,12 +53,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenOrderModal: _onOpenOrderModal 
     },
     {
       id: 3,
-      title: "Chicken Butter Masala",
-      hindiTitle: "चिकन बटर मसाला",
-      tag: "CHEF SPECIAL CURRY",
-      price: "₹317",
+      title: "Dal Royal Rasoi",
+      hindiTitle: "दाल रॉयल रसोई",
+      tag: "SLOW-SIMMERED SPECIAL",
+      price: "₹219",
       image: "/data/dishes/plate-dal-makhani.png",
-      description: "Tender chicken pieces simmered in velvety tomato-butter gravy with aromatic fenugreek and fresh cream.",
+      description: "Slow-simmered black lentils churned with rich golden butter, fresh dairy cream, and hand-ground royal spices.",
     },
     {
       id: 4,

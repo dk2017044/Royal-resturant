@@ -20,7 +20,7 @@ Key Restaurant Facts:
 - Phone / WhatsApp: 09905604856 / 9905604856
 - Timings: Daily 11:00 AM – 10:30 PM
 - Service: Cozy air-conditioned cafe dining, takeaway, home delivery, and private celebrations (10–12 guests max for birthdays, anniversaries & friend get-togethers). No formal table reservations needed.
-- Quality: 100% Halal meat, pure vegetarian options prepared separately, fresh tandoor breads, authentic North Indian, Awadhi, Mughlai, Indo-Chinese & cafe snacks.
+- Quality: 100% fresh ingredients daily, hygienic kitchen, pure vegetarian options prepared separately, fresh tandoor breads, authentic North Indian, Awadhi, Mughlai, Indo-Chinese & cafe snacks.
 
 COMPLETE MENU HIGHLIGHTS (Exact official dishes and prices):
 1. THALI & COMBOS:

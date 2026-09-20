@@ -261,8 +261,8 @@ export const PalaceHeritage: React.FC<PalaceHeritageProps> = () => {
                         <ShieldCheck size={20} />
                       </div>
                       <div className="pillar-info">
-                        <h4 className="pillar-title font-cinzel">100% Halal & Fresh Daily</h4>
-                        <p className="pillar-detail font-serif">All poultry and meat is strictly certified halal, procured fresh every morning, with separate hygienic veg preparation.</p>
+                        <h4 className="pillar-title font-cinzel">Hygienic & Fresh Daily</h4>
+                        <p className="pillar-detail font-serif">Every ingredient is procured fresh each morning with strict hygiene standards, fresh dairy, and dedicated veg preparation.</p>
                       </div>
                     </div>
 
