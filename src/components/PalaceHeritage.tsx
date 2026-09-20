@@ -470,7 +470,7 @@ export const PalaceHeritage: React.FC<PalaceHeritageProps> = () => {
                     onClick={() => setSelectedPhoto(photo)}
                   >
                     <div className="patron-photo-media">
-                      <img src={photo.src} alt={photo.title} className="patron-photo-img" loading="lazy" />
+                      <img src={photo.src} alt={photo.title} className="patron-photo-img" loading="lazy" decoding="async" />
                       <div className="photo-zoom-badge">
                         <Maximize2 size={12} />
                         <span>View</span>

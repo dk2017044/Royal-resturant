@@ -42,12 +42,14 @@
 }
 
 .cat-book-btn:hover {
-  background: rgba(212, 175, 55, 0.1);
-  border-color: rgba(212, 175, 55, 0.4);
+  background: rgba(212, 175, 55, 0.15);
+  border-color: rgba(212, 175, 55, 0.45);
 }
 
 .cat-book-btn.active {
-  border-color: transparent;
+  background: linear-gradient(135deg, #f5b842 0%, #d4af37 100%) !important;
+  border-color: #f5b842 !important;
+  box-shadow: 0 6px 20px rgba(245, 184, 66, 0.45);
 }
 
 .cat-icon {
@@ -69,25 +71,23 @@
 }
 
 .cat-book-btn.active .cat-title {
-  color: #090608;
+  color: #120e09 !important;
+  font-weight: 800 !important;
 }
 
 .cat-count {
   font-size: 0.72rem;
-  color: rgba(245, 230, 211, 0.65);
+  color: #d4af37;
+  font-weight: 600;
 }
 
 .cat-book-btn.active .cat-count {
-  color: #241407;
+  color: #2b1c0a !important;
+  font-weight: 700 !important;
 }
 
 .cat-active-glow {
-  position: absolute;
-  inset: 0;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #f5b842 0%, #d4af37 100%);
-  z-index: -1;
-  box-shadow: 0 6px 20px rgba(245, 184, 66, 0.45);
+  display: none;
 }
 
 /* ==========================================================================

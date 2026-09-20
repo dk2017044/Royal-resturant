@@ -214,24 +214,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenOrderModal: _onOpenOrderModal 
                   }}
                 >
                   {/* Continuous Smooth 360 Spin + Breathing Zoom In / Out Animation */}
-                  <motion.div
-                    className="plate-rotating-body"
-                    animate={{
-                      rotate: [0, 360],
-                      scale: [0.95, 1.05, 0.95],
-                    }}
-                    transition={{
-                      rotate: { duration: 26, repeat: Infinity, ease: "linear" },
-                      scale: { duration: 5, repeat: Infinity, ease: "easeInOut" }
-                    }}
-                    whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-                  >
+                  <div className="plate-rotating-body">
                     <img
                       src={currentDish.image}
                       alt={currentDish.title}
                       className="white-plate-image"
+                      decoding="async"
                     />
-                  </motion.div>
+                  </div>
 
                   {/* Floating Price Pill */}
                   <div className="plate-price-pill font-cinzel">

@@ -374,23 +374,13 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
                   key={cat.id}
                   type="button"
                   className={`cat-book-btn ${isActive ? "active" : ""}`}
-                  onClick={(e) => {
-                    e.currentTarget.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-                    handleCategoryChange(cat.id);
-                  }}
+                  onClick={() => handleCategoryChange(cat.id)}
                 >
                   <span className="cat-icon">{cat.icon}</span>
                   <div className="cat-text-wrap">
                     <span className="cat-title font-cinzel">{cat.name}</span>
                     <span className="cat-count font-serif">{cat.count} items</span>
                   </div>
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeCategoryGlow"
-                      className="cat-active-glow"
-                      transition={{ type: "spring", stiffness: 350, damping: 28 }}
-                    />
-                  )}
                 </button>
               );
             })}
@@ -502,7 +492,7 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
           </span>
         </div>
 
-        <motion.div layout className="paginated-dishes-grid">
+        <div className="paginated-dishes-grid">
           <AnimatePresence>
             {paginatedItems.map((dish) => {
               const inCart = cart.find((c) => c.id === dish.id);
@@ -514,14 +504,14 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.25 }}
+                  transition={{ duration: 0.2 }}
                   whileHover={{ y: -4, transition: { duration: 0.2 } }}
                   className={`curated-dish-card glass-panel ${qty > 0 ? "feast-selected" : ""}`}
                   onClick={() => onSelectItem(dish)}
                 >
                   {/* Photo with badges */}
                   <div className="dish-img-box">
-                    <img src={dish.image} alt={dish.name} loading="lazy" />
+                    <img src={dish.image} alt={dish.name} loading="lazy" decoding="async" />
 
                     {/* Veg/Non-Veg Pill */}
                     <div className={`diet-badge-pill ${dish.isVeg ? "veg" : "nonveg"}`}>
@@ -595,7 +585,7 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
               );
             })}
           </AnimatePresence>
-        </motion.div>
+        </div>
 
         {/* Empty state */}
         {filteredItems.length === 0 && (
