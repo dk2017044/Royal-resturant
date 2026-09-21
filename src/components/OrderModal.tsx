@@ -16,6 +16,15 @@ import {
 import { royalConfig } from "../config";
 import "./OrderModal.css";
 
+import {
+  sanitizeTemplateInput,
+  safeSanitizePhone,
+  verifyCartPrices,
+  idempotencyGuard,
+  safeCopyToClipboard,
+  PAYLOAD_LIMITS,
+} from "../utils/security";
+
 export interface CartItem {
   id: string;
   name: string;
@@ -52,6 +61,7 @@ export const OrderModal: React.FC<OrderModalProps> = ({
   const [notes, setNotes] = useState("");
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [orderId, setOrderId] = useState("");
+  const [isCopied, setIsCopied] = useState(false);
   const [formErrors, setFormErrors] = useState<{
     name?: string;
     phone?: string;
@@ -59,10 +69,15 @@ export const OrderModal: React.FC<OrderModalProps> = ({
   }>({});
   const [showErrorBanner, setShowErrorBanner] = useState(false);
 
-  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-  const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const packagingFee = orderType === "dine-in" ? 0 : 20;
-  const grandTotal = subtotal + packagingFee;
+  // Security: Canonical Price Re-Verification to prevent client-side price tampering / replay
+  const verifiedBill = verifyCartPrices(cart, orderType);
+  const totalItems = cart.reduce(
+    (sum, item) => sum + Math.max(1, Math.min(PAYLOAD_LIMITS.MAX_CART_ITEM_QTY, Math.floor(item.quantity) || 1)),
+    0
+  );
+  const subtotal = verifiedBill.subtotal;
+  const packagingFee = verifiedBill.packagingFee;
+  const grandTotal = verifiedBill.grandTotal;
 
   const validateCustomerDetails = (): boolean => {
     const errs: {
@@ -71,21 +86,24 @@ export const OrderModal: React.FC<OrderModalProps> = ({
       address?: string;
     } = {};
 
-    if (!name.trim()) {
+    const cleanName = sanitizeTemplateInput(name, PAYLOAD_LIMITS.CUSTOMER_NAME);
+    if (!cleanName.trim()) {
       errs.name = "Please enter your name (Aapka naam zaroori hai)";
-    } else if (name.trim().length < 2) {
+    } else if (cleanName.trim().length < 2) {
       errs.name = "Name must be at least 2 characters";
     }
 
-    const cleanPhone = phone.replace(/\D/g, "");
-    if (!cleanPhone) {
-      errs.phone = "Please enter mobile number (Mobile no. zaroori hai)";
-    } else if (cleanPhone.length < 10) {
-      errs.phone = "Please enter a valid 10-digit mobile number";
+    // Security: ReDoS-safe linear phone validation
+    const phoneCheck = safeSanitizePhone(phone);
+    if (!phoneCheck.isValid) {
+      errs.phone = phoneCheck.error || "Please enter a valid 10-digit mobile number";
     }
 
-    if (orderType === "delivery" && !address.trim()) {
-      errs.address = "Please enter delivery address in Sadikpur / Patna City";
+    if (orderType === "delivery") {
+      const cleanAddress = sanitizeTemplateInput(address, PAYLOAD_LIMITS.ADDRESS);
+      if (!cleanAddress.trim()) {
+        errs.address = "Please enter delivery address in Sadikpur / Patna City";
+      }
     }
 
     setFormErrors(errs);
@@ -94,8 +112,14 @@ export const OrderModal: React.FC<OrderModalProps> = ({
     return isValid;
   };
 
-  const generateOrderText = () => {
-    let text = `👑 *ROYAL RASOI - NEW ORDER* 👑\n`;
+  const generateOrderText = (nonce: string) => {
+    // Security: SSTI & Template Injection defense
+    const cleanName = sanitizeTemplateInput(name, PAYLOAD_LIMITS.CUSTOMER_NAME);
+    const cleanPhone = safeSanitizePhone(phone).cleanPhone || phone.slice(0, 15);
+    const cleanAddress = sanitizeTemplateInput(address, PAYLOAD_LIMITS.ADDRESS);
+    const cleanNotes = sanitizeTemplateInput(notes, PAYLOAD_LIMITS.SPECIAL_INSTRUCTIONS);
+
+    let text = `👑 *ROYAL RASOI - NEW ORDER* [REF: #${nonce}] 👑\n`;
     text += `---------------------------------\n`;
     text += `*Order Type:* ${
       orderType === "dine-in"
@@ -105,20 +129,23 @@ export const OrderModal: React.FC<OrderModalProps> = ({
         : "🛵 Home Delivery"
     }\n`;
 
-    if (name.trim()) text += `*Customer Name:* ${name.trim()}\n`;
-    if (phone.trim()) text += `*Phone:* ${phone.trim()}\n`;
-    if (orderType === "delivery" && address.trim()) text += `*Delivery Address:* ${address.trim()}\n`;
+    if (cleanName) text += `*Customer Name:* ${cleanName}\n`;
+    if (cleanPhone) text += `*Phone:* ${cleanPhone}\n`;
+    if (orderType === "delivery" && cleanAddress) text += `*Delivery Address:* ${cleanAddress}\n`;
     text += `---------------------------------\n`;
     text += `*ITEMS ORDERED:*\n`;
 
     cart.forEach((item) => {
-      text += `• ${item.quantity}x ${item.name} - ₹${item.price * item.quantity}\n`;
+      const canonicalItem = royalConfig.menu.find((d) => d.id === item.id);
+      const verifiedPrice = canonicalItem ? canonicalItem.price : item.price;
+      const validQty = Math.max(1, Math.min(PAYLOAD_LIMITS.MAX_CART_ITEM_QTY, Math.floor(item.quantity) || 1));
+      text += `• ${validQty}x ${item.name} - ₹${verifiedPrice * validQty}\n`;
     });
 
     text += `---------------------------------\n`;
     if (packagingFee > 0) text += `*Packaging / Delivery:* ₹${packagingFee}\n`;
     text += `*TOTAL BILL:* ₹${grandTotal}\n`;
-    if (notes.trim()) text += `*Special Instructions:* ${notes.trim()}\n`;
+    if (cleanNotes) text += `*Special Instructions:* ${cleanNotes}\n`;
     text += `---------------------------------\n`;
     text += `Please confirm my order. Thank you!`;
 
@@ -130,15 +157,22 @@ export const OrderModal: React.FC<OrderModalProps> = ({
     if (cart.length === 0) return;
     if (!validateCustomerDetails()) return;
 
-    const msg = generateOrderText();
+    // Security: Replay attack & duplicate submission guard
+    const orderNonce = idempotencyGuard.generateOrderNonce();
+    const submissionKey = `${phone}_${grandTotal}_${cart.length}`;
+    if (!idempotencyGuard.canSubmit(submissionKey)) {
+      alert("Order already being dispatched! Please wait a moment.");
+      return;
+    }
+
+    const msg = generateOrderText(orderNonce);
     const encoded = encodeURIComponent(msg);
     const waNumber = "919905604856";
     const waUrl = `https://wa.me/${waNumber}?text=${encoded}`;
     window.open(waUrl, "_blank", "noopener,noreferrer");
 
     // Also mark confirmed locally
-    const id = `RR-${Math.floor(1000 + Math.random() * 9000)}`;
-    setOrderId(id);
+    setOrderId(orderNonce);
     setIsConfirmed(true);
   };
 
@@ -146,9 +180,25 @@ export const OrderModal: React.FC<OrderModalProps> = ({
     e.preventDefault();
     if (cart.length === 0) return;
     if (!validateCustomerDetails()) return;
-    const id = `RR-${Math.floor(1000 + Math.random() * 9000)}`;
-    setOrderId(id);
+
+    const orderNonce = idempotencyGuard.generateOrderNonce();
+    const submissionKey = `${phone}_${grandTotal}_${cart.length}`;
+    if (!idempotencyGuard.canSubmit(submissionKey)) {
+      alert("Order already being dispatched! Please wait a moment.");
+      return;
+    }
+
+    setOrderId(orderNonce);
     setIsConfirmed(true);
+  };
+
+  const handleCopyOrder = async () => {
+    const summary = `Royal Rasoi Order Ref: #${orderId} | Total: ₹${grandTotal} | Phone: ${royalConfig.restaurant.phone}`;
+    const success = await safeCopyToClipboard(summary);
+    if (success) {
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2500);
+    }
   };
 
   const handleResetAndClose = () => {
@@ -209,7 +259,15 @@ export const OrderModal: React.FC<OrderModalProps> = ({
                 </div>
               </div>
 
-              <div className="success-actions">
+              <div className="success-actions" style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                <button
+                  type="button"
+                  className="btn-royal-secondary w-full"
+                  onClick={handleCopyOrder}
+                  style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "8px" }}
+                >
+                  <span>{isCopied ? "✓ Copied to Clipboard!" : "📋 Copy Order Details"}</span>
+                </button>
                 <button
                   type="button"
                   className="btn-royal-primary w-full"
@@ -357,6 +415,7 @@ export const OrderModal: React.FC<OrderModalProps> = ({
                       <input
                         type="text"
                         placeholder="Your Name (Aapka Naam) *"
+                        maxLength={PAYLOAD_LIMITS.CUSTOMER_NAME}
                         className={`order-input ${formErrors.name ? "input-error" : ""}`}
                         value={name}
                         onChange={(e) => {
@@ -377,6 +436,7 @@ export const OrderModal: React.FC<OrderModalProps> = ({
                       <input
                         type="tel"
                         placeholder="Phone Number (10-Digit Mobile) *"
+                        maxLength={PAYLOAD_LIMITS.PHONE_NUMBER}
                         className={`order-input ${formErrors.phone ? "input-error" : ""}`}
                         value={phone}
                         onChange={(e) => {
@@ -400,6 +460,7 @@ export const OrderModal: React.FC<OrderModalProps> = ({
                       <input
                         type="text"
                         placeholder="Delivery Address in Sadikpur / Patna City *"
+                        maxLength={PAYLOAD_LIMITS.ADDRESS}
                         className={`order-input ${formErrors.address ? "input-error" : ""}`}
                         value={address}
                         onChange={(e) => {
@@ -421,6 +482,7 @@ export const OrderModal: React.FC<OrderModalProps> = ({
                     <input
                       type="text"
                       placeholder="Cooking Instructions (e.g. Less spicy, Extra green chutney, Boiled egg)"
+                      maxLength={PAYLOAD_LIMITS.SPECIAL_INSTRUCTIONS}
                       className="order-input"
                       value={notes}
                       onChange={(e) => setNotes(e.target.value)}

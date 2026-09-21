@@ -16,6 +16,7 @@ import {
 import { motion, AnimatePresence } from "motion/react";
 import { royalConfig, type MenuItem } from "../config";
 import type { CartItem } from "./OrderModal";
+import { sanitizeSearchQuery, PAYLOAD_LIMITS } from "../utils/security";
 import "./RoyalMenu.css";
 
 interface RoyalMenuProps {
@@ -182,8 +183,10 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
   // Filter items with global search across all categories when search query is typed
   const filteredItems = useMemo(() => {
     const isSearching = searchQuery.trim() !== "";
-    const qRaw = searchQuery.toLowerCase().trim();
-    const searchTokens = qRaw.split(/\s+/).filter(Boolean);
+    // Security: sanitize and cap search query length to prevent LPDoS & injection
+    const qRaw = sanitizeSearchQuery(searchQuery).toLowerCase().trim();
+    // Security: limit to 5 search tokens to prevent algorithmic complexity DoS
+    const searchTokens = qRaw.split(/\s+/).filter(Boolean).slice(0, 5);
 
     // Check if query explicitly specifies diet
     const querySpecifiesVeg =
@@ -444,7 +447,8 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
   };
 
   const handleSearchChange = (val: string) => {
-    setSearchQuery(val);
+    const clean = sanitizeSearchQuery(val);
+    setSearchQuery(clean);
     setCurrentPage(1);
   };
 
@@ -536,6 +540,7 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
               <input
                 type="text"
                 placeholder="Search delicacies (e.g. Momos, Burger, Pakoda, Biryani)..."
+                maxLength={PAYLOAD_LIMITS.SEARCH_QUERY}
                 value={searchQuery}
                 onChange={(e) => handleSearchChange(e.target.value)}
                 className="mini-search-input"

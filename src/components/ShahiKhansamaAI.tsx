@@ -269,6 +269,7 @@ export const ShahiKhansamaAI: React.FC<ShahiKhansamaAIProps> = ({
                   type="text"
                   className="shahi-input"
                   placeholder="Poochiye (e.g. momos, burger, pakoda, biryani, party)..."
+                  maxLength={300}
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
