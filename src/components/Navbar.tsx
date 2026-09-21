@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, Crown, MapPin, Clock, Phone, ShoppingBag } from "lucide-react";
+import { Menu, X, Crown, MapPin, Clock, Phone, ShoppingBag, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { royalConfig } from "../config";
 import { openDeviceMap } from "../utils/mapUtils";
 import "./Navbar.css";
 
 interface NavbarProps {
-  onOpenOrderModal?: () => void;
-  cartCount?: number;
+  onOpenOrderModal: () => void;
+  cartCount: number;
   activePage: "home" | "menu";
   onNavigate: (page: "home" | "menu", anchorId?: string) => void;
+  onOpenAI?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -17,6 +18,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   cartCount = 0,
   activePage,
   onNavigate,
+  onOpenAI,
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -140,6 +142,20 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               <span>Explore Menu</span>
             </button>
+
+            {/* Rasoi AI Button */}
+            {onOpenAI && (
+              <button
+                type="button"
+                className="nav-ai-btn"
+                onClick={onOpenAI}
+                title="Ask Rasoi AI Concierge"
+                aria-label="Open Rasoi AI Assistant"
+              >
+                <Sparkles size={16} />
+                <span className="nav-ai-label">Rasoi AI</span>
+              </button>
+            )}
 
             {/* Mobile Toggle */}
             <button

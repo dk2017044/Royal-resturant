@@ -125,6 +125,7 @@ export const App: React.FC = () => {
         cartCount={totalCartItems}
         activePage={activePage}
         onNavigate={handleNavigate}
+        onOpenAI={() => handleOpenAI()}
       />
 
       {/* Main Content View */}
@@ -156,7 +157,6 @@ export const App: React.FC = () => {
             onUpdateQuantity={handleUpdateQuantity}
             onClearCart={handleClearCart}
             onOpenOrderModal={() => setIsOrderModalOpen(true)}
-            onOpenAIWithQuery={handleOpenAI}
             onBackToHome={() => handleNavigate("home", "hero")}
           />
         )}

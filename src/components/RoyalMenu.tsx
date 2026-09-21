@@ -25,7 +25,6 @@ interface RoyalMenuProps {
   onUpdateQuantity: (id: string, delta: number) => void;
   onClearCart: () => void;
   onOpenOrderModal: () => void;
-  onOpenAIWithQuery?: (query: string) => void;
   onBackToHome?: () => void;
 }
 
@@ -45,17 +44,57 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
   onUpdateQuantity,
   onClearCart,
   onOpenOrderModal,
-  onOpenAIWithQuery,
   onBackToHome,
 }) => {
   const [activeCategory, setActiveCategory] = useState<string>("Combos & Thali");
   const [activeSubcategory, setActiveSubcategory] = useState<string>("All");
   const [dietFilter, setDietFilter] = useState<"All" | "Veg" | "NonVeg">("All");
-  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [searchQuery, setSearchQuery] = useState<string>(() => {
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get("q")) return urlParams.get("q")!;
+      if (urlParams.get("search")) return urlParams.get("search")!;
+      const hash = window.location.hash;
+      if (hash.includes("?")) {
+        const hashParams = new URLSearchParams(hash.slice(hash.indexOf("?") + 1));
+        if (hashParams.get("q")) return hashParams.get("q")!;
+        if (hashParams.get("search")) return hashParams.get("search")!;
+      }
+    } catch {
+      // ignore
+    }
+    return "";
+  });
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const itemsPerPage = 9; // Exactly 9 dishes per page for ZERO LAG
+  const isSearching = searchQuery.trim() !== "";
+  const itemsPerPage = isSearching ? 48 : 9; // Show all search results directly without tiny page limits
 
   const menuBookRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleUrlSearch = () => {
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const q = urlParams.get("q") || urlParams.get("search");
+        if (q !== null && q !== undefined) {
+          setSearchQuery(q);
+          return;
+        }
+        const hash = window.location.hash;
+        if (hash.includes("?")) {
+          const hashParams = new URLSearchParams(hash.slice(hash.indexOf("?") + 1));
+          const hq = hashParams.get("q") || hashParams.get("search");
+          if (hq !== null && hq !== undefined) {
+            setSearchQuery(hq);
+          }
+        }
+      } catch {
+        // ignore
+      }
+    };
+    window.addEventListener("hashchange", handleUrlSearch);
+    return () => window.removeEventListener("hashchange", handleUrlSearch);
+  }, []);
 
   const categories: CategoryMeta[] = [
     {
@@ -294,14 +333,80 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
           return itemN.includes("chicken") || itemN.includes("murgh") || itemD.includes("chicken");
         }
 
-        // Roll / Rolls
-        if (token.includes("roll")) {
-          return itemN.includes("roll") || itemD.includes("roll");
+        // Coke / Cold Drink / Soda / Beverage / Soft Drink
+        if (
+          token.includes("coke") ||
+          token.includes("cola") ||
+          token.includes("pepsi") ||
+          token.includes("sprite") ||
+          token.includes("thums") ||
+          token.includes("fanta") ||
+          token.includes("mirinda") ||
+          token.includes("coldrink") ||
+          token.includes("drink") ||
+          token.includes("soda") ||
+          token.includes("beverag")
+        ) {
+          return (
+            itemN.includes("cold drink") ||
+            itemN.includes("coke") ||
+            itemN.includes("sprite") ||
+            itemN.includes("soda") ||
+            itemN.includes("mojito") ||
+            itemN.includes("lemonade") ||
+            itemN.includes("shake") ||
+            itemD.includes("cold drink") ||
+            itemD.includes("coke") ||
+            itemD.includes("coca-cola") ||
+            itemD.includes("drink") ||
+            itemD.includes("soda") ||
+            itemC.includes("beverages")
+          );
         }
 
-        // Pasta / Pastas / Macaroni
-        if (token.includes("past") || token.includes("macaron")) {
-          return itemN.includes("pasta") || itemD.includes("pasta");
+        // Roti / Naan / Paratha / Kulcha / Breads
+        if (
+          token.includes("roti") ||
+          token.includes("naan") ||
+          token.includes("nan") ||
+          token.includes("paratha") ||
+          token.includes("kulcha") ||
+          token.includes("bread")
+        ) {
+          return (
+            itemN.includes("roti") ||
+            itemN.includes("naan") ||
+            itemN.includes("paratha") ||
+            itemN.includes("kulcha") ||
+            itemC.includes("breads") ||
+            itemD.includes("roti") ||
+            itemD.includes("naan")
+          );
+        }
+
+        // Thali / Combo
+        if (token.includes("thali") || token.includes("combo")) {
+          return itemN.includes("thali") || itemN.includes("combo") || itemC.includes("combos") || itemD.includes("thali");
+        }
+
+        // Mutton / Gosht
+        if (token.includes("mutton") || token.includes("gosht")) {
+          return itemN.includes("mutton") || itemD.includes("mutton");
+        }
+
+        // Egg / Anda
+        if (token.includes("egg") || token.includes("anda")) {
+          return itemN.includes("egg") || itemN.includes("anda") || itemD.includes("egg");
+        }
+
+        // Fish / Machli
+        if (token.includes("fish") || token.includes("machli")) {
+          return itemN.includes("fish") || itemD.includes("fish");
+        }
+
+        // Sweets / Gulab Jamun / Ice cream
+        if (token.includes("sweet") || token.includes("jamun") || token.includes("gulab") || token.includes("dessert") || token.includes("ice cream") || token.includes("icecream")) {
+          return itemN.includes("jamun") || itemN.includes("sweet") || itemD.includes("sweet") || itemN.includes("ice cream") || itemD.includes("ice cream");
         }
 
         return false;
@@ -441,19 +546,9 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
                   onClick={() => handleSearchChange("")}
                   className="mini-clear-btn"
                   title="Clear search"
+                  aria-label="Clear search"
                 >
                   <X size={14} />
-                </button>
-              )}
-              {searchQuery.trim().length > 1 && onOpenAIWithQuery && (
-                <button
-                  type="button"
-                  onClick={() => onOpenAIWithQuery(searchQuery)}
-                  className="mini-ai-ask-btn font-cinzel"
-                  title="Ask Rasoi AI about this"
-                >
-                  <Sparkles size={12} />
-                  <span>Ask AI</span>
                 </button>
               )}
             </div>
@@ -502,7 +597,7 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
         <div className="menu-page-header">
           <span className="page-summary font-serif">
             {searchQuery.trim() ? (
-              <>Search results for &ldquo;<strong>{searchQuery}</strong>&rdquo; across all categories • Page <strong>{currentPage}</strong> of <strong>{totalPages}</strong> ({filteredItems.length} delicacies found)</>
+              <>Found <strong>{filteredItems.length} delicacies</strong> matching &ldquo;<strong>{searchQuery}</strong>&rdquo; across all 8 categories{totalPages > 1 ? ` • Page ${currentPage} of ${totalPages}` : ""}</>
             ) : (
               <>Showing {currentCategory.name} ({dietFilter === "All" ? "All" : dietFilter === "Veg" ? "Pure Veg" : "Non-Veg"}) • Page <strong>{currentPage}</strong> of <strong>{totalPages}</strong> ({filteredItems.length} dishes)</>
             )}
@@ -611,33 +706,40 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
             <p className="empty-sub font-serif">
               {searchQuery ? (
                 <>
-                  Looking for &ldquo;<strong>{searchQuery}</strong>&rdquo;? Let our Rasoi AI recommend the best food for you!
+                  No delicacies found matching &ldquo;<strong>{searchQuery}</strong>&rdquo;. Try searching for another dish or choose from popular searches below.
                 </>
               ) : (
-                "Try adjusting your filters or search query."
+                "Try adjusting your filters or category selection."
               )}
             </p>
+            {searchQuery && (
+              <div className="empty-quick-suggestions">
+                <span className="quick-suggest-label">Popular Searches:</span>
+                <div className="quick-suggest-pills">
+                  {["Cold Drink", "Biryani", "Tandoori Chicken", "Momos", "Paneer Tikka", "Thali"].map((term) => (
+                    <button
+                      key={term}
+                      type="button"
+                      className="quick-suggest-pill"
+                      onClick={() => handleSearchChange(term)}
+                    >
+                      {term}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
             <div className="empty-actions-row">
-              {searchQuery && onOpenAIWithQuery && (
-                <button
-                  type="button"
-                  className="btn-royal-gold-ai font-cinzel"
-                  onClick={() => onOpenAIWithQuery(searchQuery)}
-                >
-                  <Sparkles size={15} />
-                  <span>Ask Rasoi AI for Recommendations</span>
-                </button>
-              )}
               <button
                 type="button"
-                className="btn-royal-primary"
+                className="btn-green btn-reset-filters"
                 onClick={() => {
                   setSearchQuery("");
                   setDietFilter("All");
                   setActiveSubcategory("All");
                 }}
               >
-                Reset Filters
+                Reset All Filters
               </button>
             </div>
           </div>

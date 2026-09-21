@@ -506,6 +506,19 @@ export const royalConfig = {
           "serves": "1-2 Persons"
       },
       {
+          "id": "m-cold-drink",
+          "name": "Cold Drink (Coke / Thums Up / Sprite)",
+          "category": "Beverages & Soups",
+          "subCategory": "Mocktail",
+          "isVeg": true,
+          "price": 45,
+          "description": "Chilled refreshing soft drink (Coca-Cola, Thums Up, Sprite, 7Up, Fanta). Served chilled with ice.",
+          "spicyLevel": 1,
+          "isChefSpecial": false,
+          "image": "/data/dishes/virgin-mojito.jpg",
+          "serves": "1 Person"
+      },
+      {
           "id": "m-22",
           "name": "Egg Masala",
           "category": "Curries & Chinese",

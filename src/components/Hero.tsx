@@ -26,7 +26,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreMenu }) => {
       hindiTitle: "मुर्ग मुसल्लम",
       tag: "IMPERIAL SPECIAL",
       price: "₹599",
-      image: "/data/dishes/hero-gourmet-plate.jpg",
+      image: "/data/dishes/royal-murgh-musallam.jpg",
     },
     {
       id: 1,
@@ -34,15 +34,15 @@ export const Hero: React.FC<HeroProps> = ({ onExploreMenu }) => {
       hindiTitle: "रॉयल स्पेशल बिरयानी",
       tag: "SIGNATURE DUM PUKHT",
       price: "₹399",
-      image: "/data/dishes/plate-biryani.png",
+      image: "/data/dishes/royal-handi-biryani.jpg",
     },
     {
       id: 2,
-      title: "Chicken Seekh Kebab",
-      hindiTitle: "चिकन सीख कबाब",
-      tag: "TANDOOR SPECIAL",
-      price: "₹250",
-      image: "/data/dishes/plate-kebabs.png",
+      title: "Tandoori Chicken Platter",
+      hindiTitle: "तंदूरी चिकन प्लैटर",
+      tag: "CLAY TANDOOR SPECIAL",
+      price: "₹380",
+      image: "/data/dishes/royal-tandoori-platter.jpg",
     },
     {
       id: 3,
@@ -145,10 +145,10 @@ export const Hero: React.FC<HeroProps> = ({ onExploreMenu }) => {
               <motion.div
                 key={currentDish.id}
                 className="plate-display-card"
-                initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
-                animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                exit={{ opacity: 0, scale: 0.9, rotate: 5 }}
-                transition={{ duration: 0.45, ease: "easeOut" }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
               >
                 <img
                   src={currentDish.image}

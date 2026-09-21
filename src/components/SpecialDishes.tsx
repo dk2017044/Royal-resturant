@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "motion/react";
 import { Heart, Plus, Check } from "lucide-react";
 import type { MenuItem } from "../config";
 import "./SpecialDishes.css";
@@ -41,7 +42,7 @@ export const SpecialDishes: React.FC<SpecialDishesProps> = ({
       subCategory: "Indian (Chicken)",
       price: 599,
       isVeg: false,
-      image: "/data/dishes/hero-gourmet-plate.jpg",
+      image: "/data/dishes/royal-murgh-musallam.jpg",
       description: "Tender whole chicken slow-roasted in imperial Awadhi spices and savory gravy.",
       spicyLevel: 2,
       serves: "2-3 Persons",
@@ -55,7 +56,7 @@ export const SpecialDishes: React.FC<SpecialDishesProps> = ({
       subCategory: "Biryani",
       price: 399,
       isVeg: false,
-      image: "/data/dishes/plate-biryani.png",
+      image: "/data/dishes/royal-handi-biryani.jpg",
       description: "Aged long-grain basmati simmered over charcoal embers with saffron & pure desi ghee.",
       spicyLevel: 1,
       serves: "1-2 Persons",
@@ -81,24 +82,34 @@ export const SpecialDishes: React.FC<SpecialDishesProps> = ({
     <section className="special-dishes-section">
       <div className="container">
         {/* Section Heading matching Screenshot 1 */}
-        <div className="special-dishes-header">
+        <motion.div
+          className="special-dishes-header"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <h2 className="special-dishes-title">Our Special Dish</h2>
           <p className="special-dishes-sub">
             Hand-crafted by our master chefs using time-honored slow-cooking traditions.
           </p>
-        </div>
+        </motion.div>
 
         {/* 3 Protruding Round Plate Cards matching Reference Screenshot 1 */}
         <div className="special-dishes-grid">
-          {specialDishes.map((dish) => {
+          {specialDishes.map((dish, idx) => {
             const isFav = !!favorites[dish.id];
             const isJustAdded = !!addedItems[dish.id];
 
             return (
-              <div
+              <motion.div
                 key={dish.id}
                 className="special-dish-card"
                 onClick={() => onSelectItem?.(dish)}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ duration: 0.5, delay: idx * 0.12, ease: "easeOut" }}
               >
                 {/* Round Plate Protruding from Top */}
                 <div className="special-card-plate-wrap">
@@ -147,14 +158,20 @@ export const SpecialDishes: React.FC<SpecialDishesProps> = ({
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
 
         {/* Explore Full Menu Link */}
         {onExploreMore && (
-          <div className="special-dishes-more-cta">
+          <motion.div
+            className="special-dishes-more-cta"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+          >
             <button
               type="button"
               className="btn-green-outline"
@@ -162,7 +179,7 @@ export const SpecialDishes: React.FC<SpecialDishesProps> = ({
             >
               <span>Explore All 220+ Delicacies in Menu →</span>
             </button>
-          </div>
+          </motion.div>
         )}
       </div>
     </section>

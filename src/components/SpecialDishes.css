@@ -78,7 +78,7 @@
 }
 
 .special-dish-card:hover .special-card-plate-img {
-  transform: scale(1.08) rotate(3deg);
+  transform: scale(1.05);
 }
 
 /* Card Body */

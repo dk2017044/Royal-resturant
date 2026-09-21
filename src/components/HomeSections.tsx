@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "motion/react";
 import { ArrowRight, ChevronLeft, ChevronRight, Utensils, HeartHandshake, ShieldCheck, Flame, Star } from "lucide-react";
 import "./HomeSections.css";
 
@@ -62,12 +63,18 @@ export const HomeSections: React.FC<HomeSectionsProps> = ({ onExploreMenu, onOpe
       <section className="food-story-section">
         <div className="container story-grid-layout">
           {/* Left: Big Gourmet Plate with Garnishes */}
-          <div className="story-img-col">
+          <motion.div
+            className="story-img-col"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <div className="story-plate-wrapper">
               <div className="story-plate-circle">
                 <img
-                  src="/data/dishes/story-bowl.jpg"
-                  alt="Authentic Fresh Delicacies at The Royal Rasoi"
+                  src="/data/dishes/royal-handi-biryani.jpg"
+                  alt="Authentic Charcoal Dum Biryani at The Royal Rasoi"
                   className="story-main-dish-img"
                   loading="lazy"
                   decoding="async"
@@ -78,10 +85,16 @@ export const HomeSections: React.FC<HomeSectionsProps> = ({ onExploreMenu, onOpe
                 <span>Cooked Over Charcoal Embers</span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right: Narrative & Explore Story Button */}
-          <div className="story-text-col">
+          <motion.div
+            className="story-text-col"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <h2 className="story-main-heading">
               We Serve Authentic & Fresh Food.
             </h2>
@@ -102,28 +115,38 @@ export const HomeSections: React.FC<HomeSectionsProps> = ({ onExploreMenu, onOpe
                 <ArrowRight size={17} />
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* 2. GET YOUR FOOD IN 30 MINUTES (3 Process Cards matching Screenshot 2 middle) */}
       <section className="process-steps-section">
         <div className="container">
-          <div className="process-header text-center">
+          <motion.div
+            className="process-header text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
             <h2 className="process-title">Get Your Food in 30 minutes</h2>
             <p className="process-subtitle">
               Piping hot delicacies prepared fresh on order for Dine-in, Takeaway, and Home Delivery.
             </p>
-          </div>
+          </motion.div>
 
           <div className="process-cards-grid">
             {/* Step 1: Order Your Food (Yellow/Amber Icon Badge) */}
-            <div
+            <motion.div
               className="process-card clean-white-card"
               onClick={onOpenOrderModal}
               role={onOpenOrderModal ? "button" : undefined}
               tabIndex={onOpenOrderModal ? 0 : undefined}
               style={{ cursor: onOpenOrderModal ? "pointer" : "default" }}
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
             >
               <div className="process-icon-box box-amber">
                 <Utensils size={28} />
@@ -132,10 +155,16 @@ export const HomeSections: React.FC<HomeSectionsProps> = ({ onExploreMenu, onOpe
               <p className="process-card-desc">
                 Browse our 220+ North Indian, Tandoori & Chinese delicacies and place your order online, on call, or via 1-tap WhatsApp.
               </p>
-            </div>
+            </motion.div>
 
             {/* Step 2: Fresh Preparation (Coral/Red Icon Badge) */}
-            <div className="process-card clean-white-card">
+            <motion.div
+              className="process-card clean-white-card"
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ duration: 0.5, delay: 0.22, ease: "easeOut" }}
+            >
               <div className="process-icon-box box-coral">
                 <ShieldCheck size={28} />
               </div>
@@ -143,10 +172,16 @@ export const HomeSections: React.FC<HomeSectionsProps> = ({ onExploreMenu, onOpe
               <p className="process-card-desc">
                 Hand-kneaded whole-wheat breads slapped fresh on the clay tandoor and slow-simmered handis prepared with strict hygiene.
               </p>
-            </div>
+            </motion.div>
 
             {/* Step 3: Enjoy Your Food (Green Icon Badge) */}
-            <div className="process-card clean-white-card">
+            <motion.div
+              className="process-card clean-white-card"
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ duration: 0.5, delay: 0.34, ease: "easeOut" }}
+            >
               <div className="process-icon-box box-green">
                 <HeartHandshake size={28} />
               </div>
@@ -154,7 +189,7 @@ export const HomeSections: React.FC<HomeSectionsProps> = ({ onExploreMenu, onOpe
               <p className="process-card-desc">
                 Savor piping hot royal flavors with friends & family in our cozy air-conditioned Sadikpur cafe or delivered to your door.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

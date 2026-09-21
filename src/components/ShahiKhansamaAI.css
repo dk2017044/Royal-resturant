@@ -1,19 +1,20 @@
 /* ShahiKhansamaAI.css - Clean White Dining AI Concierge */
 
-/* Floating Trigger Button */
+/* Floating Trigger Button - Positioned on Bottom-Left to NEVER overlap Cart CTA on the Right */
 .shahi-ai-floating-btn {
   position: fixed;
   bottom: 24px;
-  right: 24px;
-  z-index: 990;
+  left: 24px;
+  right: auto;
+  z-index: 980;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 20px;
+  gap: 9px;
+  padding: 10px 18px;
   border-radius: 9999px;
   background: #ffffff;
   border: 1.5px solid #22c55e;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12), 0 0 20px rgba(34, 197, 94, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1), 0 0 16px rgba(34, 197, 94, 0.15);
   cursor: pointer;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -22,7 +23,7 @@
 
 .shahi-ai-floating-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15), 0 0 28px rgba(34, 197, 94, 0.35);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14), 0 0 24px rgba(34, 197, 94, 0.25);
 }
 
 .btn-crown-icon {
@@ -57,25 +58,28 @@
 }
 
 .btn-ai-text {
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: #111827;
   letter-spacing: 0.02em;
   white-space: nowrap;
 }
 
-/* Mobile Placement of Floating Button */
+/* Mobile Placement of Floating Button (Bottom-Left above mobile bar) */
 @media (max-width: 768px) {
   .shahi-ai-floating-btn {
     bottom: 74px;
-    right: 12px;
-    padding: 8px 14px;
+    left: 12px;
+    right: auto;
+    padding: 7px 12px;
     gap: 6px;
     transition: bottom 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   .shahi-ai-floating-btn.has-cart-items {
     bottom: 138px;
+    left: 12px;
+    right: auto;
   }
 
   .btn-ai-text {
