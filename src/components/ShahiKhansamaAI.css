@@ -1,4 +1,4 @@
-/* ShahiKhansamaAI.css - Royal Dining AI Concierge */
+/* ShahiKhansamaAI.css - Clean White Dining AI Concierge */
 
 /* Floating Trigger Button */
 .shahi-ai-floating-btn {
@@ -11,9 +11,9 @@
   gap: 10px;
   padding: 12px 20px;
   border-radius: 9999px;
-  background: linear-gradient(135deg, #1c1017 0%, #0d070b 100%);
-  border: 1.5px solid #f5b842;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.85), 0 0 24px rgba(245, 184, 66, 0.35);
+  background: #ffffff;
+  border: 1.5px solid #22c55e;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12), 0 0 20px rgba(34, 197, 94, 0.2);
   cursor: pointer;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -21,7 +21,8 @@
 }
 
 .shahi-ai-floating-btn:hover {
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.95), 0 0 35px rgba(245, 184, 66, 0.55);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15), 0 0 28px rgba(34, 197, 94, 0.35);
 }
 
 .btn-crown-icon {
@@ -29,7 +30,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #f5b842;
+  color: #16a34a;
 }
 
 .live-sparkle-dot {
@@ -58,8 +59,8 @@
 .btn-ai-text {
   font-size: 0.84rem;
   font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 0.05em;
+  color: #111827;
+  letter-spacing: 0.02em;
   white-space: nowrap;
 }
 
@@ -74,7 +75,7 @@
   }
 
   .shahi-ai-floating-btn.has-cart-items {
-    bottom: 138px; /* Smoothly floats above the floating order cart bar */
+    bottom: 138px;
   }
 
   .btn-ai-text {
@@ -87,9 +88,9 @@
 .shahi-chat-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.82);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   z-index: 2100;
   display: flex;
   align-items: flex-end;
@@ -108,12 +109,12 @@
   max-width: 440px;
   height: 600px;
   max-height: 85vh;
-  background: #0f0a0d;
-  border: 1.5px solid rgba(212, 175, 55, 0.35);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.95), 0 0 35px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15), 0 0 35px rgba(34, 197, 94, 0.1);
   overflow: hidden;
 }
 
@@ -132,8 +133,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 20px;
-  background: rgba(22, 14, 20, 0.95);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  background: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
 }
 
 .header-left {
@@ -146,12 +147,12 @@
   width: 40px;
   height: 40px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #f5b842 0%, #aa8724 100%);
-  color: #0a0608;
+  background: #22c55e;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 4px 14px rgba(34, 197, 94, 0.35);
 }
 
 .avatar-title-row {
@@ -162,16 +163,16 @@
 
 .khansama-name {
   font-size: 1.05rem;
-  font-weight: 700;
-  color: #ffffff;
+  font-weight: 800;
+  color: #111827;
   margin: 0;
 }
 
 .online-badge {
   font-size: 0.62rem;
   font-weight: 700;
-  color: #4ade80;
-  background: rgba(34, 197, 94, 0.15);
+  color: #16a34a;
+  background: rgba(34, 197, 94, 0.12);
   border: 1px solid rgba(34, 197, 94, 0.3);
   padding: 1px 6px;
   border-radius: 9999px;
@@ -180,7 +181,7 @@
 
 .khansama-role {
   font-size: 0.72rem;
-  color: rgba(245, 230, 211, 0.65);
+  color: #6b7280;
   margin: 2px 0 0;
 }
 
@@ -188,9 +189,9 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #ffffff;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #6b7280;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -199,15 +200,16 @@
 }
 
 .chat-close-btn:hover {
-  background: rgba(212, 175, 55, 0.2);
-  color: #f5b842;
+  background: #fee2e2;
+  border-color: #ef4444;
+  color: #ef4444;
 }
 
 /* Quick Chips Bar */
 .quick-chips-bar {
   padding: 10px 16px;
-  background: rgba(14, 8, 12, 0.9);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
   overflow-x: auto;
 }
 
@@ -228,18 +230,19 @@
   gap: 5px;
   padding: 5px 12px;
   border-radius: 9999px;
-  background: rgba(212, 175, 55, 0.08);
-  border: 1px solid rgba(212, 175, 55, 0.22);
-  color: rgba(245, 230, 211, 0.85);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #374151;
   font-size: 0.75rem;
+  font-weight: 500;
   white-space: nowrap;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .quick-chip:hover:not(:disabled) {
-  background: rgba(212, 175, 55, 0.2);
-  border-color: #f5b842;
+  background: #22c55e;
+  border-color: #22c55e;
   color: #ffffff;
 }
 
@@ -251,6 +254,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  background: #ffffff;
 }
 
 .chat-msg-row {
@@ -273,9 +277,9 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: rgba(212, 175, 55, 0.18);
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  color: #f5b842;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #16a34a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -291,16 +295,16 @@
 }
 
 .msg-user .chat-msg-bubble {
-  background: linear-gradient(135deg, #d4af37, #aa8724);
-  color: #0a0608;
+  background: #22c55e;
+  color: #ffffff;
   border-bottom-right-radius: 2px;
   font-weight: 500;
 }
 
 .msg-assistant .chat-msg-bubble {
-  background: rgba(22, 14, 20, 0.85);
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  color: rgba(245, 230, 211, 0.95);
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  color: #1f2937;
   border-bottom-left-radius: 2px;
 }
 
@@ -314,7 +318,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  color: rgba(245, 230, 211, 0.7);
+  color: #6b7280;
   font-style: italic;
   font-size: 0.82rem;
 }
@@ -323,7 +327,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #f5b842;
+  background: #22c55e;
   animation: dot-bounce 1.4s infinite ease-in-out both;
 }
 
@@ -345,16 +349,16 @@
   align-items: center;
   justify-content: space-around;
   padding: 8px 12px;
-  background: rgba(14, 8, 12, 0.95);
-  border-top: 1px solid rgba(212, 175, 55, 0.12);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .quick-action-link {
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #f5b842;
+  color: #16a34a;
   font-size: 0.75rem;
   font-weight: 600;
   cursor: pointer;
@@ -367,8 +371,8 @@
 }
 
 .quick-action-link:hover {
-  background: rgba(212, 175, 55, 0.15);
-  color: #ffffff;
+  background: rgba(34, 197, 94, 0.1);
+  color: #15803d;
 }
 
 /* Input Bar */
@@ -377,16 +381,16 @@
   align-items: center;
   gap: 8px;
   padding: 12px 16px;
-  background: rgba(18, 12, 16, 0.98);
+  background: #ffffff;
 }
 
 .shahi-input {
   flex: 1;
-  background: rgba(26, 16, 23, 0.8);
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
   border-radius: 9999px;
   padding: 10px 16px;
-  color: #ffffff;
+  color: #111827;
   font-size: 0.86rem;
   font-family: inherit;
   outline: none;
@@ -394,20 +398,21 @@
 }
 
 .shahi-input:focus {
-  border-color: #f5b842;
-  box-shadow: 0 0 12px rgba(245, 184, 66, 0.2);
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+  background: #ffffff;
 }
 
 .shahi-input::placeholder {
-  color: rgba(245, 230, 211, 0.45);
+  color: #9ca3af;
 }
 
 .shahi-send-btn {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #f5b842 0%, #d4af37 100%);
-  color: #0a0608;
+  background: #22c55e;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -418,7 +423,8 @@
 
 .shahi-send-btn:hover:not(:disabled) {
   transform: scale(1.08);
-  box-shadow: 0 0 14px rgba(245, 184, 66, 0.5);
+  background: #16a34a;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.35);
 }
 
 .shahi-send-btn:disabled {

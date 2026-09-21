@@ -1,558 +1,281 @@
-.royal-hero-section {
+/* Clean Minimalist Hero Section matching Screenshot 1 */
+
+.clean-hero-section {
+  background: #ffffff;
+  padding: 50px 0 70px;
   position: relative;
-  min-height: calc(100vh - 125px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 0 5rem;
-  background: radial-gradient(circle at 60% 40%, #26141f 0%, #180c14 60%, #0c070a 100%);
   overflow: hidden;
 }
 
-/* Ambient Radial Glows */
-.hero-ambient-glow {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  filter: blur(100px);
-  z-index: 0;
-}
-
-.hero-ambient-glow.glow-1 {
-  top: 10%;
-  right: 15%;
-  width: 480px;
-  height: 480px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.14) 0%, rgba(212, 175, 55, 0) 70%);
-}
-
-.hero-ambient-glow.glow-2 {
-  bottom: 5%;
-  left: 5%;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(230, 126, 34, 0.12) 0%, rgba(230, 126, 34, 0) 70%);
-}
-
-.hero-layout-grid {
-  position: relative;
-  z-index: 2;
+.hero-clean-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 3.5rem;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
+  gap: 3rem;
 }
 
-/* Left Column */
-.hero-text-col {
+/* Left Text Column */
+.hero-clean-text-col {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
-
-.hero-pill {
-  margin-bottom: 1.25rem;
-}
-
-.hero-main-title {
-  font-size: clamp(2.8rem, 5.5vw, 4.6rem);
-  font-weight: 800;
-  color: #ffffff;
-  line-height: 1.12;
-  letter-spacing: 0.02em;
-  margin-bottom: 0.85rem;
-}
-
-.hero-headline-sub {
-  font-size: 1.2rem;
-  color: #f7df94;
-  font-style: italic;
-  letter-spacing: 0.04em;
-  margin-bottom: 1.2rem;
-}
-
-.hero-paragraph {
-  font-size: 1.05rem;
-  color: rgba(245, 230, 211, 0.85);
-  line-height: 1.7;
-  max-width: 600px;
-  margin-bottom: 2rem;
-}
-
-/* Metrics Bar */
-.hero-metrics-bar {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  background: rgba(22, 12, 18, 0.6);
-  border: 1px solid rgba(212, 175, 55, 0.25);
-  border-radius: 16px;
-  padding: 12px 24px;
-  backdrop-filter: blur(12px);
-  margin-bottom: 2.25rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-.metric-chip {
-  display: flex;
-  flex-direction: column;
-}
-
-.metric-stars {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.metric-val {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #ffffff;
-  font-family: "Cinzel", serif;
-  line-height: 1;
-}
-
-.metric-val.gold-text {
-  color: #f5b842;
-}
-
-.metric-label {
-  font-size: 0.72rem;
-  color: rgba(245, 230, 211, 0.65);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-top: 4px;
-}
-
-.metric-divider {
-  width: 1px;
-  height: 32px;
-  background: rgba(212, 175, 55, 0.2);
-}
-
-/* Action Buttons */
-.hero-action-buttons {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
-}
-
-/* Quick Meta */
-.hero-quick-meta {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  font-size: 0.82rem;
-  color: rgba(245, 230, 211, 0.7);
-}
-
-.meta-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.meta-icon {
-  color: var(--accentGold);
-}
-
-.meta-call {
-  color: #f5b842;
-  font-weight: 600;
-  transition: color 0.2s ease;
-}
-
-.meta-call:hover {
-  color: #ffffff;
-}
-
-/* ==========================================================================
-   RIGHT COLUMN: SPINNING & ZOOMING WHITE PLATE STAGE
-   ========================================================================== */
-.hero-showcase-col {
-  display: flex;
-  justify-content: center;
-}
-
-.showcase-card-container {
-  width: 100%;
-  max-width: 480px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-/* Circular Plate Stage */
-.plate-showcase-stage {
-  position: relative;
-  width: 360px;
-  height: 360px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.plate-under-glow {
-  position: absolute;
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, rgba(230, 126, 34, 0.1) 50%, transparent 70%);
-  filter: blur(30px);
-  pointer-events: none;
-  z-index: 1;
-}
-
-.plate-ambient-ring {
-  position: absolute;
-  width: 340px;
-  height: 340px;
-  border-radius: 50%;
-  border: 1px dashed rgba(212, 175, 55, 0.3);
-  pointer-events: none;
-  z-index: 1;
-  animation: rotate-ambient-ring 40s linear infinite;
-}
-
-@keyframes rotate-ambient-ring {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.spinning-plate-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 2;
 }
 
-.plate-rotating-body {
-  width: 100%;
-  height: 100%;
-  display: flex;
+.hero-kicker-badge {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  cursor: grab;
-  transform-origin: center center;
-  animation: plate-spin 26s linear infinite;
-  will-change: transform;
-}
-
-@keyframes plate-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.plate-rotating-body:active {
-  cursor: grabbing;
-}
-
-.white-plate-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 25px rgba(212, 175, 55, 0.3));
-  user-select: none;
-  pointer-events: none;
-}
-
-/* Floating Badges on Plate */
-.plate-price-pill {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-  background: rgba(9, 6, 8, 0.92);
-  border: 1.5px solid var(--accentGold);
-  backdrop-filter: blur(12px);
-  color: #f5b842;
-  font-weight: 800;
-  font-size: 1.15rem;
-  padding: 6px 15px;
+  gap: 6px;
+  padding: 6px 14px;
   border-radius: 9999px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
-  z-index: 3;
-}
-
-.plate-tag-badge {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background: linear-gradient(135deg, #f5b842 0%, #d4af37 60%, #a87e1a 100%);
-  color: #080507;
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 5px 12px;
-  border-radius: 9999px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
-  z-index: 3;
-}
-
-/* Dish Info Panel */
-.plate-info-card {
-  width: 100%;
-  padding: 16px 20px;
-  border-radius: 18px;
-  text-align: center;
-}
-
-.dish-title-group {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 6px;
-  flex-wrap: wrap;
-}
-
-.dish-showcase-title {
-  font-size: 1.35rem;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  color: var(--primaryGreenDark);
+  font-size: 0.74rem;
   font-weight: 700;
-  color: #ffffff;
+  letter-spacing: 0.08em;
+  margin-bottom: 24px;
 }
 
-.dish-showcase-hindi {
-  font-size: 0.92rem;
-  color: var(--accentGold);
+.kicker-icon {
+  color: var(--primaryGreen);
 }
 
-.dish-showcase-desc {
+/* Big Bold Headline matching EAT HEALTHY BE HEALTHY */
+.hero-clean-title {
+  font-size: clamp(3.2rem, 5.8vw, 5.2rem);
+  font-weight: 900;
+  color: #111827;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.hero-accent-green {
+  color: var(--primaryGreen);
+  display: block;
+}
+
+.hero-clean-description {
+  font-size: 1.1rem;
+  color: #4b5563;
+  line-height: 1.65;
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+
+/* CTA Button */
+.hero-cta-row {
+  margin-bottom: 36px;
+}
+
+.hero-pill-btn {
+  padding: 16px 36px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  gap: 12px;
+  box-shadow: 0 10px 28px rgba(34, 197, 94, 0.38);
+}
+
+.hero-pill-btn .btn-arrow-icon {
+  transition: transform 0.2s ease;
+}
+
+.hero-pill-btn:hover .btn-arrow-icon {
+  transform: translateX(4px);
+}
+
+/* Trust Metric Row */
+.hero-trust-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.trust-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 0.88rem;
-  color: rgba(245, 230, 211, 0.8);
-  line-height: 1.5;
+  color: #4b5563;
 }
 
-/* Thumbnail Switcher */
-.dish-thumbnail-selector {
+.trust-rating {
+  font-weight: 800;
+  color: #111827;
+}
+
+.trust-green-num {
+  font-weight: 800;
+  color: var(--primaryGreenDark);
+}
+
+.trust-label {
+  color: #6b7280;
+}
+
+.trust-divider {
+  color: #e5e7eb;
+}
+
+/* Right Column: Plate Stage with Floating Leaves */
+.hero-clean-image-col {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-plate-stage {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  width: 100%;
 }
 
-.selector-label {
-  font-size: 0.76rem;
-  color: var(--accentGold);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.thumbnails-row {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.thumb-btn {
+.plate-display-card {
   position: relative;
-  width: 64px;
-  height: 64px;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
-  cursor: pointer;
-  border: 2px solid rgba(212, 175, 55, 0.2);
-  padding: 0;
-  background: #14090d;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.16);
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #ffffff;
 }
 
-.thumb-btn:hover {
+.hero-main-plate-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.hero-main-plate-img:hover {
+  transform: scale(1.04);
+}
+
+/* Floating Herbs */
+.floating-leaf {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.08));
+}
+
+.leaf-top-right {
+  top: 10px;
+  right: 15px;
+}
+
+.leaf-bottom-left {
+  bottom: 40px;
+  left: 10px;
+}
+
+/* Price Pill Badge */
+.hero-dish-badge {
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
+  background: #ffffff;
+  border-radius: 9999px;
+  padding: 8px 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #f1f5f9;
+}
+
+.badge-tag-text {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6b7280;
+}
+
+.badge-price-text {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--primaryGreenDark);
+  font-family: "Outfit", sans-serif;
+}
+
+/* Plate Thumbnails Selector */
+.hero-plate-selector {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.plate-dot-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #e5e7eb;
+  padding: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.plate-dot-btn:hover {
+  border-color: var(--primaryGreen);
   transform: scale(1.08);
-  border-color: #f5b842;
 }
 
-.thumb-img {
+.plate-dot-btn.active {
+  border-color: var(--primaryGreen);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);
+  transform: scale(1.12);
+}
+
+.dot-thumb-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-}
-
-.thumb-active-ring {
-  position: absolute;
-  inset: -2px;
-  border: 2px solid #f5b842;
   border-radius: 50%;
-  pointer-events: none;
-  box-shadow: 0 0 14px rgba(245, 184, 66, 0.8);
 }
 
-/* ==========================================================================
-   RESPONSIVE (Mobile-First)
-   ========================================================================== */
-@media (max-width: 1024px) {
-  .hero-layout-grid {
+/* Mobile Responsive */
+@media (max-width: 960px) {
+  .hero-clean-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
-  }
-
-  .hero-text-col {
-    align-items: center;
     text-align: center;
   }
 
-  .hero-paragraph {
+  .hero-clean-text-col {
+    align-items: center;
+  }
+
+  .hero-clean-description {
     max-width: 100%;
   }
 
-  .hero-metrics-bar {
+  .hero-clean-title {
+    font-size: clamp(2.4rem, 8vw, 3.8rem);
+  }
+
+  .hero-main-plate-img {
+    max-width: 380px;
+  }
+
+  .hero-trust-row {
     justify-content: center;
-  }
-
-  .hero-action-buttons {
-    justify-content: center;
-  }
-
-  .hero-quick-meta {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .royal-hero-section {
-    padding: 2rem 0 2.5rem;
-    min-height: auto;
-  }
-
-  .hero-main-title {
-    font-size: clamp(1.4rem, 6.2vw, 2.1rem);
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
-    white-space: normal;
-    text-align: center;
-    width: 100%;
-  }
-
-  .title-royal,
-  .hero-main-title .glow-text {
-    display: inline-block;
-  }
-
-  .hero-headline-sub {
-    font-size: 0.95rem;
-    margin-bottom: 0.85rem;
-  }
-
-  .hero-paragraph {
-    font-size: 0.92rem;
-    line-height: 1.55;
-    margin-bottom: 1.25rem;
-  }
-
-  .hero-metrics-bar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    gap: 8px;
-    width: 100%;
-    padding: 10px 14px;
-    margin-bottom: 1.5rem;
-  }
-
-  .metric-val {
-    font-size: 1.1rem;
-  }
-
-  .metric-label {
-    font-size: 0.65rem;
-  }
-
-  .metric-divider {
-    width: 1px;
-    height: 24px;
-  }
-
-  .hero-action-buttons {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-    margin-bottom: 1.25rem;
-  }
-
-  .hero-action-buttons a,
-  .hero-action-buttons button {
-    width: 100%;
-    padding: 12px 20px;
-    font-size: 0.86rem;
-  }
-
-  .hero-quick-meta {
-    font-size: 0.76rem;
-    gap: 0.85rem;
-  }
-
-  /* Plate stage on mobile */
-  .plate-showcase-stage {
-    width: 270px;
-    height: 270px;
-  }
-
-  .plate-under-glow {
-    width: 240px;
-    height: 240px;
-  }
-
-  .plate-ambient-ring {
-    width: 260px;
-    height: 260px;
-  }
-
-  .plate-rotating-body {
-    width: 250px;
-    height: 250px;
-  }
-
-  .plate-price-pill {
-    padding: 4px 11px;
-    font-size: 0.92rem;
-    bottom: 6px;
-    right: 6px;
-  }
-
-  .plate-tag-badge {
-    padding: 3px 10px;
-    font-size: 0.6rem;
-    top: 6px;
-    left: 6px;
-  }
-
-  .dish-showcase-title {
-    font-size: 1.15rem;
-  }
-
-  .dish-showcase-hindi {
-    font-size: 0.8rem;
-  }
-
-  .dish-showcase-desc {
-    font-size: 0.8rem;
-    line-height: 1.4;
-  }
-
-  .thumbnails-row {
-    gap: 8px;
-  }
-
-  .thumb-btn {
-    width: 52px;
-    height: 52px;
   }
 }

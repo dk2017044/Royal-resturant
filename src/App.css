@@ -1,10 +1,10 @@
-/* Royal Rasoi App Layout */
+/* Royal Rasoi App Layout - Clean White Design System */
 .app-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--color-obsidian);
-  color: var(--color-parchment);
+  background-color: var(--bg-page, #ffffff);
+  color: var(--text-main, #111827);
   position: relative;
 }
 
@@ -18,5 +18,3 @@
     padding-bottom: 75px;
   }
 }
-
-

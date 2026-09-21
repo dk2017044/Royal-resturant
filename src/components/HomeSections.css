@@ -1,0 +1,338 @@
+/* Home Extra Sections matching Screenshot 2 */
+
+.home-extra-sections {
+  background: #ffffff;
+}
+
+/* ==========================================================================
+   1. FOOD STORY SECTION
+   ========================================================================== */
+.food-story-section {
+  padding: 80px 0;
+  position: relative;
+}
+
+.story-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+.story-img-col {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.story-plate-wrapper {
+  position: relative;
+  max-width: 440px;
+  width: 100%;
+}
+
+.story-plate-circle {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  background: #ffffff;
+}
+
+.story-main-dish-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.story-plate-circle:hover .story-main-dish-img {
+  transform: scale(1.05);
+}
+
+.story-garnishes-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #ffffff;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #111827;
+  border: 1px solid #f1f5f9;
+}
+
+.story-garnishes-badge .flame-icon {
+  color: #ea580c;
+}
+
+.story-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.story-main-heading {
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+  font-weight: 900;
+  color: #111827;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.story-description {
+  font-size: 1.05rem;
+  color: #4b5563;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.story-sub-description {
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+
+.story-pill-btn {
+  padding: 14px 32px;
+  font-size: 1rem;
+}
+
+/* ==========================================================================
+   2. GET YOUR FOOD IN 30 MINUTES (3 PROCESS CARDS)
+   ========================================================================== */
+.process-steps-section {
+  padding: 70px 0 90px;
+  background: #f8fafc;
+}
+
+.process-header {
+  margin-bottom: 55px;
+}
+
+.process-title {
+  font-size: clamp(2rem, 3.8vw, 2.8rem);
+  font-weight: 900;
+  color: #111827;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.process-subtitle {
+  font-size: 1.05rem;
+  color: #6b7280;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.process-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.process-card {
+  padding: 38px 28px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+}
+
+.process-icon-box {
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  transition: transform 0.2s ease;
+}
+
+.process-card:hover .process-icon-box {
+  transform: scale(1.08);
+}
+
+.box-amber {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.box-coral {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+.box-green {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.process-card-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.process-card-desc {
+  font-size: 0.92rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   3. TESTIMONIAL / HAPPY CUSTOMERS SECTION
+   ========================================================================== */
+.testimonial-section {
+  padding: 90px 0 100px;
+  background: #ffffff;
+}
+
+.testimonial-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+.testimonial-content-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.quote-mark-icon {
+  margin-bottom: 20px;
+}
+
+.testimonial-quote {
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  color: #1f2937;
+  line-height: 1.55;
+  font-weight: 600;
+  margin-bottom: 28px;
+  font-style: italic;
+}
+
+.testimonial-author-box {
+  margin-bottom: 28px;
+}
+
+.author-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primaryGreenDark);
+  margin-bottom: 2px;
+}
+
+.author-role {
+  font-size: 0.88rem;
+  color: #6b7280;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.author-stars {
+  display: flex;
+  gap: 4px;
+}
+
+/* Slider Controls */
+.testimonial-slider-controls {
+  display: flex;
+  gap: 12px;
+}
+
+.slider-arrow-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.slider-arrow-btn:hover {
+  border-color: var(--primaryGreen);
+  color: var(--primaryGreenDark);
+  background: var(--primaryGreenSoft);
+  transform: scale(1.06);
+}
+
+/* Circular Multi-Layered Photo */
+.testimonial-avatar-col {
+  display: flex;
+  justify-content: center;
+}
+
+.avatar-multi-ring {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: #f8fafc;
+  padding: 16px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-outer-ring {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.avatar-circular-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Mobile Responsive */
+@media (max-width: 960px) {
+  .story-grid-layout,
+  .testimonial-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .story-text-col,
+  .testimonial-content-col {
+    align-items: center;
+  }
+
+  .process-cards-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .avatar-multi-ring {
+    width: 260px;
+    height: 260px;
+  }
+}

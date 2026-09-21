@@ -8,17 +8,23 @@ interface MobileBottomBarProps {
   orderCount: number;
   orderTotal: number;
   onOpenOrder: () => void;
+  onOpenMenu?: () => void;
 }
 
 export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({
   orderCount,
   orderTotal,
   onOpenOrder,
+  onOpenMenu,
 }) => {
-  const handleScrollToMenu = () => {
-    const el = document.getElementById("menu");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+  const handleMenuClick = () => {
+    if (onOpenMenu) {
+      onOpenMenu();
+    } else {
+      const el = document.getElementById("menu");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
@@ -33,13 +39,13 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({
         <button
           type="button"
           className="bottom-nav-btn"
-          onClick={handleScrollToMenu}
+          onClick={handleMenuClick}
           aria-label="View Royal Menu"
         >
           <div className="icon-wrapper">
             <UtensilsCrossed size={20} />
           </div>
-          <span className="btn-label font-cinzel">Menu</span>
+          <span className="btn-label">Menu</span>
         </button>
 
         {/* 2. WhatsApp Order / Chat */}
@@ -53,7 +59,7 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({
           <div className="icon-wrapper">
             <MessageSquare size={20} />
           </div>
-          <span className="btn-label font-cinzel">WhatsApp</span>
+          <span className="btn-label">WhatsApp</span>
         </a>
 
         {/* 3. Order Cart (Center Highlighted CTA) */}
@@ -67,7 +73,7 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({
             <ShoppingBag size={22} />
             {orderCount > 0 && <span className="feast-badge-counter">{orderCount}</span>}
           </div>
-          <span className="btn-label font-cinzel">
+          <span className="btn-label">
             {orderCount > 0 ? `₹${orderTotal}` : "Order"}
           </span>
         </button>
@@ -81,7 +87,7 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({
           <div className="icon-wrapper">
             <Phone size={20} />
           </div>
-          <span className="btn-label font-cinzel">Call Desk</span>
+          <span className="btn-label">Call Desk</span>
         </a>
 
         {/* 5. Google Maps Directions */}
@@ -94,7 +100,7 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({
           <div className="icon-wrapper">
             <MapPin size={20} />
           </div>
-          <span className="btn-label font-cinzel">Location</span>
+          <span className="btn-label">Location</span>
         </button>
       </div>
     </nav>

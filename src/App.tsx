@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
+import { SpecialDishes } from "./components/SpecialDishes";
+import { HomeSections } from "./components/HomeSections";
 import { RoyalMenu } from "./components/RoyalMenu";
-import { PalaceHeritage } from "./components/PalaceHeritage";
 import { Footer } from "./components/Footer";
 import { DishModal } from "./components/DishModal";
 import { OrderModal, type CartItem } from "./components/OrderModal";
@@ -12,6 +13,9 @@ import type { MenuItem } from "./config";
 import "./App.css";
 
 export const App: React.FC = () => {
+  // Page Routing State ('home' or 'menu')
+  const [activePage, setActivePage] = useState<"home" | "menu">("home");
+
   const [isOrderModalOpen, setIsOrderModalOpen] = useState<boolean>(false);
   const [selectedDishModal, setSelectedDishModal] = useState<MenuItem | null>(null);
 
@@ -21,6 +25,40 @@ export const App: React.FC = () => {
   // Shahi Khansama AI Concierge State
   const [isAIOpen, setIsAIOpen] = useState<boolean>(false);
   const [aiInitialQuery, setAiInitialQuery] = useState<string>("");
+
+  // Listen to hash changes (#menu / #home)
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash.toLowerCase();
+      if (hash.includes("menu")) {
+        setActivePage("menu");
+      } else {
+        setActivePage("home");
+      }
+    };
+
+    handleHash();
+    window.addEventListener("hashchange", handleHash);
+    return () => window.removeEventListener("hashchange", handleHash);
+  }, []);
+
+  const handleNavigate = (page: "home" | "menu", anchorId?: string) => {
+    setActivePage(page);
+    if (page === "menu") {
+      window.location.hash = "#menu";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      window.location.hash = anchorId ? `#${anchorId}` : "#hero";
+      if (anchorId) {
+        setTimeout(() => {
+          const el = document.getElementById(anchorId);
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+        }, 80);
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+  };
 
   const handleOpenAI = (query?: string) => {
     if (query) {
@@ -81,30 +119,50 @@ export const App: React.FC = () => {
 
   return (
     <div className="app-container">
-      {/* Royal Topbar & Navigation */}
-      <Navbar onOpenOrderModal={() => setIsOrderModalOpen(true)} />
+      {/* Clean White Navbar with Green Cart Icon */}
+      <Navbar
+        onOpenOrderModal={() => setIsOrderModalOpen(true)}
+        cartCount={totalCartItems}
+        activePage={activePage}
+        onNavigate={handleNavigate}
+      />
 
-      {/* Main Content Sections - Mobile-First Curated Luxury Experience */}
+      {/* Main Content View */}
       <main className="main-content">
-        {/* 1. Hero with Interactive Spinning White Plate Delicacy Showcase */}
-        <Hero onOpenOrderModal={() => setIsOrderModalOpen(true)} />
+        {activePage === "home" ? (
+          <>
+            {/* 1. Clean Minimal Hero matching Screenshot 1 */}
+            <Hero onExploreMenu={() => handleNavigate("menu")} />
 
-        {/* 2. Zero-Lag Royal Menu Book with Easy 1-Tap [+ ADD] and [- qty +] Controls */}
-        <RoyalMenu
-          onSelectItem={(dish: MenuItem) => setSelectedDishModal(dish)}
-          cart={cart}
-          onAddToCart={handleAddToCart}
-          onUpdateQuantity={handleUpdateQuantity}
-          onClearCart={handleClearCart}
-          onOpenOrderModal={() => setIsOrderModalOpen(true)}
-          onOpenAIWithQuery={handleOpenAI}
-        />
+            {/* 2. "Our Special Dish" Section with 3 Protruding Round Plates matching Screenshot 1 */}
+            <SpecialDishes
+              onAddToCart={handleAddToCart}
+              onSelectItem={(dish) => setSelectedDishModal(dish)}
+              onExploreMore={() => handleNavigate("menu")}
+            />
 
-        {/* 3. Palace Heritage, Real Celebration Moments & Food Craft */}
-        <PalaceHeritage />
+            {/* 3. Story, 3-Step Process & Testimonials matching Screenshot 2 */}
+            <HomeSections
+              onExploreMenu={() => handleNavigate("menu")}
+              onOpenOrderModal={() => setIsOrderModalOpen(true)}
+            />
+          </>
+        ) : (
+          /* Dedicated Menu Page (Off the Homepage as requested) */
+          <RoyalMenu
+            onSelectItem={(dish: MenuItem) => setSelectedDishModal(dish)}
+            cart={cart}
+            onAddToCart={handleAddToCart}
+            onUpdateQuantity={handleUpdateQuantity}
+            onClearCart={handleClearCart}
+            onOpenOrderModal={() => setIsOrderModalOpen(true)}
+            onOpenAIWithQuery={handleOpenAI}
+            onBackToHome={() => handleNavigate("home", "hero")}
+          />
+        )}
       </main>
 
-      {/* Royal Footer */}
+      {/* Clean Light Theme Footer */}
       <Footer onOpenOrderModal={() => setIsOrderModalOpen(true)} />
 
       {/* Modals */}
@@ -114,7 +172,7 @@ export const App: React.FC = () => {
         onAddToCart={handleAddToCart}
       />
 
-      {/* Easy Order Modal with 1-Click WhatsApp, Dine-in Cafe, Takeaway & Delivery */}
+      {/* Easy Order Modal */}
       <OrderModal
         isOpen={isOrderModalOpen}
         onClose={() => setIsOrderModalOpen(false)}
@@ -124,7 +182,7 @@ export const App: React.FC = () => {
         onClearCart={handleClearCart}
       />
 
-      {/* Shahi Khansama AI Concierge (Powered by Qwen on Groq) */}
+      {/* Rasoi AI Concierge */}
       <ShahiKhansamaAI
         isOpen={isAIOpen}
         onClose={() => setIsAIOpen(false)}
@@ -134,11 +192,12 @@ export const App: React.FC = () => {
         hasCartItems={totalCartItems > 0}
       />
 
-      {/* Dedicated Mobile Bottom App Bar with Live Order Counter & Price */}
+      {/* Dedicated Mobile Bottom Navigation Bar */}
       <MobileBottomBar
         orderCount={totalCartItems}
         orderTotal={totalCartPrice}
         onOpenOrder={() => setIsOrderModalOpen(true)}
+        onOpenMenu={() => handleNavigate("menu")}
       />
     </div>
   );

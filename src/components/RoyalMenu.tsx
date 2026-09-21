@@ -10,7 +10,8 @@ import {
   Plus,
   Minus,
   Trash2,
-  ArrowRight
+  ArrowRight,
+  ArrowLeft
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { royalConfig, type MenuItem } from "../config";
@@ -25,6 +26,7 @@ interface RoyalMenuProps {
   onClearCart: () => void;
   onOpenOrderModal: () => void;
   onOpenAIWithQuery?: (query: string) => void;
+  onBackToHome?: () => void;
 }
 
 interface CategoryMeta {
@@ -44,6 +46,7 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
   onClearCart,
   onOpenOrderModal,
   onOpenAIWithQuery,
+  onBackToHome,
 }) => {
   const [activeCategory, setActiveCategory] = useState<string>("Combos & Thali");
   const [activeSubcategory, setActiveSubcategory] = useState<string>("All");
@@ -346,6 +349,20 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
   return (
     <section className="menu-book-section section-wrapper" id="menu" ref={menuBookRef}>
       <div className="container">
+        {/* Back to Home Button */}
+        {onBackToHome && (
+          <div className="menu-top-nav-bar">
+            <button
+              type="button"
+              className="btn-back-home"
+              onClick={onBackToHome}
+            >
+              <ArrowLeft size={16} />
+              <span>Back to Home</span>
+            </button>
+          </div>
+        )}
+
         {/* Section Header */}
         <motion.div
           className="section-header text-center"
@@ -356,11 +373,11 @@ export const RoyalMenu: React.FC<RoyalMenuProps> = ({
         >
           <div className="royal-pill-badge">
             <Sparkles size={14} />
-            <span>INTERACTIVE DASTARKHWAN • 220+ DELICACIES</span>
+            <span>AUTHENTIC CUISINE • 220+ DELICACIES</span>
           </div>
-          <h2 className="section-title font-cinzel">The Royal Menu Book</h2>
-          <p className="section-subtitle font-serif">
-            Browse our delicacies category-by-category. Tap <strong className="gold-text">[+ ADD]</strong> on any dish to order for Dine-in Table, Takeaway, or Delivery.
+          <h2 className="section-title">The Royal Menu</h2>
+          <p className="section-subtitle">
+            Browse our delicacies category-by-category. Tap <strong className="text-green-accent">[+ ADD]</strong> to order for Dine-in, Takeaway, or Delivery.
           </p>
         </motion.div>
 

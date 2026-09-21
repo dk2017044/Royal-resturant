@@ -1,4 +1,4 @@
-/* MobileBottomBar.css - Dedicated Restaurant Mobile App Navigation */
+/* MobileBottomBar.css - Clean White Mobile App Navigation */
 
 .mobile-bottom-appbar {
   display: none;
@@ -12,11 +12,11 @@
     left: 0;
     right: 0;
     z-index: 999;
-    background: rgba(12, 7, 10, 0.94);
+    background: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(212, 175, 55, 0.28);
-    box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.8), 0 0 16px rgba(212, 175, 55, 0.12);
+    border-top: 1px solid #e5e7eb;
+    box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.08);
     padding-bottom: env(safe-area-inset-bottom, 8px);
   }
 
@@ -37,12 +37,14 @@
     justify-content: center;
     flex: 1;
     height: 100%;
-    color: rgba(245, 230, 211, 0.72);
+    color: #6b7280;
     text-decoration: none;
     transition: all 0.2s ease;
     cursor: pointer;
     position: relative;
     padding: 4px 0;
+    background: transparent;
+    border: none;
     -webkit-tap-highlight-color: transparent;
   }
 
@@ -58,48 +60,47 @@
     width: 28px;
     height: 28px;
     margin-bottom: 2px;
-    color: rgba(245, 230, 211, 0.75);
+    color: #6b7280;
     transition: color 0.2s ease;
   }
 
   .bottom-nav-btn:hover .icon-wrapper,
-  .bottom-nav-btn.has-feast .icon-wrapper {
-    color: #f5b842;
+  .bottom-nav-btn:focus .icon-wrapper {
+    color: #22c55e;
   }
 
   .btn-label {
-    font-size: 0.65rem;
-    letter-spacing: 0.04em;
+    font-size: 0.68rem;
+    letter-spacing: 0.02em;
     font-weight: 600;
-    text-transform: uppercase;
-    color: rgba(245, 230, 211, 0.7);
+    color: #6b7280;
     transition: color 0.2s ease;
   }
 
   .bottom-nav-btn:hover .btn-label,
-  .bottom-nav-btn.has-feast .btn-label {
-    color: #f5b842;
+  .bottom-nav-btn:focus .btn-label {
+    color: #22c55e;
   }
 
-  /* Center CTA Button (Book Table) */
+  /* Center CTA Button (Order Cart) */
   .bottom-nav-btn.center-cta-btn {
     position: relative;
     top: -10px;
   }
 
   .center-cta-circle {
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #f5b842 0%, #d4af37 60%, #aa8724 100%);
-    border: 2px solid #ffffff;
-    box-shadow: 0 4px 18px rgba(212, 175, 55, 0.6), 0 0 24px rgba(245, 184, 66, 0.35);
+    background: #22c55e;
+    border: 3px solid #ffffff;
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.45);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #090608;
+    color: #ffffff;
     margin-bottom: 3px;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, background 0.2s ease;
   }
 
   .center-cta-btn:active .center-cta-circle {
@@ -107,34 +108,29 @@
   }
 
   .center-cta-btn .btn-label {
-    color: #f5b842;
+    color: #16a34a;
     font-weight: 700;
-    font-size: 0.62rem;
+    font-size: 0.65rem;
   }
 
-  /* Feast Badge Counter */
-  .feast-icon-wrapper {
-    position: relative;
-  }
-
+  /* Badge Counter */
   .feast-badge-counter {
     position: absolute;
-    top: -4px;
-    right: -7px;
+    top: -3px;
+    right: -5px;
     min-width: 18px;
     height: 18px;
     padding: 0 4px;
     border-radius: 9999px;
     background: #ef4444;
-    border: 1.5px solid #0c070a;
+    border: 2px solid #ffffff;
     color: #ffffff;
     font-size: 0.65rem;
     font-weight: 800;
-    font-family: inherit;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 8px rgba(239, 68, 68, 0.8);
+    box-shadow: 0 2px 6px rgba(239, 68, 68, 0.5);
     animation: badge-pop 0.3s ease-out;
   }
 
